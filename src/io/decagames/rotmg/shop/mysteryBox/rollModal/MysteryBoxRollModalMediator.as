@@ -115,7 +115,6 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal {
          this.requestComplete = false;
          this.timerComplete = false;
          var _loc1_:Object = this.account.getCredentials();
-         _loc1_.isChallenger = this.seasonalEventModel.isChallenger;
          _loc1_.boxId = this.view.info.id;
          if(this.view.info.isOnSale()) {
             _loc1_.quantity = this.quantity;

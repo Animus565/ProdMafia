@@ -116,11 +116,7 @@ package io.decagames.rotmg.pets.windows.yard.list {
       }
       
       private function upgradeYard(param1:BaseButton) : void {
-         if(this.seasonalEventModel.isChallenger && this.model.getPetYardType() == this.seasonalEventModel.maxPetYardLevel) {
-            this.showSeasonalErrorPopUp("You cannot upgrade your pet yard any higher this season");
-         } else {
             this.showDialog.dispatch(new PetYardUpgradeDialog(PetRarityEnum.selectByOrdinal(this.model.getPetYardType()),this.model.getPetYardUpgradeGoldPrice(),this.model.getPetYardUpgradeFamePrice()));
-         }
       }
       
       private function showSeasonalErrorPopUp(param1:String) : void {

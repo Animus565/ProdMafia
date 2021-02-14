@@ -16,7 +16,7 @@ import flash.utils.Dictionary;
 import flash.utils.setTimeout;
 
 public class Parameters {
-    public static const CLIENT_VERSION:String = "1.3.1.0.0";
+    public static const CLIENT_VERSION:String = "1.3.2.1.0";
     public static const PORT:int = 2050;
     public static const UNITY_LAUNCHER_VERSION:String = "2019.3.14f1";
     public static const UNITY_GAME_VERSION:String = "2019.4.9f1";
@@ -892,11 +892,15 @@ public class Parameters {
         setDefault("multiToggle",0);
         setDefault("multiOn",false);
         setDefault("depositKey",101);
+        setDefault("tpCursor", KeyCodes.UNSET);
+        setDefault("noClipPause", KeyCodes.UNSET);
+        setDefault("pauseDelay",0);
         setDefault("customName","");
         setDefault("logErrors", false);
         setDefault("test113Count", 0);
         setDefault("tutorialMode", false);
         setDefaultKey("pauseAnywhere", KeyCodes.UNSET);
+        setDefault("tpMulti", 1);
         Options.calculateIgnoreBitmask();
     }
 

@@ -80,7 +80,7 @@ import kabam.rotmg.messaging.impl.incoming.MapInfo;
    import org.osflash.signals.Signal;
    
    public class GameSprite extends AGameSprite {
-      
+
       public static const NON_COMBAT_MAPS:Vector.<String> = new <String>["Nexus","Vault","Guild Hall","Cloth Bazaar","Nexus Explanation","Daily Quest Room"];
       
       public static const DISPLAY_AREA_Y_SPACE:int = 32;
@@ -107,6 +107,8 @@ import kabam.rotmg.messaging.impl.incoming.MapInfo;
       public var chatBox_:Chat;
       
       public var isNexus_:Boolean = false;
+
+      public var mousePos_:Point;
       
       public var idleWatcher_:IdleWatcher;
       
@@ -1057,7 +1059,11 @@ import kabam.rotmg.messaging.impl.incoming.MapInfo;
                hudView.mouseChildren = true;
             }
             if(!Parameters.data.noClip) {
-               moveRecords_.addRecord(_loc5_,_loc7_.x_,_loc7_.y_);
+               moveRecords_.addRecord(_loc5_, _loc7_.x_, _loc7_.y_);
+            }
+
+            if(Parameters.data.tpCursor) {
+               moveRecords_.addRecord(_loc5_, this.map.mouseX, this.map.mouseY);
             }
          }
          lastUpdate_ = _loc5_;

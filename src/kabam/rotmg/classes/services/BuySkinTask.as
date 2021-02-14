@@ -23,7 +23,7 @@ package kabam.rotmg.classes.services {
       
       [Inject]
       public var player:PlayerModel;
-      
+
       [Inject]
       public var seasonalEventModel:SeasonalEventModel;
       
@@ -44,7 +44,6 @@ package kabam.rotmg.classes.services {
       private function makeCredentials() : Object {
          var _loc1_:Object = this.account.getCredentials();
          _loc1_.skinType = this.skin.id;
-         _loc1_.isChallenger = this.seasonalEventModel.isChallenger;
          return _loc1_;
       }
       

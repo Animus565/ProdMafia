@@ -173,8 +173,8 @@ package io.decagames.rotmg.pets.windows.yard.feed {
             }
          }
          if(this.currentPet) {
-            this.view.feedGoldButton.price = this.seasonalEventModel.isChallenger != 1?FeedFuseCostModel.getFeedGoldCost(this.currentPet.rarity) * _loc1_:0;
-            this.view.feedFameButton.price = this.seasonalEventModel.isChallenger != 1?FeedFuseCostModel.getFeedFameCost(this.currentPet.rarity) * _loc1_:0;
+            this.view.feedGoldButton.price = 1?FeedFuseCostModel.getFeedGoldCost(this.currentPet.rarity) * _loc1_:0;
+            this.view.feedFameButton.price = 1?FeedFuseCostModel.getFeedFameCost(this.currentPet.rarity) * _loc1_:0;
             this.view.updateFeedPower(_loc2_,this.currentPet.maxedAvailableAbilities());
          } else {
             this.view.feedGoldButton.price = 0;

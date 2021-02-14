@@ -72,7 +72,6 @@ package kabam.rotmg.account.web.view {
       private function onLogOut() : void {
          this.logout.dispatch();
          this.view.setInfo("",false);
-         this.seasonalEventModel.isChallenger = 0;
       }
       
       private function onResetComplete(param1:Boolean, param2:*) : void {

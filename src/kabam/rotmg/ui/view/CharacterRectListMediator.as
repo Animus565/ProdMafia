@@ -48,12 +48,8 @@ package kabam.rotmg.ui.view {
       }
       
       private function onNewCharacter() : void {
-         if(this.seasonalEventModel.isChallenger && this.seasonalEventModel.remainingCharacters == 0) {
-            this.showSeasonalErrorPopUp("You cannot create more characters");
-         } else {
             this.setScreenWithValidData.dispatch(new NewCharacterScreen());
          }
-      }
       
       private function showSeasonalErrorPopUp(param1:String) : void {
          this.seasonalEventErrorPopUp = new SeasonalEventErrorPopup(param1);

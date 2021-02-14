@@ -98,7 +98,6 @@ package io.decagames.rotmg.shop.packages {
       
       private function sendPurchaseRequest() : void {
          var _loc1_:Object = this.account.getCredentials();
-         _loc1_.isChallenger = this.seasonalEventModel.isChallenger;
          _loc1_.boxId = this.view.boxInfo.id;
          if(this.view.boxInfo.isOnSale()) {
             _loc1_.quantity = this.view.spinner.value;

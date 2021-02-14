@@ -153,7 +153,7 @@ package kabam.rotmg.ui.view {
       }
       
       private function showServersScreen() : void {
-         this.setScreen.dispatch(new ServersScreen(this.seasonalEventModel.isChallenger == 1));
+         this.setScreen.dispatch(new ServersScreen);
       }
       
       private function trackSomething() : void {
@@ -170,11 +170,7 @@ package kabam.rotmg.ui.view {
       }
       
       private function onNewCharacter() : void {
-         if(this.seasonalEventModel.isChallenger && this.seasonalEventModel.remainingCharacters == 0) {
-            this.showSeasonalErrorPopUp("You cannot create more characters");
-         } else {
             this.setScreen.dispatch(new NewCharacterScreen());
-         }
       }
       
       private function showSeasonalErrorPopUp(param1:String) : void {
@@ -184,7 +180,6 @@ package kabam.rotmg.ui.view {
       }
       
       private function onClose() : void {
-         this.seasonalEventModel.isChallenger = 0;
          this.playerModel.isInvalidated = true;
          this.playerModel.isLogOutLogIn = true;
          this.setScreenWithValidData.dispatch(new TitleView());

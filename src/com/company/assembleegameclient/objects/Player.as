@@ -20,9 +20,8 @@ package com.company.assembleegameclient.objects {
    import com.company.util.IntPoint;
    import com.company.util.MoreColorUtil;
    import com.company.util.MoreStringUtil;
-   import com.company.util.PointUtil;
 import com.company.util.Trig;
-
+import com.company.util.PointUtil;
 import flash.display.BitmapData;
    import flash.display.GraphicsBitmapFill;
    import flash.display.Sprite;

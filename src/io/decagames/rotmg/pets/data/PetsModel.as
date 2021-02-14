@@ -85,11 +85,11 @@ public class PetsModel {
     }
 
     public function getPetYardUpgradeFamePrice():int {
-        return !!this.seasonalEventModel.isChallenger ? 0 : this.yardXmlData.Fame;
+        return this.yardXmlData.Fame;
     }
 
     public function getPetYardUpgradeGoldPrice():int {
-        return !!this.seasonalEventModel.isChallenger ? 0 : this.yardXmlData.Price;
+        return this.yardXmlData.Price;
     }
 
     public function getPetYardObjectID():int {

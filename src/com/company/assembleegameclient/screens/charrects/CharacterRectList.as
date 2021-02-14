@@ -79,27 +79,18 @@ package com.company.assembleegameclient.screens.charrects {
       }
       
       private function canBuyCharSlot() : Boolean {
-         var _loc1_:* = false;
-         if(this.seasonalEventModel.isChallenger == 1) {
-            _loc1_ = this.seasonalEventModel.remainingCharacters - this.numberOfAvailableCharSlots > 0;
-         } else {
-            _loc1_ = true;
-         }
+         var _loc1_:* = true;
          return _loc1_;
       }
       
       private function createAvailableCharSlots() : void {
          var _loc1_:int = 0;
          var _loc3_:* = null;
-         var _loc2_:Boolean = this.seasonalEventModel.isChallenger;
          if(this.model.hasAvailableCharSlot()) {
             this.numberOfAvailableCharSlots = this.model.getAvailableCharSlots();
             _loc1_ = 0;
             while(_loc1_ < this.numberOfAvailableCharSlots) {
                _loc3_ = new CreateNewCharacterRect(this.model);
-               if(_loc2_) {
-                  _loc3_.setSeasonalOverlay(true);
-               }
                _loc3_.addEventListener("mouseDown",this.onNewChar);
                _loc3_.y = this.yOffset;
                addChild(_loc3_);
@@ -145,7 +136,6 @@ package com.company.assembleegameclient.screens.charrects {
          this.model = _loc1_.getInstance(PlayerModel);
          this.assetFactory = _loc1_.getInstance(CharacterFactory);
          this.seasonalEventModel = _loc1_.getInstance(SeasonalEventModel);
-         this.isSeasonalEvent = this.seasonalEventModel.isChallenger;
       }
       
       private function createBuyRect() : void {

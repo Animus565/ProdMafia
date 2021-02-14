@@ -39,9 +39,7 @@ package kabam.rotmg.news.model {
       }
       
       public function addInGameNews(param1:InGameNews) : void {
-         if(this.isInModeToBeShown(param1.showInModes) && this.isValidForPlatform(param1)) {
-            this.inGameNews.push(param1);
-         }
+         this.inGameNews.push(param1)
          this.sortNews();
       }
       
@@ -50,22 +48,7 @@ package kabam.rotmg.news.model {
             this.inGameNews.length = 0;
          }
       }
-      
-      public function isInModeToBeShown(param1:int) : Boolean {
-         var _loc2_:* = false;
-         var _loc3_:Boolean = this.seasonalEventModel.isChallenger;
-         switch(int(param1)) {
-            case 0:
-               _loc2_ = true;
-               break;
-            case 1:
-               _loc2_ = !_loc3_;
-               break;
-            case 2:
-               _loc2_ = _loc3_;
-         }
-         return _loc2_;
-      }
+
       
       public function markAsRead() : void {
          var _loc1_:InGameNews = this.getFirstNews();

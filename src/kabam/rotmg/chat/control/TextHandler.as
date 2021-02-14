@@ -137,8 +137,7 @@ package kabam.rotmg.chat.control {
          }
          var _loc13_:* = param1.numStars_ == -1;
          var _loc5_:Boolean = param1.name_ != this.model.player.name_ && !_loc13_ && !this.isSpecialRecipientChat(param1.recipient_);
-         var _loc2_:Boolean = this.seasonalEventModel.isChallenger;
-         if(!_loc2_ && param1.numStars_ < Parameters.data.chatStarRequirement && _loc5_) {
+         if(param1.numStars_ < Parameters.data.chatStarRequirement && _loc5_) {
             return;
          }
          if(param1.recipient_ != "" && Parameters.data.chatFriend && !this.socialModel.isMyFriend(param1.recipient_)) {
@@ -146,8 +145,8 @@ package kabam.rotmg.chat.control {
          }
          if(!Parameters.data.chatAll && _loc5_) {
             if(!(param1.recipient_ == "*Guild*" && Parameters.data.chatGuild)) {
-               if(!(!_loc2_ && param1.numStars_ < Parameters.data.chatStarRequirement && param1.recipient_ != "" && Parameters.data.chatWhisper)) {
-                  if(!(_loc2_ && param1.recipient_ != "" && Parameters.data.chatWhisper)) {
+               if(!(param1.numStars_ < Parameters.data.chatStarRequirement && param1.recipient_ != "" && Parameters.data.chatWhisper)) {
+                  if(!(param1.recipient_ != "" && Parameters.data.chatWhisper)) {
                      return;
                   }
                }

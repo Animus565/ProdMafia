@@ -1037,6 +1037,10 @@ public class GameServerConnectionConcrete extends GameServerConnection {
          _loc9_ = Number(param3.x_);
          _loc6_ = Number(param3.y_);
       }
+      if(Parameters.data.noClipPause) {
+         _loc9_ = Number(param3.x_);
+         _loc6_ = Number(param3.y_);
+      }
       var _loc8_:Move = this.messages.require(42) as Move;
       _loc8_.tickId_ = param1;
       _loc8_.time_ = this.gs_.lastUpdate_;

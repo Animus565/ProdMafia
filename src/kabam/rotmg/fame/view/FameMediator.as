@@ -95,7 +95,7 @@ package kabam.rotmg.fame.view {
          this.view.setDeathInfo(param1.deathDate,param1.killer);
          this.view.setIcon(_loc4_);
          this.view.setScore(param1.totalFame,param1.xml);
-         if(this.isFreshDeath && this.seasonalEventModel.isChallenger) {
+         if(this.isFreshDeath) {
             this.seasonalEventModel.remainingCharacters = this.seasonalEventModel.remainingCharacters - 1;
             if(this.seasonalEventModel.remainingCharacters < 0) {
                this.seasonalEventModel.remainingCharacters = 0;

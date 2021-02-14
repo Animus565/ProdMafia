@@ -32,7 +32,7 @@ package kabam.rotmg.messaging.impl.incoming {
       override public function parseFromInput(param1:IDataInput) : void {
          this.name_ = param1.readUTF();
          this.objectId_ = param1.readInt();
-         this.numStars_ = param1.readInt();
+         this.numStars_ = param1.readUnsignedShort();
          this.bubbleTime_ = param1.readUnsignedByte();
          this.recipient_ = param1.readUTF();
          this.text_ = param1.readUTF();

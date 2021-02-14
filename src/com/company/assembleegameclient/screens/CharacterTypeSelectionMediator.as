@@ -126,7 +126,6 @@ package com.company.assembleegameclient.screens {
       }
       
       private function runTasks() : void {
-         this.logGameMode();
          this.getCharListTask.start();
          this.petsModel.clearPets();
          this.getOwnedPetSkinsTask.start();
@@ -140,14 +139,6 @@ package com.company.assembleegameclient.screens {
             _loc1_ = true;
          }
          return _loc1_;
-      }
-      
-      private function logGameMode() : void {
-         var _loc2_:AppEngineClient = StaticInjectorContext.getInjector().getInstance(AppEngineClient);
-         var _loc1_:Object = this.account.getCredentials();
-         _loc1_.gameMode = this.seasonalEventModel.isChallenger != 1?"Legacy":"Challenger";
-         _loc1_.seasonID = this.seasonalEventModel.seasonTitle;
-         _loc2_.sendRequest("/log/logGameModePlayed",_loc1_);
       }
       
       private function onListComplete() : void {

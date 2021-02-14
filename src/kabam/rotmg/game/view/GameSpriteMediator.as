@@ -208,9 +208,6 @@ package kabam.rotmg.game.view {
       
       private function onGameSpriteModelInitialized() : void {
          this.hudSetupStarted.dispatch(this.view);
-         if(!this.seasonalEventModel.isChallenger) {
-            this.beginnersPackageAvailable.add(this.onBeginner);
-         }
          this.initPackages.dispatch();
       }
       

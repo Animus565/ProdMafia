@@ -47,5 +47,6 @@ public class ChatSocketServerModel {
     public function set connectDelayMS(_arg_1:int):void {
         this._connectDelayMS = _arg_1;
     }
+
 }
 }

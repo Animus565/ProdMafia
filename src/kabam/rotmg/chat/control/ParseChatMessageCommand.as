@@ -109,6 +109,7 @@ public class ParseChatMessageCommand {
       var name:String = "";
       var time:uint = 0;
       var timeScale:Number = 0;
+      var tpMulti:Number = 0;
       var player:Player = null;
       var go:GameObject = null;
       switch(command) {
@@ -436,6 +437,23 @@ public class ParseChatMessageCommand {
                      Parameters.data.timeScale = timeScale;
                      Parameters.save();
                      this.addTextLine.dispatch(ChatMessage.make("*Help*","Time Scale set to: " + timeScale + "x"));
+                     break;
+                  }
+                  this.addTextLine.dispatch(ChatMessage.make("*Error*","Incorrect length! Make sure you provide a number."));
+                  break;
+            }
+            return;
+         case "/tpmulti":
+            switch(int(split.length) - 1) {
+               case 0:
+                  this.addTextLine.dispatch(ChatMessage.make("*Help*","Your current Teleport Modifier is: " + Parameters.data.tpMulti + "x"));
+                  break;
+               case 1:
+                  tpMulti = parseFloat(split[1]);
+                  if(!isNaN(tpMulti)) {
+                     Parameters.data.tpMulti = tpMulti;
+                     Parameters.save();
+                     this.addTextLine.dispatch(ChatMessage.make("*Help*","Teleport Modifier: " + tpMulti + "x"));
                      break;
                   }
                   this.addTextLine.dispatch(ChatMessage.make("*Error*","Incorrect length! Make sure you provide a number."));

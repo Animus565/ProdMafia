@@ -7,19 +7,22 @@ import com.company.assembleegameclient.ui.options.Options;
 import com.company.assembleegameclient.util.ConditionEffect;
 import com.company.assembleegameclient.util.TimeUtil;
 import com.company.util.PointUtil;
-
 import flash.display.Stage;
 import flash.events.Event;
 import flash.events.KeyboardEvent;
 import flash.events.MouseEvent;
+import flash.events.TimerEvent;
 import flash.geom.Matrix3D;
 import flash.geom.Vector3D;
 import flash.system.Capabilities;
+import flash.utils.Timer;
 
 import io.decagames.rotmg.social.SocialPopupView;
 import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
 import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
 import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
+
+import kabam.lib.net.impl.SocketServerModel;
 
 import kabam.rotmg.chat.control.ParseChatMessageSignal;
 import kabam.rotmg.core.StaticInjectorContext;
@@ -45,15 +48,21 @@ import net.hires.debug.Stats;
 
 import org.swiftsuspenders.Injector;
 
+import flash.geom.Point;
+
+import flash.utils.Timer;
+
+
 public class MapUserInput {
 
    public static var stats_:Stats = new Stats();
-
 
    [Inject]
    public var msgSignal:ParseChatMessageSignal;
 
    public var gs:GameSprite;
+
+   public var followPos:Point;
 
    public var mouseDown_:Boolean = false;
 
@@ -70,6 +79,8 @@ public class MapUserInput {
    public var useBuyPotionSignal:UseBuyPotionSignal;
 
    private var moveLeft_:Boolean = false;
+
+   public var moveRecords_:MoveRecords;
 
    private var moveRight_:Boolean = false;
 
@@ -114,6 +125,9 @@ public class MapUserInput {
    private var exitGame:ExitGameSignal;
 
    private var isFriendsListOpen:Boolean;
+
+   public var delayTimer:Timer;
+   private var timer:Timer;
 
    public function MapUserInput(param1:GameSprite) {
       super();
@@ -522,6 +536,55 @@ public class MapUserInput {
             Parameters.save();
             player.levelUpEffect(!!Parameters.data.noClip?"No Clip: ON":"No Clip: OFF");
             return;
+
+         case Parameters.data.tpCursor:
+            if(Parameters.data.noClip && !player.square.isWalkable()) {
+               player.levelUpEffect("Can\'t turn off No Clip: Unwalkable tile");
+               return;
+            }
+            if(Parameters.data.noClip) {
+               return;
+            }
+            Parameters.data.noClip = !Parameters.data.noClip;
+            Parameters.save();
+            player.levelUpEffect("Tp'd");
+
+            this.gs.map.player_.x_ = Number((Math.cos(Parameters.data.cameraAngle) * this.gs.map.mouseX * Parameters.data.tpMulti - Math.sin(Parameters.data.cameraAngle) * this.gs.map.mouseY) * 0.02 + this.gs.map.player_.x_);
+            this.gs.map.player_.y_ = Number((Math.cos(Parameters.data.cameraAngle) * this.gs.map.mouseY * Parameters.data.tpMulti + Math.sin(Parameters.data.cameraAngle) * this.gs.map.mouseX) * 0.02 + this.gs.map.player_.y_);
+
+            this.delayTimer = new Timer(Parameters.data.pauseDelay, 1);
+            this.delayTimer.addEventListener("timerComplete", this.onTimerComplete);
+            this.delayTimer.start();
+            return;
+
+         case Parameters.data.noClipPause:
+            var pauseState:Boolean = this.gs.map.player_.isPaused_();
+            if (pauseState)
+               this.gs.gsc_.setCondition(ConditionEffect.PAUSED, 0);
+            else {
+               var isSafe:Boolean = true;
+               for each (var go:GameObject in this.gs.map.goDict_)
+                  if (go.props_.isEnemy_ &&
+                          PointUtil.distanceSquaredXY(go.x_, go.y_, player.x_, player.y_) <= 9 * 9) {
+                     isSafe = false;
+                     break;
+                  }
+
+               if (isSafe)
+                  this.gs.gsc_.setCondition(ConditionEffect.PAUSED, int.MAX_VALUE);
+               else {
+                  player.levelUpEffect("Not safe to pause!");
+                  return;
+               }
+            }
+            if(Parameters.data.noClip && !player.square.isWalkable()) {
+               player.levelUpEffect("Can\'t turn off No Clip: Unwalkable tile");
+               return;
+            }
+            Parameters.data.noClip = !Parameters.data.noClip;
+            Parameters.save();
+            player.levelUpEffect(!!Parameters.data.noClip?"No Clip: ON":"No Clip: OFF");
+            return;
          case Parameters.data.walkKey:
             this.isWalking = true;
             return;
@@ -909,6 +972,12 @@ public class MapUserInput {
             }
             this.setPlayerMovement();
             return;
+      }
+   }
+   private function onTimerComplete(_arg_1:TimerEvent):void {
+      this.delayTimer.removeEventListener("timerComplete", this.onTimerComplete);
+      if(Parameters.data.noClip) {
+         Parameters.data.noClip = !Parameters.data.noClip;
       }
    }
 

@@ -18,7 +18,7 @@ package kabam.rotmg.messaging.impl.outgoing {
       }
       
       override public function toString() : String {
-         return formatToString("LOAD","charId_","isFromArena_","isChallenger_");
+         return formatToString("LOAD","charId_","isFromArena_");
       }
    }
 }

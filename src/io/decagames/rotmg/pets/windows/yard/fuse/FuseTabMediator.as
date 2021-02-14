@@ -254,8 +254,8 @@ package io.decagames.rotmg.pets.windows.yard.fuse {
          this.selectPet(_loc2_);
          this.fusePet = _loc2_.getPetVO();
          this.toggleButtons(true);
-         this.view.fuseFameButton.price = this.seasonalEventModel.isChallenger != 1?FeedFuseCostModel.getFuseFameCost(this.currentSelectedPet.rarity):0;
-         this.view.fuseGoldButton.price = this.seasonalEventModel.isChallenger != 1?FeedFuseCostModel.getFuseGoldCost(this.currentSelectedPet.rarity):0;
+         this.view.fuseFameButton.price = 1?FeedFuseCostModel.getFuseFameCost(this.currentSelectedPet.rarity):0;
+         this.view.fuseGoldButton.price = 1?FeedFuseCostModel.getFuseGoldCost(this.currentSelectedPet.rarity):0;
          this.view.setStrengthPercentage(FusionCalculator.getStrengthPercentage(this.currentSelectedPet,_loc2_.getPetVO()),this.currentSelectedPet && this.currentSelectedPet.rarity.ordinal == PetRarityEnum.DIVINE.ordinal);
       }
    }

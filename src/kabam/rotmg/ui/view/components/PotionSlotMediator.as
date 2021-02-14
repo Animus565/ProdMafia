@@ -30,7 +30,7 @@ import com.company.assembleegameclient.objects.Player;
       [Inject]
       public var potionInventoryModel:PotionInventoryModel;
       
-      [Inject]
+      [Inject]1.3.2.1.0
       public var useBuyPotionSignal:UseBuyPotionSignal;
       
       private var blockingUpdate:Boolean = false;
