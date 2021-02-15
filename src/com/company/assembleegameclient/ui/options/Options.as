@@ -480,7 +480,7 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new KeyMapper("TogglePlayerFollow","Toggle Player Follow","Set with /follow <name>, press this hotkey to toggle on and off"));
          this.addOptionAndPosition(new ChoiceOption("logErrors",makeOnOffLabels(),[true,false],"Log Errors","This toggles whether to log errors, for debugging purposes",null));
          this.addOptionAndPosition(new ChoiceOption("tutorialMode",makeOnOffLabels(),[true,false],"Tutorial Mode","This toggles whether to load into the Tutorial when attempting to enter the Nexus",null));
-         this.addOptionAndPosition(new ChoiceOption("pauseDelay",makePauseDelayLabels(),[0,100,250,500,750,1000,1500,2000],"Pause Delay","Amount of time to wait between switching maps, normal amount is is 2000 milliseconds, 250 ms will usually work fine without any issues - use /recondelay # for a custom delay",null));
+         this.addOptionAndPosition(new ChoiceOption("customPauseDelay",makePauseDelayLabels(),[0,100,250,500,750,1000,1500,2000],"Pause Delay","",null));
          this.addOptionAndPosition(new KeyMapper("pauseAnywhere", "Pause Anywhere", "The key which pauses you without map restrictions when pressed"));
          this.addOptionAndPosition(new KeyMapper("noClipPause","No Clip Pause","Pauses after using noclip "));
          this.addOptionAndPosition(new KeyMapper("tpCursor","Tp to Cursor","Teleport to position of your cursor"));

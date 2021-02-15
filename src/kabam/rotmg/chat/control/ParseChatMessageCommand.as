@@ -1,30 +1,20 @@
 package kabam.rotmg.chat.control {
-import com.company.assembleegameclient.game.GameSprite;
 import com.company.assembleegameclient.objects.ForgeProperties;
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.ui.Slot;
-import com.company.assembleegameclient.util.ConditionEffect;
 import com.company.assembleegameclient.util.TimeUtil;
-import com.company.util.StringUtils;
 import flash.events.Event;
-import flash.geom.Point;
 import flash.system.System;
 import flash.utils.Dictionary;
-import flash.utils.clearInterval;
 import flash.utils.setInterval;
-import flash.utils.setTimeout;
 
 import io.decagames.rotmg.social.model.FriendRequestVO;
 import io.decagames.rotmg.social.signals.FriendActionSignal;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.services.GetConCharListTask;
 import kabam.rotmg.account.core.services.GetConServersTask;
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.chat.model.ChatMessage;
-import kabam.rotmg.chat.model.ChatMessage;
 import kabam.rotmg.chat.model.ChatMessage;
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.game.model.GameInitData;

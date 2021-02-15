@@ -13,7 +13,6 @@ import flash.geom.Point;
 import flash.net.SharedObject;
 import flash.utils.ByteArray;
 import flash.utils.Dictionary;
-import flash.utils.setTimeout;
 
 public class Parameters {
     public static const CLIENT_VERSION:String = "1.3.2.1.0";
@@ -894,7 +893,8 @@ public class Parameters {
         setDefault("depositKey",101);
         setDefault("tpCursor", KeyCodes.UNSET);
         setDefault("noClipPause", KeyCodes.UNSET);
-        setDefault("pauseDelay",0);
+        setDefault("customPauseDelay",0);
+        setDefault("pauseDelay",100);
         setDefault("customName","");
         setDefault("logErrors", false);
         setDefault("test113Count", 0);

@@ -3,10 +3,13 @@ import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.ObjectLibrary;
 import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.parameters.Parameters;
+import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.options.Options;
 import com.company.assembleegameclient.util.ConditionEffect;
 import com.company.assembleegameclient.util.TimeUtil;
 import com.company.util.PointUtil;
+import com.hurlant.util.asn1.parser.defaultValue;
+
 import flash.display.Stage;
 import flash.events.Event;
 import flash.events.KeyboardEvent;
@@ -542,17 +545,12 @@ public class MapUserInput {
                player.levelUpEffect("Can\'t turn off No Clip: Unwalkable tile");
                return;
             }
-            if(Parameters.data.noClip) {
-               return;
-            }
             Parameters.data.noClip = !Parameters.data.noClip;
             Parameters.save();
             player.levelUpEffect("Tp'd");
-
             this.gs.map.player_.x_ = Number((Math.cos(Parameters.data.cameraAngle) * this.gs.map.mouseX * Parameters.data.tpMulti - Math.sin(Parameters.data.cameraAngle) * this.gs.map.mouseY) * 0.02 + this.gs.map.player_.x_);
             this.gs.map.player_.y_ = Number((Math.cos(Parameters.data.cameraAngle) * this.gs.map.mouseY * Parameters.data.tpMulti + Math.sin(Parameters.data.cameraAngle) * this.gs.map.mouseX) * 0.02 + this.gs.map.player_.y_);
-
-            this.delayTimer = new Timer(Parameters.data.pauseDelay, 1);
+            this.delayTimer = new Timer(Parameters.data.customPauseDelay, 1);
             this.delayTimer.addEventListener("timerComplete", this.onTimerComplete);
             this.delayTimer.start();
             return;
