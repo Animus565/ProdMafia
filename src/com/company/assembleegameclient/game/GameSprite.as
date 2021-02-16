@@ -909,36 +909,6 @@ import kabam.rotmg.messaging.impl.incoming.MapInfo;
             this.specialOfferButton.y = _loc7_ * this.specialOfferButton.scaleY;
             _loc7_ = _loc7_ + 32;
          }
-         if(this.challengerLeaderBoard) {
-            if(_loc2_) {
-               this.challengerLeaderBoard.scaleX = _loc5_;
-               this.challengerLeaderBoard.scaleY = 1;
-            } else {
-               this.challengerLeaderBoard.scaleX = _loc4_;
-               this.challengerLeaderBoard.scaleY = _loc3_;
-            }
-            if(this.challengerLeaderBoard) {
-               this.challengerLeaderBoard.x = this.hudView.x - this.challengerLeaderBoard.width - 6;
-               this.challengerLeaderBoard.y = 40;
-            }
-         }
-         if(this.challengerInfoButton) {
-            if(_loc2_) {
-               this.challengerInfoButton.scaleX = _loc5_;
-               this.challengerInfoButton.scaleY = 1;
-            } else {
-               this.challengerInfoButton.scaleX = _loc4_;
-               this.challengerInfoButton.scaleY = _loc3_;
-            }
-            if(this.challengerInfoButton) {
-               this.challengerInfoButton.x = this.hudView.x - this.challengerInfoButton.width - 6;
-               this.challengerInfoButton.y = 80;
-            }
-         }
-      }
-      
-      private function onTimerCounterClick(param1:MouseEvent) : void {
-         this.gsc_.playerText(Parameters.phaseName + " time left: " + toTimeCode(Parameters.phaseChangeAt - TimeUtil.getTrueTime()));
       }
       
       private function onFocusOut(param1:Event) : void {
@@ -1060,10 +1030,6 @@ import kabam.rotmg.messaging.impl.incoming.MapInfo;
             }
             if(!Parameters.data.noClip) {
                moveRecords_.addRecord(_loc5_, _loc7_.x_, _loc7_.y_);
-            }
-
-            if(Parameters.data.tpCursor) {
-               moveRecords_.addRecord(_loc5_, this.map.mouseX, this.map.mouseY);
             }
          }
          lastUpdate_ = _loc5_;

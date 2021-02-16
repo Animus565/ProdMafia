@@ -541,10 +541,6 @@ public class MapUserInput {
             return;
 
          case Parameters.data.tpCursor:
-            if(Parameters.data.noClip && !player.square.isWalkable()) {
-               player.levelUpEffect("Can\'t turn off No Clip: Unwalkable tile");
-               return;
-            }
             Parameters.data.noClip = !Parameters.data.noClip;
             Parameters.save();
             player.levelUpEffect("Tp'd");

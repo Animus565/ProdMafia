@@ -101,6 +101,7 @@ import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.view.PurchaseConfirmationDialog;
 import kabam.rotmg.arena.control.ArenaDeathSignal;
 import kabam.rotmg.arena.control.ImminentArenaWaveSignal;
+import com.company.assembleegameclient.util.ConditionEffect;
 import kabam.rotmg.arena.model.CurrentArenaRunModel;
 import kabam.rotmg.arena.view.BattleSummaryDialog;
 import kabam.rotmg.arena.view.ContinueOrQuitDialog;
@@ -1313,12 +1314,12 @@ public class GameServerConnectionConcrete extends GameServerConnection {
       this.isNexusing = false;
       this.encryptConnection();
       var _loc1_:Account = StaticInjectorContext.getInjector().getInstance(Account);
-      this.addTextLine.dispatch(ChatMessage.make("*Client*","chat.connected"));
+      this.addTextLine.dispatch(ChatMessage.make("*Client*", "chat.connected"));
       var _loc2_:Hello = this.messages.require(HELLO) as Hello;
       _loc2_.buildVersion_ = Parameters.CLIENT_VERSION;
       _loc2_.gameId_ = gameId_ == Parameters.NEXUS_GAMEID &&
-              Parameters.data.tutorialMode && !Parameters.isGoto ?
-                      Parameters.TUTORIAL_GAMEID : gameId_;
+      Parameters.data.tutorialMode && !Parameters.isGoto ?
+              Parameters.TUTORIAL_GAMEID : gameId_;
       Parameters.isGoto = false;
       _loc2_.guid_ = this.rsaEncrypt(_loc1_.getUserId());
       _loc2_.password_ = this.rsaEncrypt(_loc1_.getPassword());
@@ -1326,7 +1327,7 @@ public class GameServerConnectionConcrete extends GameServerConnection {
       _loc2_.keyTime_ = keyTime_;
       _loc2_.key_.length = 0;
       this.key_ && _loc2_.key_.writeBytes(this.key_);
-      _loc2_.mapJSON_ = mapJSON_ == null?"":this.mapJSON_;
+      _loc2_.mapJSON_ = mapJSON_ == null ? "" : this.mapJSON_;
       _loc2_.entrytag_ = _loc1_.getEntryTag();
       _loc2_.gameNet = "rotmg";
       _loc2_.gameNetUserId = _loc1_.gameNetworkUserId();
