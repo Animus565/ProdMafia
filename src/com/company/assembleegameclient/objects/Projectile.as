@@ -375,10 +375,10 @@ public class Projectile extends BasicObject {
       if(Parameters.data.autoDodge && this.damagesPlayers_) {
          _loc6_ = this.map_.player_;
          _loc5_ = 0.25 * (this.projProps.speed / 100);
-         if(PointUtil.distanceSquaredXY(_loc6_.x_,_loc6_.y_,this.x_,this.y_) <= 0.5 + _loc5_) {
+         if(PointUtil.distanceSquaredXY(_loc6_.x_,_loc6_.y_,this.x_,this.y_) <= 0.7 + _loc5_) {
             _loc4_ = map_.enumGOAngles();
-            _loc6_.walkPos.x = _loc6_.x_ + 0.25 * Math.cos(_loc4_);
-            _loc6_.walkPos.y = _loc6_.y_ + 0.25 * Math.sin(_loc4_);
+            _loc6_.walkPos.x = _loc6_.x_ + 0.012 * Math.cos(_loc4_);
+            _loc6_.walkPos.y = _loc6_.y_ + 0.012 * Math.sin(_loc4_);
          }
       }
       return true;

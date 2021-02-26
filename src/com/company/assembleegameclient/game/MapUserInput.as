@@ -19,6 +19,7 @@ import flash.geom.Matrix3D;
 import flash.geom.Vector3D;
 import flash.system.Capabilities;
 import flash.utils.Timer;
+import flash.utils.setTimeout;
 
 import io.decagames.rotmg.social.SocialPopupView;
 import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
@@ -88,6 +89,10 @@ public class MapUserInput {
    private var moveRight_:Boolean = false;
 
    private var moveUp_:Boolean = false;
+
+   private var xml:XML;
+
+   public var objectId_:int;
 
    private var moveDown_:Boolean = false;
 
@@ -539,18 +544,25 @@ public class MapUserInput {
             Parameters.save();
             player.levelUpEffect(!!Parameters.data.noClip?"No Clip: ON":"No Clip: OFF");
             return;
-
          case Parameters.data.tpCursor:
-            Parameters.data.noClip = !Parameters.data.noClip;
-            Parameters.save();
-            player.levelUpEffect("Tp'd");
             this.gs.map.player_.x_ = Number((Math.cos(Parameters.data.cameraAngle) * this.gs.map.mouseX * Parameters.data.tpMulti - Math.sin(Parameters.data.cameraAngle) * this.gs.map.mouseY) * 0.02 + this.gs.map.player_.x_);
             this.gs.map.player_.y_ = Number((Math.cos(Parameters.data.cameraAngle) * this.gs.map.mouseY * Parameters.data.tpMulti + Math.sin(Parameters.data.cameraAngle) * this.gs.map.mouseX) * 0.02 + this.gs.map.player_.y_);
-            this.delayTimer = new Timer(Parameters.data.customPauseDelay, 1);
+            TimeUtil.moddedTime = TimeUtil.moddedTime + Parameters.data.customDelay
+            this.delayTimer = new Timer(Parameters.data.customDelay, 1);
             this.delayTimer.addEventListener("timerComplete", this.onTimerComplete);
             this.delayTimer.start();
+            player.levelUpEffect("Tp'd");
             return;
-
+         case Parameters.data.autoDodgeKey:
+            Parameters.data.autoDodge = !Parameters.data.autoDodge;
+            Parameters.save();
+            player.levelUpEffect("Auto Dodge: " + (!!Parameters.data.autoDodge?"ON":"OFF"));
+            return;
+         case Parameters.data.nukeKey:
+            Parameters.data.nukeOn = !Parameters.data.nukeOn;
+            Parameters.save();
+            player.levelUpEffect("Nuke: " + (!!Parameters.data.nukeOn?"ON":"OFF"));
+            return;
          case Parameters.data.noClipPause:
             var pauseState:Boolean = this.gs.map.player_.isPaused_();
             if (pauseState)
@@ -632,20 +644,18 @@ public class MapUserInput {
                     gs.dispatchEvent(Parameters.lastRecon);
                  return;*/
          case Parameters.data.depositKey:
+            gs.map.player_.sbAssist(this.gs.map.mouseX,this.gs.map.mouseY);
             var vault:GameObject = null;
             for each (var go:GameObject in gs.map.goDict_)
-               if (go.objectType_ == 0x504/*0x743*/) {
+               if (go.objectType_ == 1284) {
                   vault = go;
                   break;
                }
-
             var i:int = 4;
             var nonEmpty:Vector.<int> = new Vector.<int>();
-
             for (; i < player.equipment_.length; i++)
                if (player.equipment_[i] != -1)
                   nonEmpty.push(i);
-
             var filled:int = 0;
             for (i = 0; i < vault.equipment_.length; i++)
                if (vault.equipment_[i] == -1) {
@@ -661,8 +671,6 @@ public class MapUserInput {
                   if (filled >= nonEmpty.length)
                      break;
                }
-
-
             if (Parameters.lastRecon)
                gs.dispatchEvent(Parameters.lastRecon);
             return;
@@ -969,10 +977,7 @@ public class MapUserInput {
       }
    }
    private function onTimerComplete(_arg_1:TimerEvent):void {
-      this.delayTimer.removeEventListener("timerComplete", this.onTimerComplete);
-      if(Parameters.data.noClip) {
-         Parameters.data.noClip = !Parameters.data.noClip;
-      }
+      this.delayTimer.removeEventListener("timerComplete", this.onTimerComplete);;
    }
 
    private function onKeyUp(param1:KeyboardEvent) : void {

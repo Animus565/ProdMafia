@@ -31,52 +31,52 @@ package com.company.assembleegameclient.ui.options {
    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    import kabam.rotmg.ui.UIUtils;
    import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
-   
+
    public class Options extends Sprite {
-      
+
       public static const Y_POSITION:int = 550;
-      
+
       public static const SCROLL_HEIGHT:int = 420;
-      
+
       public static const SCROLL_Y_OFFSET:int = 102;
-      
+
       public static const CHAT_COMMAND:String = "chatCommand";
-      
+
       public static const CHAT:String = "chat";
-      
+
       public static const TELL:String = "tell";
-      
+
       public static const GUILD_CHAT:String = "guildChat";
-      
+
       public static const SCROLL_CHAT_UP:String = "scrollChatUp";
-      
+
       public static const SCROLL_CHAT_DOWN:String = "scrollChatDown";
-      
+
       private static var registeredCursors:Vector.<String> = new Vector.<String>(0);
-       
-      
+
+
       private var gs_:GameSprite;
-      
+
       private var continueButton_:TitleMenuOption;
-      
+
       private var resetToDefaultsButton_:TitleMenuOption;
-      
+
       private var homeButton_:TitleMenuOption;
-      
+
       private var tabs_:Vector.<OptionsTabTitle>;
-      
+
       private var selected_:OptionsTabTitle;
-      
+
       private var options_:Vector.<Sprite>;
-      
+
       private var defaultTab_:OptionsTabTitle;
-      
+
       private var scroll:UIScrollbar;
-      
+
       private var scrollContainer:Sprite;
-      
+
       private var scrollContainerBottom:Shape;
-      
+
       public function Options(param1:GameSprite) {
          var _loc3_:* = undefined;
          var _loc4_:int = 0;
@@ -85,7 +85,7 @@ package com.company.assembleegameclient.ui.options {
          options_ = new Vector.<Sprite>();
          var _loc5_:* = null;
          var _loc8_:* = null;
-         _loc3_ = new <String>["Options.Controls","Options.HotKeys","Options.Chat","Options.Graphics","Options.Sound","Options.Friend","Experimental","Debuffs","Auto","Loot","World","Visual","Other"];
+         _loc3_ = new <String>["Options.Controls","Options.HotKeys","Options.Chat","Options.Graphics","Options.Sound","Options.Friend","Experimental","Debuffs","Auto","Loot","World","Visual","Other","Epic"];
          super();
          this.gs_ = param1;
          graphics.clear();
@@ -150,7 +150,7 @@ package com.company.assembleegameclient.ui.options {
          _loc6_.dispatch();
          this.createScrollWindow();
       }
-      
+
       public static function refreshCursor() : void {
          var _loc2_:* = null;
          var _loc1_:* = undefined;
@@ -165,7 +165,7 @@ package com.company.assembleegameclient.ui.options {
          }
          Mouse.cursor = Parameters.data.cursorSelect;
       }
-      
+
       public static function calculateIgnoreBitmask() : void {
          var _loc1_:* = 0;
          var _loc3_:* = 0;
@@ -228,97 +228,97 @@ package com.company.assembleegameclient.ui.options {
          Parameters.data.ssdebuffBitmask2 = _loc3_;
          Parameters.data.ccdebuffBitmask = _loc2_;
       }
-      
+
       private static function makeOnOffLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[makeLineBuilder("Options.On"),makeLineBuilder("Options.Off")];
       }
-      
+
       private static function makeHighLowLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("High"),new StaticStringBuilder("Low")];
       }
-      
+
       private static function makeReconDelayLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("0 ms"),new StaticStringBuilder("100 ms"),new StaticStringBuilder("250 ms"),new StaticStringBuilder("500 ms"),new StaticStringBuilder("750 ms"),new StaticStringBuilder("1000 ms"),new StaticStringBuilder("1500 ms"),new StaticStringBuilder("2000 ms")];
       }
 
-      private static function makePauseDelayLabels() : Vector.<StringBuilder> {
-         return new <StringBuilder>[new StaticStringBuilder("0 ms"),new StaticStringBuilder("100 ms"),new StaticStringBuilder("250 ms"),new StaticStringBuilder("500 ms"),new StaticStringBuilder("750 ms"),new StaticStringBuilder("1000 ms"),new StaticStringBuilder("1500 ms"),new StaticStringBuilder("2000 ms")];
+      private static function makeDelayLabels() : Vector.<StringBuilder> {
+         return new <StringBuilder>[new StaticStringBuilder("0 ms"), new StaticStringBuilder("1000 ms"), new StaticStringBuilder("2000 ms"),new StaticStringBuilder("3000 ms"),new StaticStringBuilder("5000 ms"),new StaticStringBuilder("7000 ms"),new StaticStringBuilder("10000 ms"),new StaticStringBuilder("15000 ms")];
       }
-      
+
       private static function makeStarSelectLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("1"),new StaticStringBuilder("2"),new StaticStringBuilder("3"),new StaticStringBuilder("5"),new StaticStringBuilder("10")];
       }
-      
+
       private static function makeFameDeltaLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("0"),new StaticStringBuilder("0.25"),new StaticStringBuilder("0.5"),new StaticStringBuilder("0.75"),new StaticStringBuilder("1"),new StaticStringBuilder("1.5"),new StaticStringBuilder("2")];
       }
-      
+
       private static function makeFameCheckLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("50"),new StaticStringBuilder("100"),new StaticStringBuilder("150"),new StaticStringBuilder("225"),new StaticStringBuilder("300"),new StaticStringBuilder("400"),new StaticStringBuilder("500")];
       }
-      
+
       private static function makeCursorSelectLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("ProX"),new StaticStringBuilder("X2"),new StaticStringBuilder("X3"),new StaticStringBuilder("X4"),new StaticStringBuilder("Corner1"),new StaticStringBuilder("Corner2"),new StaticStringBuilder("Symb"),new StaticStringBuilder("Alien"),new StaticStringBuilder("Xhair"),new StaticStringBuilder("Chusto1"),new StaticStringBuilder("Chusto2")];
       }
-      
+
       private static function makeLineBuilder(param1:String) : LineBuilder {
          return new LineBuilder().setParams(param1);
       }
-      
+
       private static function onBarTextToggle() : void {
          StatusBar.barTextSignal.dispatch(Parameters.data.toggleBarText);
       }
-      
+
       private static function onToMaxTextToggle() : void {
          StatusBar.barTextSignal.dispatch(Parameters.data.toggleBarText);
          StatView.toMaxTextSignal.dispatch(Parameters.data.toggleToMaxText);
       }
-      
+
       private static function makeDegreeOptions() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("45°"),new StaticStringBuilder("0°")];
       }
-      
+
       private static function onDefaultCameraAngleChange() : void {
          Parameters.data.cameraAngle = Parameters.data.defaultCameraAngle;
          Parameters.save();
       }
-      
+
       private static function makePetHiddenLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[makeLineBuilder("Hide All"),makeLineBuilder("Show All"),makeLineBuilder("Show Mine")];
       }
-      
+
       private static function chatLengthLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("1"),new StaticStringBuilder("2"),new StaticStringBuilder("3"),new StaticStringBuilder("4"),new StaticStringBuilder("5"),new StaticStringBuilder("6"),new StaticStringBuilder("7"),new StaticStringBuilder("8"),new StaticStringBuilder("9"),new StaticStringBuilder("10"),new StaticStringBuilder("11"),new StaticStringBuilder("12"),new StaticStringBuilder("13"),new StaticStringBuilder("14"),new StaticStringBuilder("15"),new StaticStringBuilder("16"),new StaticStringBuilder("17"),new StaticStringBuilder("18"),new StaticStringBuilder("19"),new StaticStringBuilder("20")];
       }
-      
+
       private static function makeRightClickOptions() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("Quest"),new StaticStringBuilder("Ability"),new StaticStringBuilder("Camera")];
       }
-      
+
       private static function makeAllyShootLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("All"),new StaticStringBuilder("Proj")];
       }
-      
+
       private static function makeHpBarLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("All"),new StaticStringBuilder("Enemy"),new StaticStringBuilder("Self & En."),new StaticStringBuilder("Self"),new StaticStringBuilder("Ally")];
       }
-      
+
       private static function makeForceExpLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("On"),new StaticStringBuilder("Self")];
       }
-      
+
       private static function makeBarTextLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("All"),new StaticStringBuilder("Fame"),new StaticStringBuilder("HP/MP")];
       }
-      
+
       private static function onVSyncToggle() : void {
          //Main.STAGE.vsyncEnabled = Parameters.data.vSync;
       }
-      
+
       private static function onFullscreenToggle() : void {
          Main.STAGE.displayState = !!Parameters.data.fullscreen?"fullScreenInteractive":"normal";
       }
-      
+
       public function addAutoOptions() : void {
          this.addOptionAndPosition(new KeyMapper("AAHotkey","AutoAim Hotkey","Toggle AutoAim"));
          this.addOptionAndPosition(new KeyMapper("AAModeHotkey","AimMode Hotkey","Switch AutoAim\'s aim mode"));
@@ -346,7 +346,7 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new ChoiceOption("BossPriority",makeOnOffLabels(),[true,false],"Boss Priority","Makes AutoAim prioritize Boss enemies over everything else - \"bosses\" includes all Quests and certain dungeon bosses which are not quests, such as the Shatters bosses",null));
          this.addOptionAndPosition(new ChoiceOption("spamPrismNumber",this.skullTargetsValues(),[0,1,2,3,4,5,6,7,8,9,10],"Spam Trickster Prism","Uses non teleporting Trickster prisms when this many enemies are around, with auto ability enabled",null));
       }
-      
+
       public function addAutoLootOptions() : void {
          this.addOptionAndPosition(new KeyMapper("AutoLootHotkey","Auto Loot","Toggles Auto Loot which automatically loots nearby items based on customizable criteria"));
          this.addOptionAndPosition(new ChoiceOption("autoLootUpgrades",makeOnOffLabels(),[true,false],"Loot Upgrades","Pick up items with a higher tier than your current equips (UTs and STs are excluded)",updateWanted));
@@ -371,23 +371,23 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new ChoiceOption("autoLootStackables",makeOnOffLabels(),[true,false],"Loot Stackables","Loot all stackable items",updateWanted));
          this.addOptionAndPosition(new ChoiceOption("autoLootInVault",makeOnOffLabels(),[true,false],"Auto Loot in Vault","Auto loot from bags in vault",null));
       }
-      
+
       public function updateWanted() : void {
          Parameters.needToRecalcDesireables = true;
       }
-      
+
       public function ZeroSix() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("0"),new StaticStringBuilder("1"),new StaticStringBuilder("2"),new StaticStringBuilder("3"),new StaticStringBuilder("4"),new StaticStringBuilder("5"),new StaticStringBuilder("6")];
       }
-      
+
       public function ZeroThirteen() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("0"),new StaticStringBuilder("1"),new StaticStringBuilder("2"),new StaticStringBuilder("3"),new StaticStringBuilder("4"),new StaticStringBuilder("5"),new StaticStringBuilder("6"),new StaticStringBuilder("7"),new StaticStringBuilder("8"),new StaticStringBuilder("9"),new StaticStringBuilder("10"),new StaticStringBuilder("11"),new StaticStringBuilder("12"),new StaticStringBuilder("13")];
       }
-      
+
       public function ZeroFourteen() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("0"),new StaticStringBuilder("1"),new StaticStringBuilder("2"),new StaticStringBuilder("3"),new StaticStringBuilder("4"),new StaticStringBuilder("5"),new StaticStringBuilder("6"),new StaticStringBuilder("7"),new StaticStringBuilder("8"),new StaticStringBuilder("9"),new StaticStringBuilder("10"),new StaticStringBuilder("11"),new StaticStringBuilder("12"),new StaticStringBuilder("13"),new StaticStringBuilder("14")];
       }
-      
+
       public function addWorldOptions() : void {
          this.addOptionAndPosition(new ChoiceOption("ethDisable",makeOnOffLabels(),[true,false],"Offset Etherite","Offsets your firing angle if you have an Etherite equipped to make it so your shots are in a straight line",null));
          this.addOptionAndPosition(new ChoiceOption("cultiststaffDisable",makeOnOffLabels(),[true,false],"Reverse Cultist Staff","Reverses the angle of the Staff of Unholy Sacrifice (which normally shoots backwards) to make it so you shoot forwards",null));
@@ -412,7 +412,7 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new KeyMapper("sayCustom4","Custom 4","Sends a custom message, set this message with /setmsg4"));
          this.addOptionAndPosition(new ChoiceOption("mysticAAShootGroup",makeOnOffLabels(),[true,false],"Stasis Enemy Group Instead of Self","Make Mystic\'s orbs stasis groups of enemies instead of self",null));
       }
-      
+
       public function addVisualOptions() : void {
          this.addOptionAndPosition(new KeyMapper("LowCPUModeHotKey","Low CPU Mode","Disables a lot of rendering and stuff"));
          this.addOptionAndPosition(new ChoiceOption("hideLowCPUModeChat",makeOnOffLabels(),[true,false],"Hide Chat in Low CPU Mode","Controls whether normal chat is shown in Low CPU Mode",null));
@@ -438,22 +438,22 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new ChoiceOption("showInventoryTooltip",makeOnOffLabels(),[true,false],"Show Inventory on Player Tooltips","Shows other people\'s inventories when hovering their name in the player grid, note you can only see when items change",null));
          this.addOptionAndPosition(new ChoiceOption("showRange",makeOnOffLabels(),[true,false],"Weapon Range Indicator","Shows a circle indicating the range of your weapon",null));
       }
-      
+
       public function toggleSideBarGradient() : void {
          this.gs_.hudView.sidebarGradientOverlay_.visible = Parameters.data.showSidebarGradient;
       }
-      
+
       public function toggleBars() : void {
          this.gs_.hudView.statMeters.dispose();
          this.gs_.hudView.statMeters.init();
       }
-      
+
       public function onShowMobInfo() : void {
          if(!Parameters.data.showMobInfo && this.gs_.map.mapOverlay_) {
             this.gs_.map.mapOverlay_.removeChildren(0);
          }
       }
-      
+
       public function addOtherOptions() : void {
          this.addOptionAndPosition(new KeyMapper("aimAtQuest","Aim at Quest","Sets your camera angle in the direction of your quest"));
          this.addOptionAndPosition(new KeyMapper("resetClientHP","Reset Client HP","Sets your Client HP to your Server HP, if you need to manually sync Health"));
@@ -472,27 +472,33 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new KeyMapper("TombCycleKey","Tomb Boss Cycle","Ignores Tomb bosses in the order of Bes Nut Geb, whichever boss name is shown when pressing the key is the boss that is attackable (works with Ice Tomb bosses as well), you will need Damage Ignored Enemies OFF, type /tomb to clear all Tomb bosses from ignore list if you need to attack all of them"));
          this.addOptionAndPosition(new ChoiceOption("rightClickSelectAll",makeOnOffLabels(),[true,false],"Right Click Trade to Select All","When in a trade, right clicking the trade button will select all items in the trade at once",null));
          this.addOptionAndPosition(new ChoiceOption("reconnectDelay",makeReconDelayLabels(),[0,100,250,500,750,1000,1500,2000],"Connection Delay","Amount of time to wait between switching maps, normal amount is is 2000 milliseconds, 250 ms will usually work fine without any issues - use /recondelay # for a custom delay",null));
-         this.addOptionAndPosition(new KeyMapper("noClipKey","No Clip Key","The key which toggles whether to No Clip"));
          this.addOptionAndPosition(new ChoiceOption("ipClipboard",makeOnOffLabels(),[true,false],"Copy IP","This toggles whether to copy the IP to Clipboard when using /ip",null));
          this.addOptionAndPosition(new ChoiceOption("reducedLava",makeOnOffLabels(),[true,false],"Reduced Ground Damage","This toggles whether to take less damage when in lava (like noclip)",null));
          this.addOptionAndPosition(new KeyMapper("ReconRealm","Realm Reconnect","The key which allows you to visit the Realm you were last in"));
-         this.addOptionAndPosition(new KeyMapper("depositKey","Deposit Key","The key which deposits all your items into the Vault, if possible"));
          this.addOptionAndPosition(new KeyMapper("TogglePlayerFollow","Toggle Player Follow","Set with /follow <name>, press this hotkey to toggle on and off"));
          this.addOptionAndPosition(new ChoiceOption("logErrors",makeOnOffLabels(),[true,false],"Log Errors","This toggles whether to log errors, for debugging purposes",null));
          this.addOptionAndPosition(new ChoiceOption("tutorialMode",makeOnOffLabels(),[true,false],"Tutorial Mode","This toggles whether to load into the Tutorial when attempting to enter the Nexus",null));
-         this.addOptionAndPosition(new ChoiceOption("customPauseDelay",makePauseDelayLabels(),[0,100,250,500,750,1000,1500,2000],"Pause Delay","",null));
+
+      }
+
+      public function addEpicOptions() : void {
+         this.addOptionAndPosition(new ChoiceOption("customDelay",makeDelayLabels(),[0,1000,2000,3000,5000,7000,10000,15000],"Pause Delay","",null));
          this.addOptionAndPosition(new KeyMapper("pauseAnywhere", "Pause Anywhere", "The key which pauses you without map restrictions when pressed"));
          this.addOptionAndPosition(new KeyMapper("noClipPause","No Clip Pause","Pauses after using noclip "));
          this.addOptionAndPosition(new KeyMapper("tpCursor","Tp to Cursor","Teleport to position of your cursor"));
+         this.addOptionAndPosition(new KeyMapper("autoDodgeKey","Auto Dodge","The key which toggles whether to No Clip"));
+         this.addOptionAndPosition(new KeyMapper("nukeKey","Ability Spam","The key toggle Ability spam. Make sure to turn on right click options and select the ability feature for this to work"));
+         this.addOptionAndPosition(new KeyMapper("depositKey","Deposit Key","The key which deposits all your items into the Vault, if possible"));
+         this.addOptionAndPosition(new KeyMapper("noClipKey","No Clip Key","The key which toggles whether to No Clip"));
       }
-      
+
       public function addOptionsChoiceOption() : void {
          var _loc2_:String = Capabilities.os.split(" ")[0] == "Mac"?"Command":"Ctrl";
          var _loc1_:ChoiceOption = new ChoiceOption("inventorySwap",makeOnOffLabels(),[true,false],"Options.SwitchItemInBackpack","",null);
          _loc1_.setTooltipText(new LineBuilder().setParams("Options.SwitchItemInBackpackDesc",{"key":_loc2_}));
          this.addOptionAndPosition(_loc1_);
       }
-      
+
       public function addInventoryOptions() : void {
          var _loc1_:* = null;
          var _loc2_:int = 1;
@@ -504,7 +510,7 @@ package com.company.assembleegameclient.ui.options {
             _loc2_++;
          }
       }
-      
+
       private function AutoNexusValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("5%"),new StaticStringBuilder("10%"),new StaticStringBuilder("15%"),new StaticStringBuilder("20%"),new StaticStringBuilder("25%"),new StaticStringBuilder("30%"),new StaticStringBuilder("35%"),new StaticStringBuilder("40%"),new StaticStringBuilder("45%"),new StaticStringBuilder("50%"),new StaticStringBuilder("60%")];
       }
@@ -528,7 +534,7 @@ package com.company.assembleegameclient.ui.options {
          this.scroll.visible = false;
          addChild(this.scroll);
       }
-      
+
       private function setSelected(param1:OptionsTabTitle) : void {
          if(param1 == this.selected_) {
             return;
@@ -585,10 +591,13 @@ package com.company.assembleegameclient.ui.options {
                break;
             case "Other":
                this.addOtherOptions();
+               break;
+            case "Epic":
+               this.addEpicOptions();
          }
          this.checkForScroll();
       }
-      
+
       private function checkForScroll() : void {
          if(this.scrollContainer.height >= 420) {
             this.scrollContainerBottom.y = 102 + this.scrollContainer.height;
@@ -598,7 +607,7 @@ package com.company.assembleegameclient.ui.options {
             this.scroll.visible = false;
          }
       }
-      
+
       private function addDebuffsOptions() : void {
          this.addOptionAndPosition(new ChoiceOption("ignoreQuiet",makeOnOffLabels(),[true,false],"Ignore Quiet","Server Sided, can DC, On means ignoring shot",calculateIgnoreBitmask,16711680));
          this.addOptionAndPosition(new ChoiceOption("ignoreWeak",makeOnOffLabels(),[true,false],"Ignore Weak","Server Sided, can DC, On means ignoring shot",calculateIgnoreBitmask,16711680));
@@ -619,103 +628,103 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new ChoiceOption("ignoreUnstable",makeOnOffLabels(),[true,false],"Ignore Unstable","Client Sided, safe to ignore",calculateIgnoreBitmask));
          this.addOptionAndPosition(new ChoiceOption("ignoreDarkness",makeOnOffLabels(),[true,false],"Ignore Darkness","Client Sided, safe to ignore",calculateIgnoreBitmask));
       }
-      
+
       private function resetHPVals() : void {
          if(this.gs_ && this.gs_.map && this.gs_.map.player_) {
             this.gs_.map.player_.calcHealthPercent();
          }
       }
-      
+
       private function resetMPVals() : void {
          if(this.gs_ && this.gs_.map && this.gs_.map.player_) {
             this.gs_.map.player_.calcManaPercent();
          }
       }
-      
+
       private function volumeValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("0.1"),new StaticStringBuilder("0.2"),new StaticStringBuilder("0.3"),new StaticStringBuilder("0.4"),new StaticStringBuilder("0.5"),new StaticStringBuilder("0.6"),new StaticStringBuilder("0.7"),new StaticStringBuilder("0.8"),new StaticStringBuilder("0.9"),new StaticStringBuilder("1.0"),new StaticStringBuilder("1.1"),new StaticStringBuilder("1.2"),new StaticStringBuilder("1.3"),new StaticStringBuilder("1.4"),new StaticStringBuilder("1.5"),new StaticStringBuilder("1.6"),new StaticStringBuilder("1.7"),new StaticStringBuilder("1.8"),new StaticStringBuilder("1.9"),new StaticStringBuilder("2.0")];
       }
-      
+
       private function make1to8labels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("#0"),new StaticStringBuilder("#1"),new StaticStringBuilder("#2"),new StaticStringBuilder("#3"),new StaticStringBuilder("#4"),new StaticStringBuilder("#5"),new StaticStringBuilder("#6"),new StaticStringBuilder("#7"),new StaticStringBuilder("#8")];
       }
-      
+
       private function makeEggLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("Common"),new StaticStringBuilder("Uncommon"),new StaticStringBuilder("Rare"),new StaticStringBuilder("Legendary")];
       }
-      
+
       private function alFBValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("1%"),new StaticStringBuilder("2%"),new StaticStringBuilder("3%"),new StaticStringBuilder("4%"),new StaticStringBuilder("5%"),new StaticStringBuilder("6%"),new StaticStringBuilder("7%")];
       }
-      
+
       private function alFPValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("100 FP"),new StaticStringBuilder("200 FP"),new StaticStringBuilder("300 FP"),new StaticStringBuilder("400 FP"),new StaticStringBuilder("500 FP"),new StaticStringBuilder("600 FP"),new StaticStringBuilder("700 FP"),new StaticStringBuilder("800 FP"),new StaticStringBuilder("900 FP"),new StaticStringBuilder("1000 FP"),new StaticStringBuilder("1200 FP"),new StaticStringBuilder("1400 FP"),new StaticStringBuilder("1600 FP"),new StaticStringBuilder("1800 FP"),new StaticStringBuilder("2000 FP")];
       }
-      
+
       private function aaDistanceValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("0"),new StaticStringBuilder("0.5"),new StaticStringBuilder("1"),new StaticStringBuilder("1.5"),new StaticStringBuilder("2"),new StaticStringBuilder("2.5"),new StaticStringBuilder("3")];
       }
-      
+
       private function BoundingDistValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("1"),new StaticStringBuilder("2"),new StaticStringBuilder("3"),new StaticStringBuilder("4"),new StaticStringBuilder("5"),new StaticStringBuilder("6"),new StaticStringBuilder("7"),new StaticStringBuilder("8"),new StaticStringBuilder("9"),new StaticStringBuilder("10"),new StaticStringBuilder("15"),new StaticStringBuilder("20"),new StaticStringBuilder("30"),new StaticStringBuilder("50")];
       }
-      
+
       private function AutoHealValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("5%"),new StaticStringBuilder("10%"),new StaticStringBuilder("15%"),new StaticStringBuilder("20%"),new StaticStringBuilder("25%"),new StaticStringBuilder("30%"),new StaticStringBuilder("35%"),new StaticStringBuilder("40%"),new StaticStringBuilder("45%"),new StaticStringBuilder("50%"),new StaticStringBuilder("55%"),new StaticStringBuilder("60%"),new StaticStringBuilder("65%"),new StaticStringBuilder("70%"),new StaticStringBuilder("75%"),new StaticStringBuilder("80%"),new StaticStringBuilder("85%"),new StaticStringBuilder("90%"),new StaticStringBuilder("95%"),new StaticStringBuilder("99%"),new StaticStringBuilder("100%")];
       }
-      
+
       private function AutoManaPercentValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("5%"),new StaticStringBuilder("10%"),new StaticStringBuilder("15%"),new StaticStringBuilder("20%"),new StaticStringBuilder("25%"),new StaticStringBuilder("30%"),new StaticStringBuilder("35%"),new StaticStringBuilder("40%"),new StaticStringBuilder("45%"),new StaticStringBuilder("50%"),new StaticStringBuilder("55%"),new StaticStringBuilder("60%"),new StaticStringBuilder("65%"),new StaticStringBuilder("70%"),new StaticStringBuilder("75%"),new StaticStringBuilder("80%"),new StaticStringBuilder("85%"),new StaticStringBuilder("90%"),new StaticStringBuilder("95%"),new StaticStringBuilder("100%")];
       }
-      
+
       private function AutoHPPotValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("5%"),new StaticStringBuilder("10%"),new StaticStringBuilder("15%"),new StaticStringBuilder("20%"),new StaticStringBuilder("25%"),new StaticStringBuilder("30%"),new StaticStringBuilder("35%"),new StaticStringBuilder("40%"),new StaticStringBuilder("45%"),new StaticStringBuilder("50%"),new StaticStringBuilder("55%"),new StaticStringBuilder("60%"),new StaticStringBuilder("65%"),new StaticStringBuilder("70%"),new StaticStringBuilder("75%")];
       }
-      
+
       private function AutoMPPotValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("Abil %"),new StaticStringBuilder("5%"),new StaticStringBuilder("10%"),new StaticStringBuilder("15%"),new StaticStringBuilder("20%"),new StaticStringBuilder("25%"),new StaticStringBuilder("30%"),new StaticStringBuilder("35%"),new StaticStringBuilder("40%"),new StaticStringBuilder("45%"),new StaticStringBuilder("50%"),new StaticStringBuilder("55%"),new StaticStringBuilder("60%"),new StaticStringBuilder("65%"),new StaticStringBuilder("70%"),new StaticStringBuilder("75%")];
       }
-      
+
       private function AutoHPPotDelayValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("100ms"),new StaticStringBuilder("200ms"),new StaticStringBuilder("300ms"),new StaticStringBuilder("400ms"),new StaticStringBuilder("500ms"),new StaticStringBuilder("600ms"),new StaticStringBuilder("700ms"),new StaticStringBuilder("800ms"),new StaticStringBuilder("900ms"),new StaticStringBuilder("1000ms")];
       }
-      
+
       private function spellbombThresholdValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("250 HP"),new StaticStringBuilder("500 HP"),new StaticStringBuilder("750 HP"),new StaticStringBuilder("1000 HP"),new StaticStringBuilder("1250 HP"),new StaticStringBuilder("1500 HP"),new StaticStringBuilder("1750 HP"),new StaticStringBuilder("2000 HP"),new StaticStringBuilder("2500 HP"),new StaticStringBuilder("3000 HP"),new StaticStringBuilder("4000 HP"),new StaticStringBuilder("5000 HP"),new StaticStringBuilder("6000 HP"),new StaticStringBuilder("7000 HP"),new StaticStringBuilder("8000 HP"),new StaticStringBuilder("9000 HP"),new StaticStringBuilder("10000 HP"),new StaticStringBuilder("15000 HP"),new StaticStringBuilder("20000 HP")];
       }
-      
+
       private function skullThresholdValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("100 HP"),new StaticStringBuilder("250 HP"),new StaticStringBuilder("500 HP"),new StaticStringBuilder("800 HP"),new StaticStringBuilder("1000 HP"),new StaticStringBuilder("2000 HP"),new StaticStringBuilder("4000 HP"),new StaticStringBuilder("8000 HP")];
       }
-      
+
       private function skullTargetsValues() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Off"),new StaticStringBuilder("1"),new StaticStringBuilder("2"),new StaticStringBuilder("3"),new StaticStringBuilder("4"),new StaticStringBuilder("5"),new StaticStringBuilder("6"),new StaticStringBuilder("7"),new StaticStringBuilder("8"),new StaticStringBuilder("9"),new StaticStringBuilder("10")];
       }
-      
+
       private function makeFameTpCdLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("1000"),new StaticStringBuilder("2000"),new StaticStringBuilder("3000"),new StaticStringBuilder("4000"),new StaticStringBuilder("5000"),new StaticStringBuilder("6000"),new StaticStringBuilder("7000"),new StaticStringBuilder("8000"),new StaticStringBuilder("9000"),new StaticStringBuilder("10000")];
       }
-      
+
       private function makePointOffsetLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("0.1"),new StaticStringBuilder("0.2"),new StaticStringBuilder("0.3"),new StaticStringBuilder("0.4"),new StaticStringBuilder("0.5"),new StaticStringBuilder("0.75"),new StaticStringBuilder("1.0"),new StaticStringBuilder("1.5"),new StaticStringBuilder("2.0"),new StaticStringBuilder("2.5"),new StaticStringBuilder("3.0"),new StaticStringBuilder("3.5")];
       }
-      
+
       private function makeTeleDistLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("1"),new StaticStringBuilder("2"),new StaticStringBuilder("4"),new StaticStringBuilder("8"),new StaticStringBuilder("16"),new StaticStringBuilder("32"),new StaticStringBuilder("64")];
       }
-      
+
       private function makeDistThreshLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("5"),new StaticStringBuilder("6"),new StaticStringBuilder("7"),new StaticStringBuilder("8"),new StaticStringBuilder("9"),new StaticStringBuilder("10"),new StaticStringBuilder("15"),new StaticStringBuilder("20"),new StaticStringBuilder("25"),new StaticStringBuilder("30"),new StaticStringBuilder("35"),new StaticStringBuilder("40")];
       }
-      
+
       private function makeOffsetLabels() : Vector.<StringBuilder> {
          return new <StringBuilder>[new StaticStringBuilder("Middle"),new StaticStringBuilder("Further"),new StaticStringBuilder("Front"),new StaticStringBuilder("Furthest")];
       }
-      
+
       private function onChatLengthChange() : void {
          this.gs_.chatBox_.model.setVisibleItemCount();
       }
-      
+
       private function close() : void {
          stage.focus = null;
          parent.removeChild(this);
@@ -724,7 +733,7 @@ package com.company.assembleegameclient.ui.options {
             Parameters.needToRecalcDesireables = false;
          }
       }
-      
+
       private function removeOptions() : void {
          var _loc3_:* = null;
          if(this.scrollContainer.contains(this.scrollContainerBottom)) {
@@ -738,7 +747,7 @@ package com.company.assembleegameclient.ui.options {
          }
          this.options_.length = 0;
       }
-      
+
       private function addControlsOptions() : void {
          this.addOptionAndPosition(new KeyMapper("moveUp","Options.MoveUp","Options.MoveUpDesc"));
          this.addOptionAndPosition(new KeyMapper("moveLeft","Options.MoveLeft","Options.MoveLeftDesc"));
@@ -756,15 +765,15 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new KeyMapper("toggleCentering","Options.ToggleCentering","Options.ToggleCenteringDesc"));
          this.addOptionAndPosition(new KeyMapper("interact","Options.InteractOrBuy","Options.InteractOrBuyDesc"));
       }
-      
+
       private function makeAllowCameraRotation() : ChoiceOption {
          return new ChoiceOption("allowRotation",makeOnOffLabels(),[true,false],"Options.AllowRotation","Options.AllowRotationDesc",this.onAllowRotationChange);
       }
-      
+
       private function makeAllowMiniMapRotation() : ChoiceOption {
          return new ChoiceOption("allowMiniMapRotation",makeOnOffLabels(),[true,false],"Options.AllowMiniMapRotation","Options.AllowMiniMapRotationDesc",null);
       }
-      
+
       private function onAllowRotationChange() : void {
          var _loc1_:* = null;
          var _loc2_:int = 0;
@@ -778,7 +787,7 @@ package com.company.assembleegameclient.ui.options {
             _loc2_++;
          }
       }
-      
+
       private function addHotKeysOptions() : void {
          this.addOptionAndPosition(new KeyMapper("quickSlotKey1","Activate Quick Slot 1","This will consume one of the items placed on the first quick slot"));
          this.addOptionAndPosition(new KeyMapper("quickSlotKey2","Activate Quick Slot 2","This will consume one of the items placed on the second quick slot"));
@@ -793,7 +802,7 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new KeyMapper("walkKey","Walk Key","Allows you to walk (move slowly) while the key is held down"));
          this.addOptionsChoiceOption();
       }
-      
+
       private function addChatOptions() : void {
          this.addOptionAndPosition(new KeyMapper("chat","Options.ActivateChat","Options.ActivateChatDesc"));
          this.addOptionAndPosition(new KeyMapper("chatCommand","Options.StartCommand","Options.StartCommandDesc"));
@@ -810,7 +819,7 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new ChoiceOption("chatGuild",makeOnOffLabels(),[true,false],"Options.chatGuild","Options.chatGuildDesc",this.onAllChatDisabled));
          this.addOptionAndPosition(new ChoiceOption("chatTrade",makeOnOffLabels(),[true,false],"Options.chatTrade","Options.chatTradeDesc",null));
       }
-      
+
       private function onAllChatDisabled() : void {
          var _loc2_:* = undefined;
          var _loc1_:* = null;
@@ -827,7 +836,7 @@ package com.company.assembleegameclient.ui.options {
             _loc3_++;
          }
       }
-      
+
       private function onAllChatEnabled() : void {
          var _loc2_:* = undefined;
          var _loc1_:* = null;
@@ -853,7 +862,7 @@ package com.company.assembleegameclient.ui.options {
             }
          }
       }
-      
+
       private function addExperimentalOptions() : void {
          this.addOptionAndPosition(new ChoiceOption("disableEnemyParticles",makeOnOffLabels(),[true,false],"Disable Enemy Particles","Disable enemy hit and death particles.",null));
          this.addOptionAndPosition(new ChoiceOption("disableAllyShoot",makeAllyShootLabels(),[0,1,2],"Disable Ally Shoot","Disable showing shooting animations and projectiles shot by allies or only projectiles.",null));
@@ -868,7 +877,7 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new ChoiceOption("showFameGain",makeOnOffLabels(),[true,false],"Show Fame Gain","Shows notifications for each fame gained.",null));
          this.addOptionAndPosition(new ChoiceOption("curseIndication",makeOnOffLabels(),[true,false],"Curse Indication","Makes enemies inflicted by Curse glow red.",null));
       }
-      
+
       private function addGraphicsOptions() : void {
          this.addOptionAndPosition(new ChoiceOption("defaultCameraAngle",makeDegreeOptions(),[5.49778714378214,0],"Options.DefaultCameraAngle","Options.DefaultCameraAngleDesc",onDefaultCameraAngleChange));
          this.addOptionAndPosition(new ChoiceOption("centerOnPlayer",makeOnOffLabels(),[true,false],"Options.CenterOnPlayer","Options.CenterOnPlayerDesc",null));
@@ -890,28 +899,28 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new ChoiceOption("vSync",makeOnOffLabels(),[true,false],"Toggle VSync","This toggles whether to enable Vertical Sync",onVSyncToggle));
          this.addOptionAndPosition(new ChoiceOption("fullscreen",makeOnOffLabels(),[true,false],"Toggle Fullscreen","This toggles whether to set the window mode to Fullscreen",onFullscreenToggle));
       }
-      
+
       private function onToggleTierTag() : void {
          StaticInjectorContext.getInjector().getInstance(ToggleShowTierTagSignal).dispatch(Parameters.data.showTierTag);
       }
-      
+
       private function onCharacterGlow() : void {
          var _loc1_:Player = this.gs_.map.player_;
          if(_loc1_.hasSupporterFeature(1)) {
             _loc1_.clearTextureCache();
          }
       }
-      
+
       private function onShowQuestPortraitsChange() : void {
          if(this.gs_ != null && this.gs_.map != null && this.gs_.map.partyOverlay_ != null && this.gs_.map.partyOverlay_.questArrow_ != null) {
             this.gs_.map.partyOverlay_.questArrow_.refreshToolTip();
          }
       }
-      
+
       private function onFullscreenChange() : void {
          stage.displayState = !!Parameters.data.fullscreenMode?"fullScreenInteractive":"normal";
       }
-      
+
       private function addSoundOptions() : void {
          this.addOptionAndPosition(new ChoiceOption("playMusic",makeOnOffLabels(),[true,false],"Options.PlayMusic","Options.PlayMusicDesc",this.onPlayMusicChange));
          this.addOptionAndPosition(new SliderOption("musicVolume",this.onMusicVolumeChange),-120,15);
@@ -919,13 +928,13 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new SliderOption("SFXVolume",this.onSoundEffectsVolumeChange),-120,34);
          this.addOptionAndPosition(new ChoiceOption("playPewPew",makeOnOffLabels(),[true,false],"Options.PlayWeaponSounds","Options.PlayWeaponSoundsDesc",null));
       }
-      
+
       private function addMiscOptions() : void {
          this.addOptionAndPosition(new ChoiceOption("showProtips",new <StringBuilder>[makeLineBuilder("Options.legalView"),makeLineBuilder("Options.legalView")],[Parameters.data.showProtips,Parameters.data.showProtips],"Options.legal1","Options.legal1Desc",this.onLegalPrivacyClick));
          this.addOptionAndPosition(new NullOption());
          this.addOptionAndPosition(new ChoiceOption("showProtips",new <StringBuilder>[makeLineBuilder("Options.legalView"),makeLineBuilder("Options.legalView")],[Parameters.data.showProtips,Parameters.data.showProtips],"Options.legal2","Options.legal2Desc",this.onLegalTOSClick));
       }
-      
+
       private function addFriendOptions() : void {
          this.addOptionAndPosition(new ChoiceOption("tradeWithFriends",makeOnOffLabels(),[true,false],"Options.TradeWithFriends","Options.TradeWithFriendsDesc",this.onPlaySoundEffectsChange));
          this.addOptionAndPosition(new KeyMapper("friendList","Options.FriendList","Options.FriendListDesc"));
@@ -934,7 +943,7 @@ package com.company.assembleegameclient.ui.options {
          this.addOptionAndPosition(new NullOption());
          this.addOptionAndPosition(new NullOption());
       }
-      
+
       private function onPlayMusicChange() : void {
          Music.setPlayMusic(Parameters.data.playMusic);
          if(Parameters.data.playMusic) {
@@ -944,7 +953,7 @@ package com.company.assembleegameclient.ui.options {
          }
          this.refresh();
       }
-      
+
       private function onPlaySoundEffectsChange() : void {
          SFX.setPlaySFX(Parameters.data.playSFX);
          if(Parameters.data.playSFX || Parameters.data.playPewPew) {
@@ -954,27 +963,27 @@ package com.company.assembleegameclient.ui.options {
          }
          this.refresh();
       }
-      
+
       private function onMusicVolumeChange(param1:Number) : void {
          Music.setMusicVolume(param1);
       }
-      
+
       private function onSoundEffectsVolumeChange(param1:Number) : void {
          SFX.setSFXVolume(param1);
       }
-      
+
       private function onLegalPrivacyClick() : void {
          var _loc1_:URLRequest = new URLRequest();
          _loc1_.url = "http://legal.decagames.com/privacy/";
          _loc1_.method = "GET";
       }
-      
+
       private function onLegalTOSClick() : void {
          var _loc1_:URLRequest = new URLRequest();
          _loc1_.url = "http://legal.decagames.com/tos/";
          _loc1_.method = "GET";
       }
-      
+
       private function addOptionAndPosition(param1:Option, param2:Number = 0, param3:Number = 0, param4:Boolean = false) : void {
          var smaller:Boolean = param4;
          var option:Option = param1;
@@ -987,13 +996,13 @@ package com.company.assembleegameclient.ui.options {
          option.textChanged.addOnce(positionOption);
          this.addOption(option);
       }
-      
+
       private function addOption(param1:Option) : void {
          this.scrollContainer.addChild(param1);
          param1.addEventListener("change",this.onChange);
          this.options_.push(param1);
       }
-      
+
       private function refresh() : void {
          var _loc3_:* = null;
          var _loc2_:int = 0;
@@ -1006,11 +1015,11 @@ package com.company.assembleegameclient.ui.options {
             _loc2_++;
          }
       }
-      
+
       private function onContinueClick(param1:MouseEvent) : void {
          this.close();
       }
-      
+
       private function onResetToDefaultsClick(param1:MouseEvent) : void {
          var _loc3_:* = null;
          var _loc2_:int = 0;
@@ -1025,20 +1034,20 @@ package com.company.assembleegameclient.ui.options {
          Parameters.save();
          this.refresh();
       }
-      
+
       private function onHomeClick(param1:MouseEvent) : void {
          var _loc2_:PlayerModel = StaticInjectorContext.getInjector().getInstance(PlayerModel);
          _loc2_.isLogOutLogIn = true;
          this.close();
          this.gs_.closed.dispatch();
       }
-      
+
       private function onTabClick(param1:MouseEvent) : void {
          var _loc2_:OptionsTabTitle = param1.currentTarget as OptionsTabTitle;
          Parameters.data.lastTab = _loc2_.text_;
          this.setSelected(_loc2_);
       }
-      
+
       private function onAddedToStage(param1:Event) : void {
          this.continueButton_.x = 400;
          this.continueButton_.y = 550;
@@ -1054,12 +1063,12 @@ package com.company.assembleegameclient.ui.options {
          stage.addEventListener("keyDown",this.onKeyDown,false,1);
          stage.addEventListener("keyUp",this.onKeyUp,false,1);
       }
-      
+
       private function onRemovedFromStage(param1:Event) : void {
          stage.removeEventListener("keyDown",this.onKeyDown,false);
          stage.removeEventListener("keyUp",this.onKeyUp,false);
       }
-      
+
       private function onKeyDown(param1:KeyboardEvent) : void {
          if(param1.keyCode == 27) {
             param1.preventDefault();
@@ -1069,11 +1078,11 @@ package com.company.assembleegameclient.ui.options {
          }
          param1.stopImmediatePropagation();
       }
-      
+
       private function onKeyUp(param1:KeyboardEvent) : void {
          param1.stopImmediatePropagation();
       }
-      
+
       private function onChange(param1:Event) : void {
          this.refresh();
       }

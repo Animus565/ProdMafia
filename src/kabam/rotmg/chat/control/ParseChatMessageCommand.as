@@ -1,4 +1,5 @@
 package kabam.rotmg.chat.control {
+import com.company.assembleegameclient.map.Map;
 import com.company.assembleegameclient.objects.ForgeProperties;
 import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.ObjectLibrary;
@@ -6,12 +7,19 @@ import com.company.assembleegameclient.objects.Player;
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.util.TimeUtil;
 import flash.events.Event;
+import flash.events.TimerEvent;
 import flash.system.System;
 import flash.utils.Dictionary;
+import flash.utils.Timer;
 import flash.utils.setInterval;
+
+import kabam.lib.net.impl.SocketServer;
+
 
 import io.decagames.rotmg.social.model.FriendRequestVO;
 import io.decagames.rotmg.social.signals.FriendActionSignal;
+
+import kabam.lib.net.impl.SocketServerModel;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.services.GetConCharListTask;
 import kabam.rotmg.account.core.services.GetConServersTask;
@@ -45,6 +53,8 @@ public class ParseChatMessageCommand {
 
    [Inject]
    public var account:Account;
+
+   public var delayTimer:Timer;
 
    public function ParseChatMessageCommand() {
       super();
@@ -192,6 +202,37 @@ public class ParseChatMessageCommand {
             if(split.length == 1) {
                player = this.hudModel.gameSprite.map.player_;
                this.addTextLine.dispatch(ChatMessage.make("*Help*","Your location is x=\'" + player.x_ + "\', y=\'" + player.y_ + "\'"));
+            } else {
+               this.addTextLine.dispatch(ChatMessage.make("*Error*","Invalid syntax! This command does not use any arguments."));
+            }
+            return;
+         case "/logloc":
+            if(split.length == 1) {
+               player = this.hudModel.gameSprite.map.player_;
+               this.addTextLine.dispatch(ChatMessage.make("*Help*","Logged location is x=\'" + player.x_ + "\', y=\'" + player.y_ + "\'"));
+               Parameters.data.newLocX = player.x_
+               Parameters.data.newLocY = player.y_
+            } else {
+               this.addTextLine.dispatch(ChatMessage.make("*Error*","Invalid syntax! This command does not use any arguments."));
+            }
+            return;
+         case "/tploc":
+            if(split.length == 1) {
+               player = this.hudModel.gameSprite.map.player_;
+               this.addTextLine.dispatch(ChatMessage.make("*Help*","Teleported to x=\'" + player.x_ + "\', y=\'" + player.y_ + "\'"));
+               player.x_ = Parameters.data.newLocX
+               player.y_ = Parameters.data.newLocY
+               TimeUtil.moddedTime = TimeUtil.moddedTime + Parameters.data.customDelay
+            } else {
+               this.addTextLine.dispatch(ChatMessage.make("*Error*","Invalid syntax! This command does not use any arguments."));
+            }
+            return;
+         case "/tp0":
+            if(split.length == 1) {
+               player = this.hudModel.gameSprite.map.player_;
+               this.addTextLine.dispatch(ChatMessage.make("*Help*","Teleported to x=\'" + player.x_ + "\', y=\'" + player.y_ + "\'"));
+               player.x_ = 500000
+               player.y_ = 500000
             } else {
                this.addTextLine.dispatch(ChatMessage.make("*Error*","Invalid syntax! This command does not use any arguments."));
             }
@@ -524,15 +565,23 @@ public class ParseChatMessageCommand {
                        "Blueprint required: " + props.blueprintRequired + "        \n" +
                        "Forgefire cost: " + props.forgefireCost + "        \n" +
                        "Forgefire reduction when dismantled: " + props.forgefireDismantle + "        \n" +
-                       "Limit of 1 per dismantle: " + props.isIngredient));
+                       "Limit of 1 per mdismantle: " + props.isIngredient));
             else this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME,
                     "No forge property found for item '" + itemName + "'."));
             return;
+         case "/nc":
+         case "/nukecount":
+            var count:int = parseInt(split[1]);
+            Parameters.data.nukeCount = count;
+            Parameters.save();
+            this.addTextLine.dispatch(ChatMessage.make("*Help*","Nuke count set to: " + count));
+            return;
+            break;
          case "/forge":
             var vec:Vector.<SlotObjectData> = new Vector.<SlotObjectData>();
             var vault:GameObject = null;
             player = this.hudModel.gameSprite.map.player_;
-            for each (var go:GameObject in this.hudModel.gameSprite.map.goDict_)
+            for each (var go:GameObject in this.hudModel.gameSprite.map.boDict_)
                if (go.objectType_ == 0x0504) {
                   vault = go;
                   break;
@@ -555,7 +604,6 @@ public class ParseChatMessageCommand {
                slotObj.objectType_ = fromVault ? vault.equipment_[slotId] : player.equipment_[slotId];
                vec.push(slotObj);
             }
-
             this.hudModel.gameSprite.gsc_.forgeRequest(itemId, vec);
             return;
          default:

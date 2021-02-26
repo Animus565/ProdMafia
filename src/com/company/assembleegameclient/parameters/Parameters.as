@@ -15,7 +15,7 @@ import flash.utils.ByteArray;
 import flash.utils.Dictionary;
 
 public class Parameters {
-    public static const CLIENT_VERSION:String = "1.3.2.1.0";
+    public static const CLIENT_VERSION:String = "1.3.2.2.0";
     public static const PORT:int = 2050;
     public static const UNITY_LAUNCHER_VERSION:String = "2019.3.14f1";
     public static const UNITY_GAME_VERSION:String = "2019.4.9f1";
@@ -878,7 +878,6 @@ public class Parameters {
         setDefault("fakeLag",0);
         setDefault("renderDistance",16);
         setDefault("showRange",false);
-        setDefault("autoDodge",false);
         setDefault("vSync",true);
         setDefault("lastRealmIP","127.0.0.1");
         setDefault("fullscreen",false);
@@ -891,16 +890,22 @@ public class Parameters {
         setDefault("multiToggle",0);
         setDefault("multiOn",false);
         setDefault("depositKey",101);
-        setDefault("tpCursor", KeyCodes.UNSET);
-        setDefault("noClipPause", KeyCodes.UNSET);
-        setDefault("customPauseDelay",0);
-        setDefault("pauseDelay",100);
+        setDefault("customDelay",1000);
         setDefault("customName","");
         setDefault("logErrors", false);
         setDefault("test113Count", 0);
         setDefault("tutorialMode", false);
         setDefaultKey("pauseAnywhere", KeyCodes.UNSET);
         setDefault("tpMulti", 1);
+        setDefault("tpCursor", KeyCodes.UNSET);
+        setDefault("noClipPause", KeyCodes.UNSET);
+        setDefault("newLocX", 0);
+        setDefault("newLocY", 0);
+        setDefault("nukeCount",50);
+        setDefault("nukeOn",true);
+        setDefaultKey("nukeKey",0);
+        setDefaultKey("autoDodgeKey",0);
+        setDefault("autoDodge",true);
         Options.calculateIgnoreBitmask();
     }
 

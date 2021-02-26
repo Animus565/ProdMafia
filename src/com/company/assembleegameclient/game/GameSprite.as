@@ -199,6 +199,7 @@ import kabam.rotmg.messaging.impl.incoming.MapInfo;
       private var seasonalEventModel:SeasonalEventModel;
       
       private var mapName:String;
+
       
       public function GameSprite(param1:Server, param2:int, param3:Boolean, param4:int, param5:int, param6:ByteArray, param7:PlayerModel, param8:String, param9:Boolean) {
          showPackage = new Signal();
@@ -453,7 +454,7 @@ import kabam.rotmg.messaging.impl.incoming.MapInfo;
             stage.scaleMode = "noScale";
             stage.addEventListener("resize",this.onScreenResize,false,0,true);
             stage.dispatchEvent(new Event("resize"));
-            Main.STAGE.vsyncEnabled = Parameters.data.vSync;
+          Main.STAGE.vsyncEnabled = Parameters.data.vSync;
          }
       }
       

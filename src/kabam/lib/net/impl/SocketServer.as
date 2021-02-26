@@ -158,8 +158,6 @@ public class SocketServer {
                 this.outgoingCipher.encrypt(this.data);
                 this.data.position = 0;
             }
-            if (Parameters.LOG_PACKETS)
-                trace("Sent:", msg.id)
             this.socket.writeInt(this.data.bytesAvailable + 5);
             this.socket.writeByte(msg.id);
             this.socket.writeBytes(this.data);
@@ -221,8 +219,6 @@ public class SocketServer {
             }
             if (this.socket.bytesAvailable < this.messageLen - MESSAGE_LENGTH_SIZE_IN_BYTES) break;
             messageId = this.socket.readUnsignedByte();
-            if (Parameters.LOG_PACKETS)
-                trace("Recv:", messageId)
             message = this.messages.require(messageId);
             var bytesStr:String = "";
             var i:int = 0;

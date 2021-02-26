@@ -43,7 +43,9 @@ import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
    import kabam.rotmg.text.view.BitmapTextFactory;
    import org.osflash.signals.Signal;
    import org.swiftsuspenders.Injector;
-   
+
+
+
    public class Player extends Character {
 
       public static const MS_BETWEEN_TELEPORT:int = 10000;
@@ -561,6 +563,7 @@ import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
                }
             }
             if(Parameters.questFollow) {
+
                if(this.followLanded) {
                   this.followVec.x = 0;
                   this.followVec.y = 0;
@@ -2974,23 +2977,41 @@ import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
          var xml:XML = ObjectLibrary.xmlLibrary_[equipId];
          var _loc10_:Number = NaN;
          var _loc6_:* = null;
+         var target:Point = sToW(x,y);
+         var _loc4_:* = Infinity;
          if(equipId == -1) {
             return;
          }
-         var _loc12_:int = 0;
-         var _loc11_:* = xml.Activate;
+         if(Parameters.data.nukeOn)
+         {
+            if(this.mp_ < xml.MpCost)
+            {
+               SoundEffectLibrary.play("no_mana");
+               return;
+            }
+            if(this.isQuiet || this.isSilenced)
+            {
+               SoundEffectLibrary.play("error");
+               return;
+            }
+            var cd:int = xml.hasOwnProperty("Cooldown") ? xml.Cooldown : 500
+            ;
+            for (var i:int = 0; i < Parameters.data.nukeCount; i++) {
+               map_.gs_.gsc_.useItem(map_.gs_.lastUpdate_ + i * cd,
+                       objectId_, 1, equipId,
+                       target.x, target.y, 1);
+            }
+            TimeUtil.moddedTime = TimeUtil.moddedTime + 1000;
+            return;
+         }
          for each(var _loc3_ in xml.Activate) {
             if(_loc3_.toString() == "Teleport") {
                this.useAltWeapon(x,y,1,-1,false);
                return;
             }
          }
-         var _loc7_:Point = sToW(x,y);
-         var _loc4_:* = Infinity;
-         var _loc14_:int = 0;
-         var _loc13_:* = map_.vulnEnemyDict_;
          for each(var _loc5_ in map_.vulnEnemyDict_) {
-            _loc10_ = getDistSquared(_loc5_.x_,_loc5_.y_,_loc7_.x,_loc7_.y);
+            _loc10_ = getDistSquared(_loc5_.x_,_loc5_.y_,target.x,target.y);
             if(_loc10_ < _loc4_) {
                _loc4_ = _loc10_;
                _loc6_ = _loc5_;
