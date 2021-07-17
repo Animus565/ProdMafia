@@ -79,12 +79,12 @@ public class SoundEffectLibrary {
     }
 
     private static function getUrlBase():String {
-        return "https://dangergun.github.io";
+        return "https://github.com/Animus565/ProdMafia-Assets/blob/main";
     }
 
     private static function makeSoundRequest(param1:String):URLRequest {
         urlBase = urlBase || getUrlBase();
-        var _loc2_:String = "{URLBASE}/sfx/{NAME}.mp3".replace("{URLBASE}", urlBase).replace("{NAME}", param1);
+        var _loc2_:String = "{URLBASE}/sfx/{NAME}.mp3?raw=true".replace("{URLBASE}", urlBase).replace("{NAME}", param1);
         return new URLRequest(_loc2_);
     }
 

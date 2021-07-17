@@ -8,7 +8,7 @@ import flash.net.URLRequest;
 
 public class Music {
 
-    private static const MUSIC_URL:String = "https://dangergun.github.io/sfx/music/sorc%20prod.mp3";
+    private static const MUSIC_URL:String = "https://github.com/Animus565/ProdMafia-Assets/blob/main/sfx/music/sorc.mp3?raw=true";
 
     private static var music_:Sound = null;
 
@@ -24,7 +24,7 @@ public class Music {
         if (Parameters.data.playMusic) {
             if (!music_) {
                 music_ = new Sound();
-                music_.load(new URLRequest("https://dangergun.github.io/sfx/music/sorc%20prod.mp3"));
+                music_.load(new URLRequest(MUSIC_URL));
             }
             musicChannel_ = music_.play(0, 2147483647, musicVolumeTransform);
         }
@@ -36,7 +36,7 @@ public class Music {
         if (Parameters.data.playMusic) {
             if (!music_) {
                 music_ = new Sound();
-                music_.load(new URLRequest("https://dangergun.github.io/sfx/music/sorc%20prod.mp3"));
+                music_.load(new URLRequest(MUSIC_URL));
             }
             musicChannel_ = music_.play(0, 2147483647, musicVolumeTransform);
         } else {
