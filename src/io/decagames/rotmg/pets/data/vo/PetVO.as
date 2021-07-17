@@ -11,7 +11,6 @@ import org.osflash.signals.Signal;
 
 public class PetVO extends PetSkinRenderer implements IPetVO {
 
-
     public static function clone(param1:PetVO):PetVO {
         return new PetVO(param1.id);
     }
@@ -34,6 +33,7 @@ public class PetVO extends PetSkinRenderer implements IPetVO {
         ;
         this.listenToAbilities();
     }
+
     private var staticData:XML;
     private var id:int;
     private var type:int;

@@ -6,10 +6,10 @@ import org.swiftsuspenders.Injector;
 
 public class TaskDelegate implements StartupDelegate {
 
-
     public function TaskDelegate() {
         super();
     }
+
     public var injector:Injector;
     public var taskClass:Class;
     public var priority:int;

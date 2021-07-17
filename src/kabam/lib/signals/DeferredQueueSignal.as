@@ -4,11 +4,11 @@ import org.osflash.signals.Signal;
 
 public class DeferredQueueSignal extends Signal {
 
-
     public function DeferredQueueSignal(...rest) {
         data = [];
         super(rest);
     }
+
     private var data:Array;
     private var log:Boolean = true;
 

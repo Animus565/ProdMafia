@@ -7,10 +7,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class CreditsMediator extends Mediator {
 
-
     public function CreditsMediator() {
         super();
     }
+
     [Inject]
     public var view:CreditsScreen;
     [Inject]

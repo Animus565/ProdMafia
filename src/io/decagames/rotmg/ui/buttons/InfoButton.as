@@ -7,12 +7,12 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 public class InfoButton extends BaseButton {
 
-
     public function InfoButton(param1:int) {
         super();
         this._radius = param1;
         this.init();
     }
+
     private var _background:Shape;
     private var _label:UILabel;
     private var _radius:int;

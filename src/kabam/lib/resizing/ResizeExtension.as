@@ -5,7 +5,6 @@ import robotlegs.bender.framework.api.IExtension;
 
 public class ResizeExtension implements IExtension {
 
-
     public function ResizeExtension() {
         super();
     }

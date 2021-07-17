@@ -18,7 +18,6 @@ public class ChatSocketServer {
 
     public static const MESSAGE_LENGTH_SIZE_IN_BYTES:int = 4;
 
-
     public const chatConnected:Signal = new Signal();
 
     public const chatClosed:Signal = new Signal();
@@ -34,6 +33,7 @@ public class ChatSocketServer {
         tail = unsentPlaceholder;
         super();
     }
+
     [Inject]
     public var messages:MessageProvider;
     [Inject]

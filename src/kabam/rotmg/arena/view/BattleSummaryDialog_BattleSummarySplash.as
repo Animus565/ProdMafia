@@ -3,8 +3,8 @@ import mx.core.BitmapAsset;
 
 [Embed(source="BattleSummaryDialog_BattleSummarySplash.jpg")]
 public class BattleSummaryDialog_BattleSummarySplash extends BitmapAsset {
-   public function BattleSummaryDialog_BattleSummarySplash() {
-      super();
-   }
+    public function BattleSummaryDialog_BattleSummarySplash() {
+        super();
+    }
 }
 }

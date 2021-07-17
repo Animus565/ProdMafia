@@ -3,7 +3,6 @@ import flash.display.DisplayObject;
 
 public interface List {
 
-
     function addItem(_arg_1:DisplayObject):void;
 
     function setItems(_arg_1:Vector.<DisplayObject>):void;

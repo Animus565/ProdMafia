@@ -6,7 +6,6 @@ import kabam.rotmg.pets.view.components.PopupWindowBackground;
 
 public class InfoHoverPaneFactory extends Sprite {
 
-
     public static function make(_arg_1:DisplayObject):Sprite {
         var _local3:* = null;
         if (_arg_1 == null) {

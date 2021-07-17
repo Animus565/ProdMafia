@@ -1,17 +1,13 @@
 package kabam.rotmg.core.service {
-   public class TrackingData {
-       
-      
-      public var category:String;
-      
-      public var action:String;
-      
-      public var label:String;
-      
-      public var value:Number;
-      
-      public function TrackingData() {
-         super();
-      }
-   }
+public class TrackingData {
+
+    public function TrackingData() {
+        super();
+    }
+
+    public var category:String;
+    public var action:String;
+    public var label:String;
+    public var value:Number;
+}
 }

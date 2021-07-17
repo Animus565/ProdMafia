@@ -5,10 +5,10 @@ import kabam.lib.ui.api.Layout;
 
 public class HorizontalLayout implements Layout {
 
-
     public function HorizontalLayout() {
         super();
     }
+
     private var padding:int = 0;
 
     public function getPadding():int {

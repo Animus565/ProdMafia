@@ -8,10 +8,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class NewAbilityUnlockedDialogMediator extends Mediator {
 
-
     public function NewAbilityUnlockedDialogMediator() {
         super();
     }
+
     [Inject]
     public var view:NewAbilityUnlockedDialog;
     [Inject]

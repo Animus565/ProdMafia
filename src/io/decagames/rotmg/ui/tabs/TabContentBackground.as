@@ -8,10 +8,10 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class TabContentBackground extends SliceScalingBitmap {
 
-
     public function TabContentBackground() {
         super(TextureParser.instance.getTexture("UI", "tab_cointainer_background").bitmapData, SliceScalingBitmap.SCALE_TYPE_9, new Rectangle(15, 15, 1, 1));
     }
+
     private var decorBitmapData:BitmapData;
     private var decorSliceRectangle:Rectangle;
 

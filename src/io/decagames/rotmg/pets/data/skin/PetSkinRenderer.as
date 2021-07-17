@@ -11,10 +11,10 @@ import flash.display.BitmapData;
 
 public class PetSkinRenderer {
 
-
     public function PetSkinRenderer() {
         super();
     }
+
     protected var _skinType:int;
     protected var skin:AnimatedChar;
 

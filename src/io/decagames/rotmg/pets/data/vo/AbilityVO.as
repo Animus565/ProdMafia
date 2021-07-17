@@ -5,12 +5,12 @@ import org.osflash.signals.Signal;
 
 public class AbilityVO {
 
-
     public const updated:Signal = new Signal(AbilityVO);
 
     public function AbilityVO() {
         super();
     }
+
     public var level:int;
     public var points:int;
     public var name:String;

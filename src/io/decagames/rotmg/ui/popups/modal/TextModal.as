@@ -5,7 +5,6 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 public class TextModal extends ModalPopup {
 
-
     public function TextModal(param1:int, param2:String, param3:String, param4:Vector.<BaseButton>, param5:Boolean = false) {
         var _loc9_:int = 0;
         var _loc7_:int = 0;
@@ -40,6 +39,7 @@ public class TextModal extends ModalPopup {
             registerButton(_loc6_);
         }
     }
+
     private var buttonsMargin:int = 30;
 }
 }

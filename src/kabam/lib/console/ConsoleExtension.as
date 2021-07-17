@@ -9,10 +9,10 @@ import robotlegs.bender.framework.api.IExtension;
 
 public class ConsoleExtension implements IExtension {
 
-
     public function ConsoleExtension() {
         super();
     }
+
     [Inject]
     public var contextView:DisplayObjectContainer;
 

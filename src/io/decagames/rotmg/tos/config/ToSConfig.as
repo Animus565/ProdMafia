@@ -11,10 +11,10 @@ import robotlegs.bender.framework.api.IConfig;
 
 public class ToSConfig implements IConfig {
 
-
     public function ToSConfig() {
         super();
     }
+
     [Inject]
     public var mediatorMap:IMediatorMap;
 

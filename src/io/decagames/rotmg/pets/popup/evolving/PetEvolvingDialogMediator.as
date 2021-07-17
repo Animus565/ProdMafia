@@ -8,18 +8,15 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class PetEvolvingDialogMediator extends Mediator {
 
-
-    [Inject]
-    public var view:PetEvolvingDialog;
-
-    [Inject]
-    public var closePopupSignal:ClosePopupSignal;
-
-    private var closeButton:SliceScalingButton;
-
     public function PetEvolvingDialogMediator() {
         super();
     }
+
+    [Inject]
+    public var view:PetEvolvingDialog;
+    [Inject]
+    public var closePopupSignal:ClosePopupSignal;
+    private var closeButton:SliceScalingButton;
 
     override public function initialize():void {
         this.closeButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "close_button"));

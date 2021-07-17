@@ -76,6 +76,7 @@ public class PetRarityEnum {
         this.color = param3;
         this.backgroundColor = param4;
     }
+
     public var rarityKey:String;
     public var ordinal:int;
     public var rarityName:String;

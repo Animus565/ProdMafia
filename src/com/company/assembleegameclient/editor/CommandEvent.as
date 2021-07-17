@@ -19,7 +19,6 @@ public class CommandEvent extends Event {
 
     public static const SELECT_COMMAND_EVENT:String = "SELECT_COMMAND_EVENT";
 
-
     public function CommandEvent(_arg_1:String) {
         super(_arg_1);
     }

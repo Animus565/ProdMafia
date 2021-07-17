@@ -7,7 +7,6 @@ public class UIAssets {
 
     public static var UI:Class = UIAssets_UI;
 
-
     public function UIAssets() {
         super();
     }

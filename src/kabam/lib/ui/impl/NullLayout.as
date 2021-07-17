@@ -5,7 +5,6 @@ import kabam.lib.ui.api.Layout;
 
 public class NullLayout implements Layout {
 
-
     public function NullLayout() {
         super();
     }

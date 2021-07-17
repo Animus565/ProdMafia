@@ -27,6 +27,7 @@ public class CommandMenuItem extends Sprite {
         addEventListener("mouseUp", this.onMouseUp);
         addEventListener("click", this.onClick);
     }
+
     public var callback_:Function;
     public var command_:int;
     private var over_:Boolean = false;

@@ -1,7 +1,6 @@
 package kabam.lib.util {
 public class VectorAS3Util {
 
-
     public static function toArray(_arg_1:Object):Array {
         var _local3:* = null;
         var _local2:* = [];

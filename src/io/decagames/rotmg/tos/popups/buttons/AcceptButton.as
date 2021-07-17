@@ -5,7 +5,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class AcceptButton extends SliceScalingButton {
 
-
     public function AcceptButton() {
         super(TextureParser.instance.getSliceScalingBitmap("UI", "generic_green_button"));
         setLabel("Accept", DefaultLabelFormat.defaultButtonLabel);

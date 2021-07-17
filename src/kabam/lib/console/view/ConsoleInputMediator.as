@@ -13,6 +13,7 @@ public final class ConsoleInputMediator extends Mediator {
     public function ConsoleInputMediator() {
         super();
     }
+
     [Inject]
     public var view:ConsoleInputView;
     [Inject]

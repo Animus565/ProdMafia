@@ -15,7 +15,6 @@ import kabam.rotmg.tooltips.TooltipAble;
 
 public class PlayerGameObjectListItem extends GameObjectListItem implements TooltipAble {
 
-
     public const hoverTooltipDelegate:HoverTooltipDelegate = new HoverTooltipDelegate();
 
     public function PlayerGameObjectListItem(_arg_1:uint, _arg_2:Boolean, _arg_3:GameObject) {
@@ -27,6 +26,7 @@ public class PlayerGameObjectListItem extends GameObjectListItem implements Tool
         addEventListener("addedToStage", this.onAddedToStage, false, 0, true);
         addEventListener("removedFromStage", this.onRemovedFromStage, false, 0, true);
     }
+
     private var enabled:Boolean = true;
     private var starred:Boolean = false;
 

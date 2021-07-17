@@ -20,6 +20,12 @@ public class StartupSequence extends BaseTask {
     public var logger:ILogger;
     private var index:int = 0;
 
+    override protected function startTask():void {
+        this.list.sort(this.priorityComparison);
+        this.index = 0;
+        this.doNextTaskOrComplete();
+    }
+
     public function addSignal(_arg1:Class, _arg2:int = 0):void {
         var _local3:SignalTaskDelegate = new SignalTaskDelegate();
         _local3.injector = this.injector;
@@ -36,12 +42,6 @@ public class StartupSequence extends BaseTask {
         this.list.push(_local3);
     }
 
-    override protected function startTask():void {
-        this.list.sort(this.priorityComparison);
-        this.index = 0;
-        this.doNextTaskOrComplete();
-    }
-
     private function priorityComparison(_arg1:StartupDelegate, _arg2:StartupDelegate):int {
         return ((_arg1.getPriority() - _arg2.getPriority()));
     }
@@ -49,8 +49,7 @@ public class StartupSequence extends BaseTask {
     private function doNextTaskOrComplete():void {
         if (this.isAnotherTask()) {
             this.doNextTask();
-        }
-        else {
+        } else {
             completeTask(true);
         }
     }
@@ -70,8 +69,7 @@ public class StartupSequence extends BaseTask {
         this.logger.info("StartupSequence finish:{0} (isOK: {1})", [_arg1, _arg2]);
         if (_arg2) {
             this.doNextTaskOrComplete();
-        }
-        else {
+        } else {
             completeTask(false, _arg3);
         }
     }

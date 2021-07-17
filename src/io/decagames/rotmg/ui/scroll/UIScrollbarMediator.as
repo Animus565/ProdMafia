@@ -7,10 +7,10 @@ import robotlegs.bender.framework.api.ILogger;
 
 public class UIScrollbarMediator extends Mediator {
 
-
     public function UIScrollbarMediator() {
         super();
     }
+
     [Inject]
     public var view:UIScrollbar;
     [Inject]

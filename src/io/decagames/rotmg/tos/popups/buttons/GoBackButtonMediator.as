@@ -8,10 +8,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class GoBackButtonMediator extends Mediator {
 
-
     public function GoBackButtonMediator() {
         super();
     }
+
     [Inject]
     public var view:GoBackButton;
     [Inject]

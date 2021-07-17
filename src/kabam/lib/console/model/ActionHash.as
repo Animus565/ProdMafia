@@ -3,12 +3,12 @@ import org.osflash.signals.Signal;
 
 internal final class ActionHash {
 
-
     function ActionHash() {
         super();
         this.signalMap = {};
         this.descriptionMap = {};
     }
+
     private var signalMap:Object;
     private var descriptionMap:Object;
 

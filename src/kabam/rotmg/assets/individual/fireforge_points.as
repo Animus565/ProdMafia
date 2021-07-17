@@ -3,8 +3,8 @@ import mx.core.BitmapAsset;
 
 [Embed(source="fireforge-points.png")]
 public class fireforge_points extends BitmapAsset {
-   public function fireforge_points() {
-      super();
-   }
+    public function fireforge_points() {
+        super();
+    }
 }
 }

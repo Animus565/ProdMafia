@@ -5,7 +5,6 @@ import io.decagames.rotmg.fame.data.bonus.FameBonus;
 
 public class TotalFame {
 
-
     public function TotalFame(param1:Number) {
         _bonuses = new Vector.<FameBonus>();
         super();

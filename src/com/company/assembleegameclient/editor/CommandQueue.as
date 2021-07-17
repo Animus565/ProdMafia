@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.editor {
 public class CommandQueue {
 
-
     public function CommandQueue() {
         list_ = new Vector.<CommandList>();
         super();
     }
+
     private var list_:Vector.<CommandList>;
     private var currPos:int = 0;
 

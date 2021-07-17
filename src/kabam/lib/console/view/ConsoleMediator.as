@@ -8,10 +8,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class ConsoleMediator extends Mediator {
 
-
     public function ConsoleMediator() {
         super();
     }
+
     [Inject]
     public var view:ConsoleView;
     [Inject]

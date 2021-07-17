@@ -4,10 +4,10 @@ import kabam.lib.console.signals.ConsoleLogSignal;
 
 public final class ListActionsCommand {
 
-
     public function ListActionsCommand() {
         super();
     }
+
     [Inject]
     public var console:Console;
     [Inject]

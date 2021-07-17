@@ -6,11 +6,11 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 public class WardrobeTooltip extends ToolTip {
 
-
     public function WardrobeTooltip() {
         super(3552822, 1, 10197915, 1);
         this.init();
     }
+
     private var title:UILabel;
     private var topDesc:UILabel;
 

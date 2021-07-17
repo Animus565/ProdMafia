@@ -8,10 +8,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class BuyGoldButtonMediator extends Mediator {
 
-
     public function BuyGoldButtonMediator() {
         super();
     }
+
     [Inject]
     public var closeSignal:CloseCurrentPopupSignal;
     [Inject]

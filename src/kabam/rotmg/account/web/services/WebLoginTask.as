@@ -1,56 +1,63 @@
 package kabam.rotmg.account.web.services {
-   import kabam.lib.tasks.BaseTask;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.account.core.services.LoginTask;
-   import kabam.rotmg.account.web.model.AccountData;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   
-   public class WebLoginTask extends BaseTask implements LoginTask {
-       
-      
-      [Inject]
-      public var account:Account;
-      
-      [Inject]
-      public var data:AccountData;
-      
-      [Inject]
-      public var client:AppEngineClient;
-      
-      public function WebLoginTask() {
-         super();
-      }
-      
-      override protected function startTask() : void {
-         this.client.complete.addOnce(this.onComplete);
-         if(this.data.secret != "") {
-            this.client.sendRequest("/account/verify",{
-               "game_net":"Unity",
-               "play_platform":"Unity",
-               "game_net_user_id":"",
-               "guid":this.data.username,
-               "secret":this.data.secret
+import com.company.assembleegameclient.parameters.Parameters;
+
+import kabam.lib.tasks.BaseTask;
+import kabam.rotmg.account.core.Account;
+import kabam.rotmg.account.core.services.LoginTask;
+import kabam.rotmg.account.web.model.AccountData;
+import kabam.rotmg.account.web.signals.LoginSuccessSignal;
+import kabam.rotmg.appengine.api.AppEngineClient;
+
+public class WebLoginTask extends BaseTask implements LoginTask {
+    public function WebLoginTask() {
+        super();
+    }
+
+    [Inject]
+    public var account:Account;
+    [Inject]
+    public var data:AccountData;
+    [Inject]
+    public var client:AppEngineClient;
+    [Inject]
+    public var loginSuccess:LoginSuccessSignal;
+
+    override protected function startTask():void {
+        this.client.complete.addOnce(this.onComplete);
+        if (this.data.secret != "") {
+            this.client.sendRequest("/account/verify", {
+                "game_net": "Unity",
+                "play_platform": "Unity",
+                "game_net_user_id": "",
+                "guid": this.data.username,
+                "secret": this.data.secret,
+                "clientToken": Parameters.data.clientToken
             });
-         } else {
-            this.client.sendRequest("/account/verify",{
-               "game_net":"Unity",
-               "play_platform":"Unity",
-               "game_net_user_id":"",
-               "guid":this.data.username,
-               "password":this.data.password
+        } else {
+            this.client.sendRequest("/account/verify", {
+                "game_net": "Unity",
+                "play_platform": "Unity",
+                "game_net_user_id": "",
+                "guid": this.data.username,
+                "password": this.data.password,
+                "clientToken": Parameters.data.clientToken
             });
-         }
-      }
-      
-      private function onComplete(param1:Boolean, param2:*) : void {
-         if(param1) {
-            this.updateUser(param2);
-         }
-         completeTask(param1,param2);
-      }
-      
-      private function updateUser(param1:String) : void {
-         this.account.updateUser(this.data.username,this.data.password,"",this.data.secret);
-      }
-   }
+        }
+    }
+
+    private function onComplete(success:Boolean, response:*):void {
+        if (success)
+            this.updateUser(response);
+
+        completeTask(success, response);
+    }
+
+    private function updateUser(response:String):void {
+        var xml:XML = XML(response);
+        this.account.updateUser(this.data.username, this.data.password, "", this.data.secret,
+                xml.AccessToken,
+                xml.AccessTokenTimestamp + xml.AccessTokenExpiration * 1000);
+        this.loginSuccess.dispatch();
+    }
+}
 }

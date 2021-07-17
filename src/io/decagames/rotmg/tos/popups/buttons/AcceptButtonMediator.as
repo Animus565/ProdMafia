@@ -9,10 +9,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class AcceptButtonMediator extends Mediator {
 
-
     public function AcceptButtonMediator() {
         super();
     }
+
     [Inject]
     public var view:AcceptButton;
     [Inject]
@@ -31,7 +31,7 @@ public class AcceptButtonMediator extends Mediator {
     }
 
     private function onClickHandler(param1:BaseButton):void {
-        this.appEngineClient.sendRequest("account/acceptTOS", this.account.getCredentials());
+        this.appEngineClient.sendRequest("account/acceptTOS", this.account.getAccessToken());
         this.closePopupSignal.dispatch();
     }
 }

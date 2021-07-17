@@ -6,12 +6,12 @@ import org.osflash.signals.Signal;
 
 public class StageLifecycleUtil {
 
-
     public function StageLifecycleUtil(_arg_1:DisplayObject) {
         super();
         this.target = _arg_1;
         _arg_1.addEventListener("addedToStage", this.handleAddedToStage);
     }
+
     private var target:DisplayObject;
 
     private var _addedToStage:Signal;

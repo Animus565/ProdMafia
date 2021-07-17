@@ -20,7 +20,6 @@ import kabam.rotmg.game.signals.TextPanelMessageUpdateSignal;
 
 public class Pet extends GameObject implements IInteractiveObject {
 
-
     public function Pet(_arg_1:XML) {
         super(_arg_1);
         isInteractive_ = true;
@@ -28,6 +27,7 @@ public class Pet extends GameObject implements IInteractiveObject {
         this.petsModel = StaticInjectorContext.getInjector().getInstance(PetsModel);
         this.petsModel.getActivePet();
     }
+
     public var vo:PetVO;
     public var skin:AnimatedChar;
     public var defaultSkin:AnimatedChar;

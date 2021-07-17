@@ -8,10 +8,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class RefuseButtonMediator extends Mediator {
 
-
     public function RefuseButtonMediator() {
         super();
     }
+
     [Inject]
     public var view:RefuseButton;
     [Inject]

@@ -6,13 +6,13 @@ import flash.utils.Dictionary;
 
 public class CommandMenu extends Sprite {
 
-
     public function CommandMenu() {
         keyCodeDict_ = new Dictionary();
         super();
         addEventListener("addedToStage", this.onAddedToStage);
         addEventListener("removedFromStage", this.onRemovedFromStage);
     }
+
     private var keyCodeDict_:Dictionary;
     private var yOffset_:int = 0;
     private var selected_:CommandMenuItem = null;

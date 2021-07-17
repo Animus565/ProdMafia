@@ -9,10 +9,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class ResizableMediator extends Mediator {
 
-
     public function ResizableMediator() {
         super();
     }
+
     [Inject]
     public var view:Resizable;
     [Inject]

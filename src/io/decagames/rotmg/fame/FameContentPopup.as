@@ -18,7 +18,6 @@ import kabam.rotmg.assets.services.IconFactory;
 
 public class FameContentPopup extends ModalPopup {
 
-
     public function FameContentPopup(param1:int = -1) {
         super(340, 505, "Fame Overview", DefaultLabelFormat.defaultSmallPopupTitle, new Rectangle(0, 0, 340, 565));
         this.characterId = param1;
@@ -76,6 +75,7 @@ public class FameContentPopup extends ModalPopup {
         DefaultLabelFormat.deathFameCount(this.fameOnDeathLabel);
         addChild(this.fameOnDeathLabel);
     }
+
     public var infoButton:SliceScalingButton;
     public var characterId:int;
     private var characterDecorationBG:SliceScalingBitmap;

@@ -1,13 +1,13 @@
 package kabam.lib.net.impl {
 public class MessagePool {
 
-
     public function MessagePool(_arg_1:int, _arg_2:Class, _arg_3:Function) {
         super();
         this.type = _arg_2;
         this.id = _arg_1;
         this.callback = _arg_3;
     }
+
     public var type:Class;
     public var callback:Function;
     public var id:int;

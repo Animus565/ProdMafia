@@ -5,10 +5,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class ModalPopupMediator extends Mediator {
 
-
     public function ModalPopupMediator() {
         super();
     }
+
     [Inject]
     public var view:ModalPopup;
     private var lastContentHeight:int = 0;

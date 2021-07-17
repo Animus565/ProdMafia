@@ -13,7 +13,6 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 public class PetFeedProgressBar extends UIGridElement {
 
-
     private const MAX_COLOR:Number = 6538829;
 
     public function PetFeedProgressBar(param1:int, param2:int, param3:String, param4:int, param5:int, param6:int, param7:int, param8:uint, param9:uint, param10:uint = 0) {
@@ -32,6 +31,7 @@ public class PetFeedProgressBar extends UIGridElement {
         this._simulationColor = param10;
         this.init();
     }
+
     private var _componentWidth:int;
     private var _componentHeight:int;
     private var _abilityName:String;

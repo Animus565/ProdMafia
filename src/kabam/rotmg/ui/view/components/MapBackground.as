@@ -37,6 +37,7 @@ public class MapBackground extends Sprite {
         addEventListener("addedToStage", this.onAddedToStage);
         addEventListener("removedFromStage", this.onRemovedFromStage);
     }
+
     private var lastUpdate:int;
     private var time:Number;
 

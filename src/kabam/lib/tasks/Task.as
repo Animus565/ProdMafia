@@ -3,7 +3,6 @@ import org.osflash.signals.Signal;
 
 public interface Task {
 
-
     function get started():Signal;
 
     function get finished():TaskResultSignal;

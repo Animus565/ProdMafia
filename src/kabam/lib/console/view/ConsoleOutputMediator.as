@@ -12,10 +12,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public final class ConsoleOutputMediator extends Mediator {
 
-
     public function ConsoleOutputMediator() {
         super();
     }
+
     [Inject]
     public var log:ConsoleLogSignal;
     [Inject]

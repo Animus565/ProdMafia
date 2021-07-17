@@ -7,10 +7,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class PetInfoItemMediator extends Mediator {
 
-
     public function PetInfoItemMediator() {
         super();
     }
+
     [Inject]
     public var view:PetInfoItem;
     [Inject]

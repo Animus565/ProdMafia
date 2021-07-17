@@ -5,10 +5,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class UITabMediator extends Mediator {
 
-
     public function UITabMediator() {
         super();
     }
+
     [Inject]
     public var view:UITab;
 

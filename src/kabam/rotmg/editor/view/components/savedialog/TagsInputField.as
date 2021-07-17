@@ -45,6 +45,7 @@ public class TagsInputField extends Sprite {
             addChild(this.instructionsText_);
         }
     }
+
     public var nameText_:BaseSimpleText;
     public var inputText_:BaseSimpleText;
     public var instructionsText_:BaseSimpleText;

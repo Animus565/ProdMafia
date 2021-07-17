@@ -3,7 +3,6 @@ import flash.display.DisplayObject;
 
 public interface Layout {
 
-
     function getPadding():int;
 
     function setPadding(_arg_1:int):void;

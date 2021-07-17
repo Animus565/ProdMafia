@@ -10,7 +10,6 @@ import kabam.rotmg.text.model.FontModel;
 
 public class DefaultLabelFormat {
 
-
     public static function createLabelFormat(param1:UILabel, param2:int = 12, param3:Number = 16777215, param4:String = "left", param5:Boolean = false, param6:Array = null):void {
         var _loc7_:TextFormat = createTextFormat(param2, param3, param4, param5);
         applyTextFormat(_loc7_, param1);

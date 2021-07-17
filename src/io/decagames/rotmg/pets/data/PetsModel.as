@@ -27,6 +27,7 @@ public class PetsModel {
         ownedSkinsIDs = new Vector.<int>();
         super();
     }
+
     [Inject]
     public var notifyActivePetUpdated:NotifyActivePetUpdated;
     [Inject]
@@ -85,11 +86,11 @@ public class PetsModel {
     }
 
     public function getPetYardUpgradeFamePrice():int {
-        return this.yardXmlData.Fame;
+        return !!this.seasonalEventModel.isChallenger ? 0 : this.yardXmlData.Fame;
     }
 
     public function getPetYardUpgradeGoldPrice():int {
-        return this.yardXmlData.Price;
+        return !!this.seasonalEventModel.isChallenger ? 0 : this.yardXmlData.Price;
     }
 
     public function getPetYardObjectID():int {

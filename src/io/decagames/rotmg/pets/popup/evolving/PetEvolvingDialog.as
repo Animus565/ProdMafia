@@ -28,7 +28,6 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 public class PetEvolvingDialog extends ModalPopup {
 
-
     public function PetEvolvingDialog(param1:EvolvePetInfo, param2:Boolean) {
         var info:EvolvePetInfo = param1;
         var unlockedSkin:Boolean = param2;
@@ -145,6 +144,7 @@ public class PetEvolvingDialog extends ModalPopup {
         this._okButton.y = _contentHeight - this._okButton.height;
         addChild(this._okButton);
     }
+
     private var contentInset:SliceScalingBitmap;
     private var info:EvolvePetInfo;
     private var initialPetImage:Bitmap;

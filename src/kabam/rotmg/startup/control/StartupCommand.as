@@ -3,10 +3,10 @@ import kabam.lib.tasks.TaskMonitor;
 
 public class StartupCommand {
 
-
     public function StartupCommand() {
         super();
     }
+
     [Inject]
     public var startup:StartupSequence;
     [Inject]

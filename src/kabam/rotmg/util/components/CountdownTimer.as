@@ -25,6 +25,7 @@ public class CountdownTimer extends Sprite {
         addChild(this.text);
         this.text.visible = false;
     }
+
     public var countdownSeconds:int = 0;
     public var myTimer:Timer;
     public var text:TextFieldDisplayConcrete;

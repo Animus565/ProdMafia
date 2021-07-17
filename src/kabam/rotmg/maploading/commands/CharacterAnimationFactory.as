@@ -11,10 +11,10 @@ import kabam.rotmg.core.model.PlayerModel;
 
 public class CharacterAnimationFactory {
 
-
     public function CharacterAnimationFactory() {
         super();
     }
+
     [Inject]
     public var playerModel:PlayerModel;
     [Inject]

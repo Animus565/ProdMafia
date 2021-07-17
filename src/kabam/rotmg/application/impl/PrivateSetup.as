@@ -5,7 +5,6 @@ import kabam.rotmg.application.api.ApplicationSetup;
 
 public class PrivateSetup implements ApplicationSetup {
 
-
     private const SERVER:String = "test.realmofthemadgod.com";
 
     private const UNENCRYPTED:String = "http://test.realmofthemadgod.com";

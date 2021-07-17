@@ -10,12 +10,12 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class PetInfoItem extends UIGridElement {
 
-
     public function PetInfoItem(param1:String) {
         super();
         this.titleText = param1;
         this.init();
     }
+
     public var titleText:String;
     protected var hoverMask:Sprite;
     private var listBackground:SliceScalingBitmap;

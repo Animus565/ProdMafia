@@ -5,7 +5,6 @@ import org.osflash.signals.Signal;
 
 public class ClosePopupSignal extends Signal {
 
-
     public function ClosePopupSignal() {
         super(BasePopup);
     }

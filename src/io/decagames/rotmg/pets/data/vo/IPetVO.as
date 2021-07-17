@@ -9,7 +9,6 @@ import org.osflash.signals.Signal;
 
 public interface IPetVO {
 
-
     function get updated():Signal;
 
     function get name():String;

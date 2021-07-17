@@ -4,13 +4,13 @@ import flash.utils.IDataOutput;
 
 public class Message {
 
-
     public function Message(_arg_1:uint, _arg_2:Function = null) {
         super();
         this.id = _arg_1;
         this.isCallback = _arg_2 != null;
         this.callback = _arg_2;
     }
+
     public var pool:MessagePool;
     public var prev:Message;
     public var next:Message;

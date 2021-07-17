@@ -8,10 +8,10 @@ import org.swiftsuspenders.Injector;
 
 public class SignalTaskDelegate implements StartupDelegate {
 
-
     public function SignalTaskDelegate() {
         super();
     }
+
     public var injector:Injector;
     public var signalClass:Class;
     public var priority:int;

@@ -521,6 +521,39 @@
     <UnlockLevel level="20" type="0x031f">Paladin</UnlockLevel>
     <UnlockCost>999</UnlockCost>
   </Object>
+  <Object type="0x0331" id="Summoner">
+    <Class>Player</Class>
+    <Description>The summoner spawns monsters to fight for her and boost her damage output.</Description>
+    <AnimatedTexture>
+      <File>players</File>
+      <Index>16</Index>
+    </AnimatedTexture>
+    <HitSound>player/priest_hit</HitSound>
+    <DeathSound>player/priest_death</DeathSound>
+    <Player />
+    <BloodProb>1.0</BloodProb>
+    <SlotTypes>8, 29, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa04, 0x3843, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <MaxHitPoints max="670">100</MaxHitPoints>
+    <MaxMagicPoints max="385">100</MaxMagicPoints>
+    <Attack max="50">10</Attack>
+    <Defense max="25">0</Defense>
+    <Speed max="60">12</Speed>
+    <Dexterity max="75">15</Dexterity>
+    <HpRegen max="40">10</HpRegen>
+    <MpRegen max="75">15</MpRegen>
+    <LevelIncrease min="20" max="30">MaxHitPoints</LevelIncrease>
+    <LevelIncrease min="5" max="15">MaxMagicPoints</LevelIncrease>
+    <LevelIncrease min="1" max="2">Attack</LevelIncrease>
+    <LevelIncrease min="0" max="0">Defense</LevelIncrease>
+    <LevelIncrease min="0" max="2">Speed</LevelIncrease>
+    <LevelIncrease min="1" max="2">Dexterity</LevelIncrease>
+    <LevelIncrease min="0" max="1">HpRegen</LevelIncrease>
+    <LevelIncrease min="1" max="2">MpRegen</LevelIncrease>
+    <UnlockLevel level="20" type="0x0325">Sorcerer</UnlockLevel>
+    <UnlockLevel level="20" type="0x0323">Mystic</UnlockLevel>
+    <UnlockCost>999</UnlockCost>
+  </Object>
   <PlayerStat id="Shots" index="0" reportEvery="100" dungeon="" displayName="Shots fired" displayColor="#27fd14" displayOnDeath="true" dungeonId="" />
   <PlayerStat id="ShotsThatDamage" index="1" reportEvery="10" dungeon="" displayName="Hits" displayColor="#27fd14" displayOnDeath="true" dungeonId="" />
   <PlayerStat id="SpecialAbilityUses" index="2" reportEvery="10" dungeon="" displayName="Ability uses" displayColor="#27fd14" displayOnDeath="true" dungeonId="" />
@@ -607,7 +640,8 @@
   <PlayerStat id="UntarisCompleted" index="75" reportEvery="1" dungeon="true" displayName="" displayColor="" displayOnDeath="false" dungeonId="Untaris" />
   <PlayerStat id="WineCellarsCompleted" index="76" reportEvery="1" dungeon="true" displayName="" displayColor="" displayOnDeath="false" dungeonId="Wine Cellar" />
   <PlayerStat id="ThirdDimensionsCompleted" index="90" reportEvery="1" dungeon="true" displayName="" displayColor="" displayOnDeath="false" dungeonId="The Third Dimension" />
-  <FameBonus id="Ancestor">
+  <PlayerStat id="BeachzonesCompleted" index="91" reportEvery="1" dungeon="true" displayName="" displayColor="" displayOnDeath="false" dungeonId="Beachzone" />
+  <FameBonus id="Ancestor" code="1">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Special</DisplayCategory>
     <DisplayName>Ancestor</DisplayName>
@@ -615,7 +649,7 @@
     <Description>This is your first character in Realm of the Mad God!</Description>
     <Condition>FirstCharacter</Condition>
   </FameBonus>
-  <FameBonus id="Maxed_Life">
+  <FameBonus id="Maxed_Life" code="2">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Maxing</DisplayCategory>
     <DisplayName>Maxed: Life</DisplayName>
@@ -624,7 +658,7 @@
     <Description>Max your HP</Description>
     <Condition stat="health">MaxedStat</Condition>
   </FameBonus>
-  <FameBonus id="Maxed_Mana">
+  <FameBonus id="Maxed_Mana" code="3">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Maxing</DisplayCategory>
     <DisplayName>Maxed: Mana</DisplayName>
@@ -633,7 +667,7 @@
     <Description>Max your Mana</Description>
     <Condition stat="magic">MaxedStat</Condition>
   </FameBonus>
-  <FameBonus id="Maxed_Attack">
+  <FameBonus id="Maxed_Attack" code="4">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Maxing</DisplayCategory>
     <DisplayName>Maxed: Attack</DisplayName>
@@ -642,7 +676,7 @@
     <Description>Max your Attack</Description>
     <Condition stat="attack">MaxedStat</Condition>
   </FameBonus>
-  <FameBonus id="Maxed_Defense">
+  <FameBonus id="Maxed_Defense" code="5">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Maxing</DisplayCategory>
     <DisplayName>Maxed: Defense</DisplayName>
@@ -651,7 +685,7 @@
     <Description>Max your Defense</Description>
     <Condition stat="defense">MaxedStat</Condition>
   </FameBonus>
-  <FameBonus id="Maxed_Speed">
+  <FameBonus id="Maxed_Speed" code="6">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Maxing</DisplayCategory>
     <DisplayName>Maxed: Speed</DisplayName>
@@ -660,7 +694,7 @@
     <Description>Max your Speed</Description>
     <Condition stat="speed">MaxedStat</Condition>
   </FameBonus>
-  <FameBonus id="Maxed_Dexterity">
+  <FameBonus id="Maxed_Dexterity" code="7">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Maxing</DisplayCategory>
     <DisplayName>Maxed: Dexterity</DisplayName>
@@ -669,7 +703,7 @@
     <Description>Max your Dexterity</Description>
     <Condition stat="dexterity">MaxedStat</Condition>
   </FameBonus>
-  <FameBonus id="Maxed_Vitality">
+  <FameBonus id="Maxed_Vitality" code="8">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Maxing</DisplayCategory>
     <DisplayName>Maxed: Vitality</DisplayName>
@@ -678,7 +712,7 @@
     <Description>Max your Vitality</Description>
     <Condition stat="vitality">MaxedStat</Condition>
   </FameBonus>
-  <FameBonus id="Maxed_Wisdom">
+  <FameBonus id="Maxed_Wisdom" code="9">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Maxing</DisplayCategory>
     <DisplayName>Maxed: Wisdom</DisplayName>
@@ -687,7 +721,7 @@
     <Description>Max your Wisdom</Description>
     <Condition stat="wisdom">MaxedStat</Condition>
   </FameBonus>
-  <FameBonus id="Traveler">
+  <FameBonus id="Traveler" code="10">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Cartography</DisplayCategory>
     <DisplayName>Traveler</DisplayName>
@@ -695,7 +729,7 @@
     <Description>Discover 200000 squares</Description>
     <Condition stat="TilesUncovered" threshold="200000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Mapper">
+  <FameBonus id="Mapper" code="11">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Cartography</DisplayCategory>
     <DisplayName>Mapper</DisplayName>
@@ -703,7 +737,7 @@
     <Description>Discover 1000000 squares</Description>
     <Condition stat="TilesUncovered" threshold="1000000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Explorer">
+  <FameBonus id="Explorer" code="12">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Cartography</DisplayCategory>
     <DisplayName>Explorer</DisplayName>
@@ -711,7 +745,7 @@
     <Description>Discover 4000000 squares</Description>
     <Condition stat="TilesUncovered" threshold="4000000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Cartographer">
+  <FameBonus id="Cartographer" code="13">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Cartography</DisplayCategory>
     <DisplayName>Cartographer</DisplayName>
@@ -719,16 +753,17 @@
     <Description>Discover 10000000 squares</Description>
     <Condition stat="TilesUncovered" threshold="10000000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MapMaker">
+  <FameBonus id="MapMaker" code="14">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Cartography</DisplayCategory>
     <DisplayName>Map Maker {0}</DisplayName>
     <Repeatable>true</Repeatable>
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Discover 25000000 squares</Description>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="TilesUncovered" threshold="25000000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PursuerofDeeds">
+  <FameBonus id="PursuerofDeeds" code="15">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Quest Completes</DisplayCategory>
     <DisplayName>Pursuer of Deeds</DisplayName>
@@ -736,7 +771,7 @@
     <Description>Complete 25 quests</Description>
     <Condition stat="QuestsCompleted" threshold="25">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DoerofDeeds">
+  <FameBonus id="DoerofDeeds" code="16">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Quest Completes</DisplayCategory>
     <DisplayName>Doer of Deeds</DisplayName>
@@ -744,7 +779,7 @@
     <Description>Complete 100 quests</Description>
     <Condition stat="QuestsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PerformerofDeeds">
+  <FameBonus id="PerformerofDeeds" code="17">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Quest Completes</DisplayCategory>
     <DisplayName>Performer of Deeds</DisplayName>
@@ -752,7 +787,7 @@
     <Description>Complete 400 quests</Description>
     <Condition stat="QuestsCompleted" threshold="400">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AchieverofDeeds">
+  <FameBonus id="AchieverofDeeds" code="18">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Quest Completes</DisplayCategory>
     <DisplayName>Achiever of Deeds</DisplayName>
@@ -760,57 +795,59 @@
     <Description>Complete 1000 quests</Description>
     <Condition stat="QuestsCompleted" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MasterofDeeds">
+  <FameBonus id="MasterofDeeds" code="19">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Quest Completes</DisplayCategory>
     <DisplayName>Master of Deeds {0}</DisplayName>
     <Repeatable>true</Repeatable>
     <AbsoluteBonus>5000</AbsoluteBonus>
     <Description>Complete 2000 quests</Description>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="QuestsCompleted" threshold="2000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CombatNovice">
+  <FameBonus id="CombatNovice" code="20">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
-    <DisplayCategory>Combat Profiency</DisplayCategory>
+    <DisplayCategory>Combat Proficiency</DisplayCategory>
     <DisplayName>Combat Novice</DisplayName>
     <AbsoluteBonus>20</AbsoluteBonus>
     <Description>Hit an enemy 8000 times</Description>
     <Condition stat="ShotsThatDamage" threshold="8000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CombatBeginner">
+  <FameBonus id="CombatBeginner" code="21">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
-    <DisplayCategory>Combat Profiency</DisplayCategory>
+    <DisplayCategory>Combat Proficiency</DisplayCategory>
     <DisplayName>Combat Beginner</DisplayName>
     <AbsoluteBonus>100</AbsoluteBonus>
     <Description>Hit an enemy 40000 times</Description>
     <Condition stat="ShotsThatDamage" threshold="40000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CombatProficient">
+  <FameBonus id="CombatProficient" code="22">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
-    <DisplayCategory>Combat Profiency</DisplayCategory>
+    <DisplayCategory>Combat Proficiency</DisplayCategory>
     <DisplayName>Combat Proficient</DisplayName>
     <AbsoluteBonus>400</AbsoluteBonus>
     <Description>Hit an enemy 200000 times</Description>
     <Condition stat="ShotsThatDamage" threshold="200000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CombatExpert">
+  <FameBonus id="CombatExpert" code="23">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
-    <DisplayCategory>Combat Profiency</DisplayCategory>
+    <DisplayCategory>Combat Proficiency</DisplayCategory>
     <DisplayName>Combat Expert</DisplayName>
     <AbsoluteBonus>1000</AbsoluteBonus>
     <Description>Hit an enemy 800000 times</Description>
     <Condition stat="ShotsThatDamage" threshold="800000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CombatVeteran">
+  <FameBonus id="CombatVeteran" code="24">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
-    <DisplayCategory>Combat Profiency</DisplayCategory>
+    <DisplayCategory>Combat Proficiency</DisplayCategory>
     <DisplayName>Combat Veteran {0}</DisplayName>
     <Repeatable>true</Repeatable>
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Hit an enemy 2000000 times</Description>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ShotsThatDamage" threshold="2000000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Supporter">
+  <FameBonus id="Supporter" code="25">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Party Level Ups</DisplayCategory>
     <DisplayName>Supporter</DisplayName>
@@ -818,7 +855,7 @@
     <Description>Help an ally level up 25 times</Description>
     <Condition stat="PartyLevelUps" threshold="25">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Collaborator">
+  <FameBonus id="Collaborator" code="26">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Party Level Ups</DisplayCategory>
     <DisplayName>Collaborator</DisplayName>
@@ -826,7 +863,7 @@
     <Description>Help an ally level up 50 times</Description>
     <Condition stat="PartyLevelUps" threshold="50">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TeamPlayer">
+  <FameBonus id="TeamPlayer" code="27">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Party Level Ups</DisplayCategory>
     <DisplayName>Team Player</DisplayName>
@@ -834,7 +871,7 @@
     <Description>Help an ally level up 100 times</Description>
     <Condition stat="PartyLevelUps" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LeaderofMen">
+  <FameBonus id="LeaderofMen" code="28">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Party Level Ups</DisplayCategory>
     <DisplayName>Leader of Men</DisplayName>
@@ -842,16 +879,17 @@
     <Description>Help an ally level up 400 times</Description>
     <Condition stat="PartyLevelUps" threshold="400">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BuilderofArmies">
+  <FameBonus id="BuilderofArmies" code="29">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Party Level Ups</DisplayCategory>
     <DisplayName>Builder of Armies {0}</DisplayName>
     <Repeatable>true</Repeatable>
     <AbsoluteBonus>1000</AbsoluteBonus>
     <Description>Help an ally level up 1000 times</Description>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="PartyLevelUps" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PotionDrinker&#xD;">
+  <FameBonus id="PotionDrinker&#xD;" code="30">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Potions</DisplayCategory>
     <DisplayName>Potion Drinker</DisplayName>
@@ -859,7 +897,7 @@
     <Description>Drink 25 potions</Description>
     <Condition stat="PotionsDrunk" threshold="25">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PotionEnthusiast">
+  <FameBonus id="PotionEnthusiast" code="31">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Potions</DisplayCategory>
     <DisplayName>Potion Enthusiast</DisplayName>
@@ -867,7 +905,7 @@
     <Description>Drink 100 potions</Description>
     <Condition stat="PotionsDrunk" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PotionConnoisseur">
+  <FameBonus id="PotionConnoisseur" code="32">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Potions</DisplayCategory>
     <DisplayName>Potion Connoisseur</DisplayName>
@@ -875,7 +913,7 @@
     <Description>Drink 400 potions</Description>
     <Condition stat="PotionsDrunk" threshold="400">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PotionSage">
+  <FameBonus id="PotionSage" code="33">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Potions</DisplayCategory>
     <DisplayName>Potion Sage</DisplayName>
@@ -883,16 +921,17 @@
     <Description>Drink 1000 potions</Description>
     <Condition stat="PotionsDrunk" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PotionFanatic">
+  <FameBonus id="PotionFanatic" code="34">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Potions</DisplayCategory>
     <DisplayName>Potion Fanatic {0}</DisplayName>
     <Repeatable>true</Repeatable>
     <AbsoluteBonus>1000</AbsoluteBonus>
     <Description>Drink 2000 potions</Description>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="PotionsDrunk" threshold="2000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbilityNeophyte">
+  <FameBonus id="AbilityNeophyte" code="35">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Ability</DisplayCategory>
     <DisplayName>Ability Neophyte</DisplayName>
@@ -900,7 +939,7 @@
     <Description>Use your special ability 100 times</Description>
     <Condition stat="SpecialAbilityUses" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbilityApprentice">
+  <FameBonus id="AbilityApprentice" code="36">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Ability</DisplayCategory>
     <DisplayName>Ability Apprentice</DisplayName>
@@ -908,7 +947,7 @@
     <Description>Use your special ability 500 times</Description>
     <Condition stat="SpecialAbilityUses" threshold="500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbilityAce">
+  <FameBonus id="AbilityAce" code="37">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Ability</DisplayCategory>
     <DisplayName>Ability Ace</DisplayName>
@@ -916,7 +955,7 @@
     <Description>Use your special ability 2500 times</Description>
     <Condition stat="SpecialAbilityUses" threshold="2500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbilityExpert">
+  <FameBonus id="AbilityExpert" code="38">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Ability</DisplayCategory>
     <DisplayName>Ability Expert</DisplayName>
@@ -924,16 +963,17 @@
     <Description>Use your special ability 10000 times</Description>
     <Condition stat="SpecialAbilityUses" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbilitySpecialist">
+  <FameBonus id="AbilitySpecialist" code="39">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Ability</DisplayCategory>
     <DisplayName>Ability Specialist {0}</DisplayName>
     <Repeatable>true</Repeatable>
     <AbsoluteBonus>1000</AbsoluteBonus>
     <Description>Use your special ability 25000 times</Description>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="SpecialAbilityUses" threshold="25000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TeleportNewcomer">
+  <FameBonus id="TeleportNewcomer" code="40">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Teleport</DisplayCategory>
     <DisplayName>Teleport Newcomer</DisplayName>
@@ -941,7 +981,7 @@
     <Description>Teleport 50 times</Description>
     <Condition stat="Teleports" threshold="50">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TeleportRookie">
+  <FameBonus id="TeleportRookie" code="41">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Teleport</DisplayCategory>
     <DisplayName>Teleport Rookie</DisplayName>
@@ -949,7 +989,7 @@
     <Description>Teleport 200 times</Description>
     <Condition stat="Teleports" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TeleportAlumni">
+  <FameBonus id="TeleportAlumni" code="42">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Teleport</DisplayCategory>
     <DisplayName>Teleport Alumni</DisplayName>
@@ -957,7 +997,7 @@
     <Description>Teleport 500 times</Description>
     <Condition stat="Teleports" threshold="500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TeleportZealot">
+  <FameBonus id="TeleportZealot" code="43">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Teleport</DisplayCategory>
     <DisplayName>Teleport Zealot</DisplayName>
@@ -965,16 +1005,17 @@
     <Description>Teleport 1000 times</Description>
     <Condition stat="Teleports" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TeleportManiac">
+  <FameBonus id="TeleportManiac" code="44">
     <DisplayGroup>Stats Bonuses</DisplayGroup>
     <DisplayCategory>Teleport</DisplayCategory>
     <DisplayName>Teleport Maniac {0}</DisplayName>
     <Repeatable>true</Repeatable>
     <AbsoluteBonus>1000</AbsoluteBonus>
     <Description>Teleport 2500 times</Description>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="Teleports" threshold="2500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MonsterFoe">
+  <FameBonus id="MonsterFoe" code="45">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Monster Kills</DisplayCategory>
     <DisplayName>Monster Foe</DisplayName>
@@ -983,7 +1024,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="MonsterKills" threshold="2000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MonsterAdversary">
+  <FameBonus id="MonsterAdversary" code="46">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Monster Kills</DisplayCategory>
     <DisplayName>Monster Adversary</DisplayName>
@@ -992,7 +1033,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="MonsterKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MonsterSlayer">
+  <FameBonus id="MonsterSlayer" code="47">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Monster Kills</DisplayCategory>
     <DisplayName>Monster Slayer</DisplayName>
@@ -1001,7 +1042,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="MonsterKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MonsterSlaughterer">
+  <FameBonus id="MonsterSlaughterer" code="48">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Monster Kills</DisplayCategory>
     <DisplayName>Monster Slaughterer</DisplayName>
@@ -1010,7 +1051,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="MonsterKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MonsterNemesis">
+  <FameBonus id="MonsterNemesis" code="49">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Monster Kills</DisplayCategory>
     <DisplayName>Monster Nemesis {0}</DisplayName>
@@ -1018,9 +1059,10 @@
     <AbsoluteBonus>1000</AbsoluteBonus>
     <Description>Kill 100000 monsters</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="MonsterKills" threshold="100000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GodFoe">
+  <FameBonus id="GodFoe" code="50">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>God Kills</DisplayCategory>
     <DisplayName>God Foe</DisplayName>
@@ -1029,7 +1071,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="GodKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GodAdversary">
+  <FameBonus id="GodAdversary" code="51">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>God Kills</DisplayCategory>
     <DisplayName>God Adversary</DisplayName>
@@ -1038,7 +1080,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="GodKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GodSlayer">
+  <FameBonus id="GodSlayer" code="52">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>God Kills</DisplayCategory>
     <DisplayName>God Slayer</DisplayName>
@@ -1047,7 +1089,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="GodKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GodSlaughterer">
+  <FameBonus id="GodSlaughterer" code="53">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>God Kills</DisplayCategory>
     <DisplayName>God Slaughterer</DisplayName>
@@ -1056,7 +1098,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="GodKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GodNemesis">
+  <FameBonus id="GodNemesis" code="54">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>God Kills</DisplayCategory>
     <DisplayName>God Nemesis {0}</DisplayName>
@@ -1064,9 +1106,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Gods</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="GodKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LesserGodFoe">
+  <FameBonus id="LesserGodFoe" code="55">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Lesser God Kills</DisplayCategory>
     <DisplayName>Lesser God Foe</DisplayName>
@@ -1075,7 +1118,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="LesserGodKills" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LesserGodAdversary">
+  <FameBonus id="LesserGodAdversary" code="56">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Lesser God Kills</DisplayCategory>
     <DisplayName>Lesser God Adversary</DisplayName>
@@ -1084,7 +1127,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="LesserGodKills" threshold="500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LesserGodSlayer">
+  <FameBonus id="LesserGodSlayer" code="57">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Lesser God Kills</DisplayCategory>
     <DisplayName>Lesser God Slayer</DisplayName>
@@ -1093,7 +1136,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="LesserGodKills" threshold="2000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LesserGodSlaughterer">
+  <FameBonus id="LesserGodSlaughterer" code="58">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Lesser God Kills</DisplayCategory>
     <DisplayName>Lesser God Slaughterer</DisplayName>
@@ -1102,7 +1145,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="LesserGodKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LesserGodNemesis">
+  <FameBonus id="LesserGodNemesis" code="59">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Lesser God Kills</DisplayCategory>
     <DisplayName>Lesser God Nemesis {0}</DisplayName>
@@ -1110,9 +1153,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 25000 Lesser Gods</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="LesserGodKills" threshold="25000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OryxFoe">
+  <FameBonus id="OryxFoe" code="60">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Oryx Kills</DisplayCategory>
     <DisplayName>Oryx Foe</DisplayName>
@@ -1121,7 +1165,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="OryxKills" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OryxAdversary">
+  <FameBonus id="OryxAdversary" code="61">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Oryx Kills</DisplayCategory>
     <DisplayName>Oryx Adversary</DisplayName>
@@ -1130,7 +1174,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="OryxKills" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OryxSlayer">
+  <FameBonus id="OryxSlayer" code="62">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Oryx Kills</DisplayCategory>
     <DisplayName>Oryx Slayer</DisplayName>
@@ -1139,7 +1183,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="OryxKills" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OryxSlaughterer">
+  <FameBonus id="OryxSlaughterer" code="63">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Oryx Kills</DisplayCategory>
     <DisplayName>Oryx Slaughterer</DisplayName>
@@ -1148,7 +1192,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="OryxKills" threshold="250">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OryxNemesis">
+  <FameBonus id="OryxNemesis" code="64">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Oryx Kills</DisplayCategory>
     <DisplayName>Oryx Nemesis {0}</DisplayName>
@@ -1156,9 +1200,10 @@
     <AbsoluteBonus>8000</AbsoluteBonus>
     <Description>Kill Oryx 500 times</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="OryxKills" threshold="500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="EncounterFoe">
+  <FameBonus id="EncounterFoe" code="65">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Encounter Kills</DisplayCategory>
     <DisplayName>Encounter Foe</DisplayName>
@@ -1167,7 +1212,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="EncounterKills" threshold="5">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="EncounterAdversary">
+  <FameBonus id="EncounterAdversary" code="66">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Encounter Kills</DisplayCategory>
     <DisplayName>Encounter Adversary</DisplayName>
@@ -1176,7 +1221,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="EncounterKills" threshold="50">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="EncounterSlayer">
+  <FameBonus id="EncounterSlayer" code="67">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Encounter Kills</DisplayCategory>
     <DisplayName>Encounter Slayer</DisplayName>
@@ -1185,7 +1230,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="EncounterKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="EncounterSlaughterer">
+  <FameBonus id="EncounterSlaughterer" code="68">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Encounter Kills</DisplayCategory>
     <DisplayName>Encounter Slaughterer</DisplayName>
@@ -1194,7 +1239,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="EncounterKills" threshold="500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="EncounterNemesis">
+  <FameBonus id="EncounterNemesis" code="69">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Encounter Kills</DisplayCategory>
     <DisplayName>Encounter Nemesis {0}</DisplayName>
@@ -1202,9 +1247,10 @@
     <AbsoluteBonus>5000</AbsoluteBonus>
     <Description>Kill 1250 Realm Encounter enemies</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="EncounterKills" threshold="1250">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroFoe">
+  <FameBonus id="HeroFoe" code="70">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Hero Kills</DisplayCategory>
     <DisplayName>Hero Foe</DisplayName>
@@ -1213,7 +1259,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="HeroKills" threshold="5">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroAdversary">
+  <FameBonus id="HeroAdversary" code="71">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Hero Kills</DisplayCategory>
     <DisplayName>Hero Adversary</DisplayName>
@@ -1222,7 +1268,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="HeroKills" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroSlayer">
+  <FameBonus id="HeroSlayer" code="72">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Hero Kills</DisplayCategory>
     <DisplayName>Hero Slayer</DisplayName>
@@ -1231,7 +1277,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="HeroKills" threshold="500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroSlaughterer">
+  <FameBonus id="HeroSlaughterer" code="73">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Hero Kills</DisplayCategory>
     <DisplayName>Hero Slaughterer</DisplayName>
@@ -1240,7 +1286,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="HeroKills" threshold="1250">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroNemesis">
+  <FameBonus id="HeroNemesis" code="74">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Hero Kills</DisplayCategory>
     <DisplayName>Hero Nemesis {0}</DisplayName>
@@ -1248,9 +1294,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 2500 Heroes of Oryx</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="HeroKills" threshold="2500">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CubeFoe">
+  <FameBonus id="CubeFoe" code="75">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Cube Kills</DisplayCategory>
     <DisplayName>Cube Foe</DisplayName>
@@ -1259,7 +1306,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="CubeKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CubeAdversary">
+  <FameBonus id="CubeAdversary" code="76">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Cube Kills</DisplayCategory>
     <DisplayName>Cube Adversary</DisplayName>
@@ -1268,7 +1315,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="CubeKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CubeSlayer">
+  <FameBonus id="CubeSlayer" code="77">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Cube Kills</DisplayCategory>
     <DisplayName>Cube Slayer</DisplayName>
@@ -1277,7 +1324,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="CubeKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CubeSlaughterer">
+  <FameBonus id="CubeSlaughterer" code="78">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Cube Kills</DisplayCategory>
     <DisplayName>Cube Slaughterer</DisplayName>
@@ -1286,7 +1333,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="CubeKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CubeNemesis">
+  <FameBonus id="CubeNemesis" code="79">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Cube Kills</DisplayCategory>
     <DisplayName>Cube Nemesis {0}</DisplayName>
@@ -1294,9 +1341,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Cubes</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CubeKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CritterFoe&#xD;">
+  <FameBonus id="CritterFoe&#xD;" code="80">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Critter Kills</DisplayCategory>
     <DisplayName>Critter Foe</DisplayName>
@@ -1305,7 +1353,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="CritterKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CritterAdversary">
+  <FameBonus id="CritterAdversary" code="81">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Critter Kills</DisplayCategory>
     <DisplayName>Critter Adversary</DisplayName>
@@ -1314,7 +1362,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="CritterKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CritterSlayer">
+  <FameBonus id="CritterSlayer" code="82">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Critter Kills</DisplayCategory>
     <DisplayName>Critter Slayer</DisplayName>
@@ -1323,7 +1371,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="CritterKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CritterSlaughterer">
+  <FameBonus id="CritterSlaughterer" code="83">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Critter Kills</DisplayCategory>
     <DisplayName>Critter Slaughterer</DisplayName>
@@ -1332,7 +1380,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="CritterKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CritterNemesis">
+  <FameBonus id="CritterNemesis" code="84">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Critter Kills</DisplayCategory>
     <DisplayName>Critter Nemesis {0}</DisplayName>
@@ -1340,9 +1388,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Critters</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CritterKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BeastFoe">
+  <FameBonus id="BeastFoe" code="85">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Beast Kills</DisplayCategory>
     <DisplayName>Beast Foe</DisplayName>
@@ -1351,7 +1400,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="BeastKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BeastAdversary">
+  <FameBonus id="BeastAdversary" code="86">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Beast Kills</DisplayCategory>
     <DisplayName>Beast Adversary</DisplayName>
@@ -1360,7 +1409,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="BeastKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BeastSlayer">
+  <FameBonus id="BeastSlayer" code="87">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Beast Kills</DisplayCategory>
     <DisplayName>Beast Slayer</DisplayName>
@@ -1369,7 +1418,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="BeastKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BeastSlaughterer">
+  <FameBonus id="BeastSlaughterer" code="88">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Beast Kills</DisplayCategory>
     <DisplayName>Beast Slaughterer</DisplayName>
@@ -1378,7 +1427,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="BeastKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BeastNemesis">
+  <FameBonus id="BeastNemesis" code="89">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Beast Kills</DisplayCategory>
     <DisplayName>Beast Nemesis {0}</DisplayName>
@@ -1386,9 +1435,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Beasts</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="BeastKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HumanoidFoe">
+  <FameBonus id="HumanoidFoe" code="90">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Humanoid Kills</DisplayCategory>
     <DisplayName>Humanoid Foe</DisplayName>
@@ -1397,7 +1447,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="HumanoidKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HunamoidAdversary">
+  <FameBonus id="HunamoidAdversary" code="91">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Humanoid Kills</DisplayCategory>
     <DisplayName>Hunamoid Adversary</DisplayName>
@@ -1406,7 +1456,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="HumanoidKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HumanoidSlayer">
+  <FameBonus id="HumanoidSlayer" code="92">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Humanoid Kills</DisplayCategory>
     <DisplayName>Humanoid Slayer</DisplayName>
@@ -1415,7 +1465,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="HumanoidKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HumanoidSlaughterer">
+  <FameBonus id="HumanoidSlaughterer" code="93">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Humanoid Kills</DisplayCategory>
     <DisplayName>Humanoid Slaughterer</DisplayName>
@@ -1424,7 +1474,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="HumanoidKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HumainoidNemesis">
+  <FameBonus id="HumainoidNemesis" code="94">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Humanoid Kills</DisplayCategory>
     <DisplayName>Humainoid Nemesis {0}</DisplayName>
@@ -1432,9 +1482,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Humanoids</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="HumanoidKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadFoe">
+  <FameBonus id="UndeadFoe" code="95">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Undead Kills</DisplayCategory>
     <DisplayName>Undead Foe</DisplayName>
@@ -1443,7 +1494,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="UndeadKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadAdversary">
+  <FameBonus id="UndeadAdversary" code="96">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Undead Kills</DisplayCategory>
     <DisplayName>Undead Adversary</DisplayName>
@@ -1452,7 +1503,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="UndeadKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadSlayer">
+  <FameBonus id="UndeadSlayer" code="97">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Undead Kills</DisplayCategory>
     <DisplayName>Undead Slayer</DisplayName>
@@ -1461,7 +1512,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="UndeadKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadSlaughterer">
+  <FameBonus id="UndeadSlaughterer" code="98">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Undead Kills</DisplayCategory>
     <DisplayName>Undead Slaughterer</DisplayName>
@@ -1470,7 +1521,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="UndeadKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadNemesis">
+  <FameBonus id="UndeadNemesis" code="99">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Undead Kills</DisplayCategory>
     <DisplayName>Undead Nemesis {0}</DisplayName>
@@ -1478,9 +1529,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Undead</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="UndeadKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="NatureFoe">
+  <FameBonus id="NatureFoe" code="100">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Nature Kills</DisplayCategory>
     <DisplayName>Nature Foe</DisplayName>
@@ -1489,7 +1541,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="NatureKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="NatureAdversary">
+  <FameBonus id="NatureAdversary" code="101">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Nature Kills</DisplayCategory>
     <DisplayName>Nature Adversary</DisplayName>
@@ -1498,7 +1550,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="NatureKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="NatureSlayer">
+  <FameBonus id="NatureSlayer" code="102">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Nature Kills</DisplayCategory>
     <DisplayName>Nature Slayer</DisplayName>
@@ -1507,7 +1559,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="NatureKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="NatureSlaughterer">
+  <FameBonus id="NatureSlaughterer" code="103">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Nature Kills</DisplayCategory>
     <DisplayName>Nature Slaughterer</DisplayName>
@@ -1516,7 +1568,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="NatureKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="NatureNemesis">
+  <FameBonus id="NatureNemesis" code="104">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Nature Kills</DisplayCategory>
     <DisplayName>Nature Nemesis {0}</DisplayName>
@@ -1524,9 +1576,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Nature creatures</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="NatureKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ConstructFoe">
+  <FameBonus id="ConstructFoe" code="105">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Construct Kills</DisplayCategory>
     <DisplayName>Construct Foe</DisplayName>
@@ -1535,7 +1588,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="ConstructKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ConstructAdversary">
+  <FameBonus id="ConstructAdversary" code="106">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Construct Kills</DisplayCategory>
     <DisplayName>Construct Adversary</DisplayName>
@@ -1544,7 +1597,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="ConstructKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ConstructSlayer">
+  <FameBonus id="ConstructSlayer" code="107">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Construct Kills</DisplayCategory>
     <DisplayName>Construct Slayer</DisplayName>
@@ -1553,7 +1606,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="ConstructKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ConstructSlaughterer">
+  <FameBonus id="ConstructSlaughterer" code="108">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Construct Kills</DisplayCategory>
     <DisplayName>Construct Slaughterer</DisplayName>
@@ -1562,7 +1615,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="ConstructKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ConstructNemesis">
+  <FameBonus id="ConstructNemesis" code="109">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Construct Kills</DisplayCategory>
     <DisplayName>Construct Nemesis {0}</DisplayName>
@@ -1570,9 +1623,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Constructs</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ConstructKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GrotesqueFoe">
+  <FameBonus id="GrotesqueFoe" code="110">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Grotesque Kills</DisplayCategory>
     <DisplayName>Grotesque Foe</DisplayName>
@@ -1581,7 +1635,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="GrotesqueKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GrotesqueAdversary">
+  <FameBonus id="GrotesqueAdversary" code="111">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Grotesque Kills</DisplayCategory>
     <DisplayName>Grotesque Adversary</DisplayName>
@@ -1590,7 +1644,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="GrotesqueKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GrotesqueSlayer">
+  <FameBonus id="GrotesqueSlayer" code="112">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Grotesque Kills</DisplayCategory>
     <DisplayName>Grotesque Slayer</DisplayName>
@@ -1599,7 +1653,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="GrotesqueKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GrotesqueSlaughterer">
+  <FameBonus id="GrotesqueSlaughterer" code="113">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Grotesque Kills</DisplayCategory>
     <DisplayName>Grotesque Slaughterer</DisplayName>
@@ -1608,7 +1662,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="GrotesqueKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="GrotesqueNemesis">
+  <FameBonus id="GrotesqueNemesis" code="114">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Grotesque Kills</DisplayCategory>
     <DisplayName>Grotesque Nemesis {0}</DisplayName>
@@ -1616,9 +1670,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Grotesque creatures</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="GrotesqueKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="StructureFoe">
+  <FameBonus id="StructureFoe" code="115">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Structure Kills</DisplayCategory>
     <DisplayName>Structure Foe</DisplayName>
@@ -1627,7 +1682,7 @@
     <ShortDisplayName>Foe</ShortDisplayName>
     <Condition stat="StructureKills" threshold="200">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="StructureAdversary">
+  <FameBonus id="StructureAdversary" code="116">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Structure Kills</DisplayCategory>
     <DisplayName>Structure Adversary</DisplayName>
@@ -1636,7 +1691,7 @@
     <ShortDisplayName>Adversary</ShortDisplayName>
     <Condition stat="StructureKills" threshold="1000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="StructureSlayer">
+  <FameBonus id="StructureSlayer" code="117">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Structure Kills</DisplayCategory>
     <DisplayName>Structure Slayer</DisplayName>
@@ -1645,7 +1700,7 @@
     <ShortDisplayName>Slayer</ShortDisplayName>
     <Condition stat="StructureKills" threshold="5000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="StructureSlaughterer">
+  <FameBonus id="StructureSlaughterer" code="118">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Structure Kills</DisplayCategory>
     <DisplayName>Structure Slaughterer</DisplayName>
@@ -1654,7 +1709,7 @@
     <ShortDisplayName>Slaughterer</ShortDisplayName>
     <Condition stat="StructureKills" threshold="10000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="StructureNemesis">
+  <FameBonus id="StructureNemesis" code="119">
     <DisplayGroup>Enemy Bonuses</DisplayGroup>
     <DisplayCategory>Structure Kills</DisplayCategory>
     <DisplayName>Structure Nemesis {0}</DisplayName>
@@ -1662,9 +1717,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Kill 50000 Structures</Description>
     <ShortDisplayName>Nemesis {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="StructureKills" threshold="50000">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TunnelRat">
+  <FameBonus id="TunnelRat" code="120">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Tunnel Rat</DisplayName>
@@ -1684,7 +1740,7 @@
     <Condition stat="OryxsChambersCompleted" threshold="1">StatValue</Condition>
     <Condition stat="WineCellarsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ExplosiveJourney">
+  <FameBonus id="ExplosiveJourney" code="121">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Explosive Journey</DisplayName>
@@ -1705,7 +1761,7 @@
     <Condition stat="PuppetMastersTheatresCompleted" threshold="1">StatValue</Condition>
     <Condition stat="IceCavesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TraveloftheDecade">
+  <FameBonus id="TraveloftheDecade" code="122">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Travel of the Decade</DisplayName>
@@ -1730,7 +1786,7 @@
     <Condition stat="AncientRuinsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="HighTechTerrorsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="FirstSteps">
+  <FameBonus id="FirstSteps" code="123">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>First Steps</DisplayName>
@@ -1743,7 +1799,7 @@
     <Condition stat="SpiderDensCompleted" threshold="1">StatValue</Condition>
     <Condition stat="TheHivesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="KingoftheMountains">
+  <FameBonus id="KingoftheMountains" code="124">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>King of the Mountains</DisplayName>
@@ -1761,7 +1817,7 @@
     <Condition stat="CursedLibrariesCompleted" threshold="1">StatValue</Condition>
     <Condition stat="AncientRuinsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ConqueroroftheRealm">
+  <FameBonus id="ConqueroroftheRealm" code="125">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Conqueror of the Realm</DisplayName>
@@ -1781,7 +1837,7 @@
     <Condition stat="CrystalCavernsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="LostHallsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="EnemyoftheCourt">
+  <FameBonus id="EnemyoftheCourt" code="126">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Enemy of the Court</DisplayName>
@@ -1794,7 +1850,7 @@
     <Condition stat="SecludedThicketsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="HighTechTerrorsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="EpicBattles">
+  <FameBonus id="EpicBattles" code="127">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Epic Battles</DisplayName>
@@ -1807,7 +1863,7 @@
     <Condition stat="TheNestsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="SecludedThicketsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="FarOut">
+  <FameBonus id="FarOut" code="128">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Far Out</DisplayName>
@@ -1819,7 +1875,7 @@
     <Condition stat="ForaxsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="KatalundsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HerooftheNexus">
+  <FameBonus id="HerooftheNexus" code="129">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Hero of the Nexus</DisplayName>
@@ -1873,7 +1929,7 @@
     <Condition stat="WineCellarsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="OryxsSanctuarysCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SeasonsBeatins">
+  <FameBonus id="SeasonsBeatins" code="130">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Season's Beatins</DisplayName>
@@ -1891,10 +1947,9 @@
     <Condition stat="ForaxsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="KatalundsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="RainbowRoadsCompleted" threshold="1">StatValue</Condition>
-    <Condition stat="HeroicUndeadLairsCompleted" threshold="1">StatValue</Condition>
-    <Condition stat="HeroicAbyssOfDemonsCompleted" threshold="1">StatValue</Condition>
+    <Condition stat="BeachzonesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="RealmoftheMadGod">
+  <FameBonus id="RealmoftheMadGod" code="131">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Dungeon Collection</DisplayCategory>
     <DisplayName>Realm of the Mad God</DisplayName>
@@ -1958,10 +2013,9 @@
     <Condition stat="ForaxsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="KatalundsCompleted" threshold="1">StatValue</Condition>
     <Condition stat="RainbowRoadsCompleted" threshold="1">StatValue</Condition>
-    <Condition stat="HeroicUndeadLairsCompleted" threshold="1">StatValue</Condition>
-    <Condition stat="HeroicAbyssOfDemonsCompleted" threshold="1">StatValue</Condition>
+    <Condition stat="BeachzonesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PirateCaveScout">
+  <FameBonus id="PirateCaveScout" code="132">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Pirate Cave</DisplayCategory>
     <DisplayName>Pirate Cave Scout</DisplayName>
@@ -1970,7 +2024,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="PirateCavesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PirateCaveExplorer">
+  <FameBonus id="PirateCaveExplorer" code="133">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Pirate Cave</DisplayCategory>
     <DisplayName>Pirate Cave Explorer</DisplayName>
@@ -1979,7 +2033,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="PirateCavesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PirateCaveAdventurer">
+  <FameBonus id="PirateCaveAdventurer" code="134">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Pirate Cave</DisplayCategory>
     <DisplayName>Pirate Cave Adventurer</DisplayName>
@@ -1988,7 +2042,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="PirateCavesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PirateCaveConqueror">
+  <FameBonus id="PirateCaveConqueror" code="135">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Pirate Cave</DisplayCategory>
     <DisplayName>Pirate Cave Conqueror</DisplayName>
@@ -1997,7 +2051,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="PirateCavesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PirateCaveMaster">
+  <FameBonus id="PirateCaveMaster" code="136">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Pirate Cave</DisplayCategory>
     <DisplayName>Pirate Cave Master {0}</DisplayName>
@@ -2005,9 +2059,10 @@
     <AbsoluteBonus>60</AbsoluteBonus>
     <Description>Complete Pirate Cave 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="PirateCavesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForestMazeScout">
+  <FameBonus id="ForestMazeScout" code="137">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forest Maze</DisplayCategory>
     <DisplayName>Forest Maze Scout</DisplayName>
@@ -2016,7 +2071,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="ForestMazesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForestMazeExplorer">
+  <FameBonus id="ForestMazeExplorer" code="138">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forest Maze</DisplayCategory>
     <DisplayName>Forest Maze Explorer</DisplayName>
@@ -2025,7 +2080,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="ForestMazesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForestMazeAdventurer">
+  <FameBonus id="ForestMazeAdventurer" code="139">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forest Maze</DisplayCategory>
     <DisplayName>Forest Maze Adventurer</DisplayName>
@@ -2034,7 +2089,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="ForestMazesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForestMazeConqueror">
+  <FameBonus id="ForestMazeConqueror" code="140">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forest Maze</DisplayCategory>
     <DisplayName>Forest Maze Conqueror</DisplayName>
@@ -2043,7 +2098,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="ForestMazesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForestMazeMaster">
+  <FameBonus id="ForestMazeMaster" code="141">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forest Maze</DisplayCategory>
     <DisplayName>Forest Maze Master {0}</DisplayName>
@@ -2051,9 +2106,10 @@
     <AbsoluteBonus>60</AbsoluteBonus>
     <Description>Complete Forest Maze 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ForestMazesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForbiddenJungleScout">
+  <FameBonus id="ForbiddenJungleScout" code="142">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forbidden Jungle</DisplayCategory>
     <DisplayName>Forbidden Jungle Scout</DisplayName>
@@ -2062,7 +2118,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="ForbiddenJunglesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForbiddenJungleExplorer">
+  <FameBonus id="ForbiddenJungleExplorer" code="143">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forbidden Jungle</DisplayCategory>
     <DisplayName>Forbidden Jungle Explorer</DisplayName>
@@ -2071,7 +2127,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="ForbiddenJunglesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForbiddenJungleAdventurer">
+  <FameBonus id="ForbiddenJungleAdventurer" code="144">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forbidden Jungle</DisplayCategory>
     <DisplayName>Forbidden Jungle Adventurer</DisplayName>
@@ -2080,7 +2136,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="ForbiddenJunglesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForbiddenJungleConqueror">
+  <FameBonus id="ForbiddenJungleConqueror" code="145">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forbidden Jungle</DisplayCategory>
     <DisplayName>Forbidden Jungle Conqueror</DisplayName>
@@ -2089,7 +2145,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="ForbiddenJunglesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForbiddenJungleMaster">
+  <FameBonus id="ForbiddenJungleMaster" code="146">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forbidden Jungle</DisplayCategory>
     <DisplayName>Forbidden Jungle Master {0}</DisplayName>
@@ -2097,9 +2153,10 @@
     <AbsoluteBonus>80</AbsoluteBonus>
     <Description>Complete Forbidden Jungle 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ForbiddenJunglesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheHiveScout">
+  <FameBonus id="TheHiveScout" code="147">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Hive</DisplayCategory>
     <DisplayName>The Hive Scout</DisplayName>
@@ -2108,7 +2165,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="TheHivesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheHiveExplorer">
+  <FameBonus id="TheHiveExplorer" code="148">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Hive</DisplayCategory>
     <DisplayName>The Hive Explorer</DisplayName>
@@ -2117,7 +2174,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="TheHivesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheHiveAdventurer">
+  <FameBonus id="TheHiveAdventurer" code="149">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Hive</DisplayCategory>
     <DisplayName>The Hive Adventurer</DisplayName>
@@ -2126,7 +2183,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="TheHivesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheHiveConqueror">
+  <FameBonus id="TheHiveConqueror" code="150">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Hive</DisplayCategory>
     <DisplayName>The Hive Conqueror</DisplayName>
@@ -2135,7 +2192,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="TheHivesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheHiveMaster">
+  <FameBonus id="TheHiveMaster" code="151">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Hive</DisplayCategory>
     <DisplayName>The Hive Master {0}</DisplayName>
@@ -2143,9 +2200,10 @@
     <AbsoluteBonus>80</AbsoluteBonus>
     <Description>Complete The Hive 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="TheHivesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpiderDenScout">
+  <FameBonus id="SpiderDenScout" code="152">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Spider Den</DisplayCategory>
     <DisplayName>Spider Den Scout</DisplayName>
@@ -2154,7 +2212,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="SpiderDensCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpiderDenExplorer">
+  <FameBonus id="SpiderDenExplorer" code="153">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Spider Den</DisplayCategory>
     <DisplayName>Spider Den Explorer</DisplayName>
@@ -2163,7 +2221,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="SpiderDensCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpiderDenAdventurer">
+  <FameBonus id="SpiderDenAdventurer" code="154">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Spider Den</DisplayCategory>
     <DisplayName>Spider Den Adventurer</DisplayName>
@@ -2172,7 +2230,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="SpiderDensCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpiderDenConqueror">
+  <FameBonus id="SpiderDenConqueror" code="155">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Spider Den</DisplayCategory>
     <DisplayName>Spider Den Conqueror</DisplayName>
@@ -2181,7 +2239,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="SpiderDensCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpiderDenMaster">
+  <FameBonus id="SpiderDenMaster" code="156">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Spider Den</DisplayCategory>
     <DisplayName>Spider Den Master {0}</DisplayName>
@@ -2189,9 +2247,10 @@
     <AbsoluteBonus>100</AbsoluteBonus>
     <Description>Complete Spider Den 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="SpiderDensCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AncientRuinsScout">
+  <FameBonus id="AncientRuinsScout" code="157">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ancient Ruins</DisplayCategory>
     <DisplayName>Ancient Ruins Scout</DisplayName>
@@ -2200,7 +2259,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="AncientRuinsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AncientRuinsExplorer">
+  <FameBonus id="AncientRuinsExplorer" code="158">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ancient Ruins</DisplayCategory>
     <DisplayName>Ancient Ruins Explorer</DisplayName>
@@ -2209,7 +2268,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="AncientRuinsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AncientRuinsAdventurer">
+  <FameBonus id="AncientRuinsAdventurer" code="159">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ancient Ruins</DisplayCategory>
     <DisplayName>Ancient Ruins Adventurer</DisplayName>
@@ -2218,7 +2277,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="AncientRuinsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AncientRuinsConqueror">
+  <FameBonus id="AncientRuinsConqueror" code="160">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ancient Ruins</DisplayCategory>
     <DisplayName>Ancient Ruins Conqueror</DisplayName>
@@ -2227,7 +2286,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="AncientRuinsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AncientRuinsMaster">
+  <FameBonus id="AncientRuinsMaster" code="161">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ancient Ruins</DisplayCategory>
     <DisplayName>Ancient Ruins Master {0}</DisplayName>
@@ -2235,9 +2294,10 @@
     <AbsoluteBonus>800</AbsoluteBonus>
     <Description>Complete Ancient Ruins 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="AncientRuinsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SnakePitScout">
+  <FameBonus id="SnakePitScout" code="162">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Snake Pit</DisplayCategory>
     <DisplayName>Snake Pit Scout</DisplayName>
@@ -2246,7 +2306,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="SnakePitsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SnakePitExplorer">
+  <FameBonus id="SnakePitExplorer" code="163">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Snake Pit</DisplayCategory>
     <DisplayName>Snake Pit Explorer</DisplayName>
@@ -2255,7 +2315,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="SnakePitsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SnakePitAdventurer">
+  <FameBonus id="SnakePitAdventurer" code="164">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Snake Pit</DisplayCategory>
     <DisplayName>Snake Pit Adventurer</DisplayName>
@@ -2264,7 +2324,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="SnakePitsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SnakePitConqueror">
+  <FameBonus id="SnakePitConqueror" code="165">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Snake Pit</DisplayCategory>
     <DisplayName>Snake Pit Conqueror</DisplayName>
@@ -2273,7 +2333,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="SnakePitsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SnakePitMaster">
+  <FameBonus id="SnakePitMaster" code="166">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Snake Pit</DisplayCategory>
     <DisplayName>Snake Pit Master {0}</DisplayName>
@@ -2281,9 +2341,10 @@
     <AbsoluteBonus>500</AbsoluteBonus>
     <Description>Complete Snake Pit 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="SnakePitsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpriteWorldScout">
+  <FameBonus id="SpriteWorldScout" code="167">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Sprite World</DisplayCategory>
     <DisplayName>Sprite World Scout</DisplayName>
@@ -2292,7 +2353,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="SpriteWorldsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpriteWorldExplorer">
+  <FameBonus id="SpriteWorldExplorer" code="168">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Sprite World</DisplayCategory>
     <DisplayName>Sprite World Explorer</DisplayName>
@@ -2301,7 +2362,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="SpriteWorldsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpriteWorldAdventurer">
+  <FameBonus id="SpriteWorldAdventurer" code="169">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Sprite World</DisplayCategory>
     <DisplayName>Sprite World Adventurer</DisplayName>
@@ -2310,7 +2371,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="SpriteWorldsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpriteWorldConqueror">
+  <FameBonus id="SpriteWorldConqueror" code="170">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Sprite World</DisplayCategory>
     <DisplayName>Sprite World Conqueror</DisplayName>
@@ -2319,7 +2380,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="SpriteWorldsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SpriteWorldMaster">
+  <FameBonus id="SpriteWorldMaster" code="171">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Sprite World</DisplayCategory>
     <DisplayName>Sprite World Master {0}</DisplayName>
@@ -2327,9 +2388,10 @@
     <AbsoluteBonus>500</AbsoluteBonus>
     <Description>Complete Sprite World 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="SpriteWorldsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MagicWoodsScout">
+  <FameBonus id="MagicWoodsScout" code="172">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Magic Woods</DisplayCategory>
     <DisplayName>Magic Woods Scout</DisplayName>
@@ -2338,7 +2400,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="MagicWoodsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MagicWoodsExplorer">
+  <FameBonus id="MagicWoodsExplorer" code="173">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Magic Woods</DisplayCategory>
     <DisplayName>Magic Woods Explorer</DisplayName>
@@ -2347,7 +2409,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="MagicWoodsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MagicWoodsAdventurer">
+  <FameBonus id="MagicWoodsAdventurer" code="174">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Magic Woods</DisplayCategory>
     <DisplayName>Magic Woods Adventurer</DisplayName>
@@ -2356,7 +2418,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="MagicWoodsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MagicWoodsConqueror">
+  <FameBonus id="MagicWoodsConqueror" code="175">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Magic Woods</DisplayCategory>
     <DisplayName>Magic Woods Conqueror</DisplayName>
@@ -2365,7 +2427,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="MagicWoodsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MagicWoodsMaster">
+  <FameBonus id="MagicWoodsMaster" code="176">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Magic Woods</DisplayCategory>
     <DisplayName>Magic Woods Master {0}</DisplayName>
@@ -2373,9 +2435,10 @@
     <AbsoluteBonus>700</AbsoluteBonus>
     <Description>Complete Magic Woods 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="MagicWoodsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadLairScout">
+  <FameBonus id="UndeadLairScout" code="177">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Undead Lair</DisplayCategory>
     <DisplayName>Undead Lair Scout</DisplayName>
@@ -2384,7 +2447,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="UndeadLairsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadLairExplorer">
+  <FameBonus id="UndeadLairExplorer" code="178">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Undead Lair</DisplayCategory>
     <DisplayName>Undead Lair Explorer</DisplayName>
@@ -2393,7 +2456,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="UndeadLairsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadLairAdventurer">
+  <FameBonus id="UndeadLairAdventurer" code="179">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Undead Lair</DisplayCategory>
     <DisplayName>Undead Lair Adventurer</DisplayName>
@@ -2402,7 +2465,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="UndeadLairsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadLairConqueror">
+  <FameBonus id="UndeadLairConqueror" code="180">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Undead Lair</DisplayCategory>
     <DisplayName>Undead Lair Conqueror</DisplayName>
@@ -2411,7 +2474,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="UndeadLairsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UndeadLairMaster">
+  <FameBonus id="UndeadLairMaster" code="181">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Undead Lair</DisplayCategory>
     <DisplayName>Undead Lair Master {0}</DisplayName>
@@ -2419,9 +2482,10 @@
     <AbsoluteBonus>700</AbsoluteBonus>
     <Description>Complete Undead Lair 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="UndeadLairsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbyssofDemonsScout">
+  <FameBonus id="AbyssofDemonsScout" code="182">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Abyss of Demons</DisplayCategory>
     <DisplayName>Abyss of Demons Scout</DisplayName>
@@ -2430,7 +2494,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="AbyssOfDemonsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbyssofDemonsExplorer">
+  <FameBonus id="AbyssofDemonsExplorer" code="183">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Abyss of Demons</DisplayCategory>
     <DisplayName>Abyss of Demons Explorer</DisplayName>
@@ -2439,7 +2503,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="AbyssOfDemonsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbyssofDemonsAdventurer">
+  <FameBonus id="AbyssofDemonsAdventurer" code="184">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Abyss of Demons</DisplayCategory>
     <DisplayName>Abyss of Demons Adventurer</DisplayName>
@@ -2448,7 +2512,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="AbyssOfDemonsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbyssofDemonsConqueror">
+  <FameBonus id="AbyssofDemonsConqueror" code="185">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Abyss of Demons</DisplayCategory>
     <DisplayName>Abyss of Demons Conqueror</DisplayName>
@@ -2457,7 +2521,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="AbyssOfDemonsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="AbyssofDemonsMaster">
+  <FameBonus id="AbyssofDemonsMaster" code="186">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Abyss of Demons</DisplayCategory>
     <DisplayName>Abyss of Demons Master {0}</DisplayName>
@@ -2465,9 +2529,10 @@
     <AbsoluteBonus>800</AbsoluteBonus>
     <Description>Complete Abyss of Demons 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="AbyssOfDemonsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CursedLibraryScout">
+  <FameBonus id="CursedLibraryScout" code="187">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cursed Library</DisplayCategory>
     <DisplayName>Cursed Library Scout</DisplayName>
@@ -2476,7 +2541,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="CursedLibrariesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CursedLibraryExplorer">
+  <FameBonus id="CursedLibraryExplorer" code="188">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cursed Library</DisplayCategory>
     <DisplayName>Cursed Library Explorer</DisplayName>
@@ -2485,7 +2550,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="CursedLibrariesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CursedLibraryAdventurer">
+  <FameBonus id="CursedLibraryAdventurer" code="189">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cursed Library</DisplayCategory>
     <DisplayName>Cursed Library Adventurer</DisplayName>
@@ -2494,7 +2559,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="CursedLibrariesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CursedLibraryConqueror">
+  <FameBonus id="CursedLibraryConqueror" code="190">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cursed Library</DisplayCategory>
     <DisplayName>Cursed Library Conqueror</DisplayName>
@@ -2503,7 +2568,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="CursedLibrariesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CursedLibraryMaster">
+  <FameBonus id="CursedLibraryMaster" code="191">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cursed Library</DisplayCategory>
     <DisplayName>Cursed Library Master {0}</DisplayName>
@@ -2511,9 +2576,10 @@
     <AbsoluteBonus>1000</AbsoluteBonus>
     <Description>Complete Cursed Library 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CursedLibrariesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ToxicSewersScout">
+  <FameBonus id="ToxicSewersScout" code="192">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Toxic Sewers</DisplayCategory>
     <DisplayName>Toxic Sewers Scout</DisplayName>
@@ -2522,7 +2588,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="ToxicSewersCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ToxicSewersExplorer">
+  <FameBonus id="ToxicSewersExplorer" code="193">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Toxic Sewers</DisplayCategory>
     <DisplayName>Toxic Sewers Explorer</DisplayName>
@@ -2531,7 +2597,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="ToxicSewersCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ToxicSewersAdventurer">
+  <FameBonus id="ToxicSewersAdventurer" code="194">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Toxic Sewers</DisplayCategory>
     <DisplayName>Toxic Sewers Adventurer</DisplayName>
@@ -2540,7 +2606,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="ToxicSewersCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ToxicSewersConqueror">
+  <FameBonus id="ToxicSewersConqueror" code="195">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Toxic Sewers</DisplayCategory>
     <DisplayName>Toxic Sewers Conqueror</DisplayName>
@@ -2549,7 +2615,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="ToxicSewersCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ToxicSewersMaster">
+  <FameBonus id="ToxicSewersMaster" code="196">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Toxic Sewers</DisplayCategory>
     <DisplayName>Toxic Sewers Master {0}</DisplayName>
@@ -2557,9 +2623,10 @@
     <AbsoluteBonus>800</AbsoluteBonus>
     <Description>Complete Toxic Sewers 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ToxicSewersCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadLabScout">
+  <FameBonus id="MadLabScout" code="197">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad Lab</DisplayCategory>
     <DisplayName>Mad Lab Scout</DisplayName>
@@ -2568,7 +2635,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="MadLabsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadLabExplorer">
+  <FameBonus id="MadLabExplorer" code="198">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad Lab</DisplayCategory>
     <DisplayName>Mad Lab Explorer</DisplayName>
@@ -2577,7 +2644,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="MadLabsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadLabAdventurer">
+  <FameBonus id="MadLabAdventurer" code="199">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad Lab</DisplayCategory>
     <DisplayName>Mad Lab Adventurer</DisplayName>
@@ -2586,7 +2653,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="MadLabsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadLabConqueror">
+  <FameBonus id="MadLabConqueror" code="200">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad Lab</DisplayCategory>
     <DisplayName>Mad Lab Conqueror</DisplayName>
@@ -2595,7 +2662,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="MadLabsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadLabMaster">
+  <FameBonus id="MadLabMaster" code="201">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad Lab</DisplayCategory>
     <DisplayName>Mad Lab Master {0}</DisplayName>
@@ -2603,9 +2670,10 @@
     <AbsoluteBonus>1000</AbsoluteBonus>
     <Description>Complete Mad Lab 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="MadLabsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sTheatreScout">
+  <FameBonus id="PuppetMaster'sTheatreScout" code="202">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Theatre</DisplayCategory>
     <DisplayName>Puppet Master's Theatre Scout</DisplayName>
@@ -2614,7 +2682,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="PuppetMastersTheatresCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sTheatreExplorer">
+  <FameBonus id="PuppetMaster'sTheatreExplorer" code="203">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Theatre</DisplayCategory>
     <DisplayName>Puppet Master's Theatre Explorer</DisplayName>
@@ -2623,7 +2691,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="PuppetMastersTheatresCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sTheatreAdventurer">
+  <FameBonus id="PuppetMaster'sTheatreAdventurer" code="204">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Theatre</DisplayCategory>
     <DisplayName>Puppet Master's Theatre Adventurer</DisplayName>
@@ -2632,7 +2700,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="PuppetMastersTheatresCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sTheatreConqueror">
+  <FameBonus id="PuppetMaster'sTheatreConqueror" code="205">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Theatre</DisplayCategory>
     <DisplayName>Puppet Master's Theatre Conqueror</DisplayName>
@@ -2641,7 +2709,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="PuppetMastersTheatresCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sTheatreMaster">
+  <FameBonus id="PuppetMaster'sTheatreMaster" code="206">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Theatre</DisplayCategory>
     <DisplayName>Puppet Master's Theatre Master {0}</DisplayName>
@@ -2649,9 +2717,10 @@
     <AbsoluteBonus>800</AbsoluteBonus>
     <Description>Complete Puppet Master's Theatre 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="PuppetMastersTheatresCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ManoroftheImmortalsScout">
+  <FameBonus id="ManoroftheImmortalsScout" code="207">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Manor of the Immortals</DisplayCategory>
     <DisplayName>Manor of the Immortals Scout</DisplayName>
@@ -2660,7 +2729,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="ManorOfTheImmortalsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ManoroftheImmortalsExplorer">
+  <FameBonus id="ManoroftheImmortalsExplorer" code="208">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Manor of the Immortals</DisplayCategory>
     <DisplayName>Manor of the Immortals Explorer</DisplayName>
@@ -2669,7 +2738,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="ManorOfTheImmortalsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ManoroftheImmortalsAdventurer">
+  <FameBonus id="ManoroftheImmortalsAdventurer" code="209">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Manor of the Immortals</DisplayCategory>
     <DisplayName>Manor of the Immortals Adventurer</DisplayName>
@@ -2678,7 +2747,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="ManorOfTheImmortalsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ManoroftheImmortalsConqueror">
+  <FameBonus id="ManoroftheImmortalsConqueror" code="210">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Manor of the Immortals</DisplayCategory>
     <DisplayName>Manor of the Immortals Conqueror</DisplayName>
@@ -2687,7 +2756,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="ManorOfTheImmortalsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ManoroftheImmortalsMaster">
+  <FameBonus id="ManoroftheImmortalsMaster" code="211">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Manor of the Immortals</DisplayCategory>
     <DisplayName>Manor of the Immortals Master {0}</DisplayName>
@@ -2695,9 +2764,10 @@
     <AbsoluteBonus>800</AbsoluteBonus>
     <Description>Complete Manor of the Immortals 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ManorOfTheImmortalsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HauntedCemeteryScout">
+  <FameBonus id="HauntedCemeteryScout" code="212">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Haunted Cemetery</DisplayCategory>
     <DisplayName>Haunted Cemetery Scout</DisplayName>
@@ -2706,7 +2776,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="HauntedCemeteriesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HauntedCemeteryExplorer">
+  <FameBonus id="HauntedCemeteryExplorer" code="213">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Haunted Cemetery</DisplayCategory>
     <DisplayName>Haunted Cemetery Explorer</DisplayName>
@@ -2715,7 +2785,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="HauntedCemeteriesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HauntedCemeteryAdventurer">
+  <FameBonus id="HauntedCemeteryAdventurer" code="214">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Haunted Cemetery</DisplayCategory>
     <DisplayName>Haunted Cemetery Adventurer</DisplayName>
@@ -2724,7 +2794,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="HauntedCemeteriesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HauntedCemeteryConqueror">
+  <FameBonus id="HauntedCemeteryConqueror" code="215">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Haunted Cemetery</DisplayCategory>
     <DisplayName>Haunted Cemetery Conqueror</DisplayName>
@@ -2733,7 +2803,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="HauntedCemeteriesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HauntedCemeteryMaster">
+  <FameBonus id="HauntedCemeteryMaster" code="216">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Haunted Cemetery</DisplayCategory>
     <DisplayName>Haunted Cemetery Master {0}</DisplayName>
@@ -2741,9 +2811,10 @@
     <AbsoluteBonus>1200</AbsoluteBonus>
     <Description>Complete Haunted Cemetery 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="HauntedCemeteriesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CaveofaThousandTreasuresScout">
+  <FameBonus id="CaveofaThousandTreasuresScout" code="217">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cave of a Thousand Treasures</DisplayCategory>
     <DisplayName>Cave of a Thousand Treasures Scout</DisplayName>
@@ -2752,7 +2823,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="CaveOfAThousandTreasuresCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CaveofaThousandTreasuresExplorer">
+  <FameBonus id="CaveofaThousandTreasuresExplorer" code="218">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cave of a Thousand Treasures</DisplayCategory>
     <DisplayName>Cave of a Thousand Treasures Explorer</DisplayName>
@@ -2761,7 +2832,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="CaveOfAThousandTreasuresCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CaveofaThousandTreasuresAdventurer">
+  <FameBonus id="CaveofaThousandTreasuresAdventurer" code="219">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cave of a Thousand Treasures</DisplayCategory>
     <DisplayName>Cave of a Thousand Treasures Adventurer</DisplayName>
@@ -2770,7 +2841,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="CaveOfAThousandTreasuresCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CaveofaThousandTreasuresConqueror">
+  <FameBonus id="CaveofaThousandTreasuresConqueror" code="220">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cave of a Thousand Treasures</DisplayCategory>
     <DisplayName>Cave of a Thousand Treasures Conqueror</DisplayName>
@@ -2779,7 +2850,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="CaveOfAThousandTreasuresCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CaveofaThousandTreasuresMaster">
+  <FameBonus id="CaveofaThousandTreasuresMaster" code="221">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cave of a Thousand Treasures</DisplayCategory>
     <DisplayName>Cave of a Thousand Treasures Master {0}</DisplayName>
@@ -2787,9 +2858,10 @@
     <AbsoluteBonus>1200</AbsoluteBonus>
     <Description>Complete Cave of a Thousand Treasures 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CaveOfAThousandTreasuresCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CandylandHuntingGroundsScout">
+  <FameBonus id="CandylandHuntingGroundsScout" code="222">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Candyland Hunting Grounds</DisplayCategory>
     <DisplayName>Candyland Hunting Grounds Scout</DisplayName>
@@ -2798,7 +2870,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="CandylandHuntingGroundsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CandylandHuntingGroundsExplorer">
+  <FameBonus id="CandylandHuntingGroundsExplorer" code="223">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Candyland Hunting Grounds</DisplayCategory>
     <DisplayName>Candyland Hunting Grounds Explorer</DisplayName>
@@ -2807,7 +2879,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="CandylandHuntingGroundsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CandylandHuntingGroundsAdventurer">
+  <FameBonus id="CandylandHuntingGroundsAdventurer" code="224">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Candyland Hunting Grounds</DisplayCategory>
     <DisplayName>Candyland Hunting Grounds Adventurer</DisplayName>
@@ -2816,7 +2888,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="CandylandHuntingGroundsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CandylandHuntingGroundsConqueror">
+  <FameBonus id="CandylandHuntingGroundsConqueror" code="225">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Candyland Hunting Grounds</DisplayCategory>
     <DisplayName>Candyland Hunting Grounds Conqueror</DisplayName>
@@ -2825,7 +2897,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="CandylandHuntingGroundsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CandylandHuntingGroundsMaster">
+  <FameBonus id="CandylandHuntingGroundsMaster" code="226">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Candyland Hunting Grounds</DisplayCategory>
     <DisplayName>Candyland Hunting Grounds Master {0}</DisplayName>
@@ -2833,9 +2905,10 @@
     <AbsoluteBonus>1200</AbsoluteBonus>
     <Description>Complete Candyland Hunting Grounds 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CandylandHuntingGroundsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ParasiteChambersScout">
+  <FameBonus id="ParasiteChambersScout" code="227">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Parasite Chambers</DisplayCategory>
     <DisplayName>Parasite Chambers Scout</DisplayName>
@@ -2844,7 +2917,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="ParasiteChambersCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ParasiteChambersExplorer">
+  <FameBonus id="ParasiteChambersExplorer" code="228">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Parasite Chambers</DisplayCategory>
     <DisplayName>Parasite Chambers Explorer</DisplayName>
@@ -2853,7 +2926,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="ParasiteChambersCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ParasiteChambersAdventurer">
+  <FameBonus id="ParasiteChambersAdventurer" code="229">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Parasite Chambers</DisplayCategory>
     <DisplayName>Parasite Chambers Adventurer</DisplayName>
@@ -2862,7 +2935,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="ParasiteChambersCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ParasiteChambersConqueror">
+  <FameBonus id="ParasiteChambersConqueror" code="230">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Parasite Chambers</DisplayCategory>
     <DisplayName>Parasite Chambers Conqueror</DisplayName>
@@ -2871,7 +2944,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="ParasiteChambersCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ParasiteChambersMaster">
+  <FameBonus id="ParasiteChambersMaster" code="231">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Parasite Chambers</DisplayCategory>
     <DisplayName>Parasite Chambers Master {0}</DisplayName>
@@ -2879,9 +2952,10 @@
     <AbsoluteBonus>3000</AbsoluteBonus>
     <Description>Complete Parasite Chambers 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ParasiteChambersCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DeadwaterDocksScout">
+  <FameBonus id="DeadwaterDocksScout" code="232">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Deadwater Docks</DisplayCategory>
     <DisplayName>Deadwater Docks Scout</DisplayName>
@@ -2890,7 +2964,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="DeadwaterDocksCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DeadwaterDocksExplorer">
+  <FameBonus id="DeadwaterDocksExplorer" code="233">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Deadwater Docks</DisplayCategory>
     <DisplayName>Deadwater Docks Explorer</DisplayName>
@@ -2899,7 +2973,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="DeadwaterDocksCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DeadwaterDocksAdventurer">
+  <FameBonus id="DeadwaterDocksAdventurer" code="234">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Deadwater Docks</DisplayCategory>
     <DisplayName>Deadwater Docks Adventurer</DisplayName>
@@ -2908,7 +2982,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="DeadwaterDocksCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DeadwaterDocksConqueror">
+  <FameBonus id="DeadwaterDocksConqueror" code="235">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Deadwater Docks</DisplayCategory>
     <DisplayName>Deadwater Docks Conqueror</DisplayName>
@@ -2917,7 +2991,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="DeadwaterDocksCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DeadwaterDocksMaster">
+  <FameBonus id="DeadwaterDocksMaster" code="236">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Deadwater Docks</DisplayCategory>
     <DisplayName>Deadwater Docks Master {0}</DisplayName>
@@ -2925,9 +2999,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete Deadwater Docks 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="DeadwaterDocksCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WoodlandLabyrinthScout">
+  <FameBonus id="WoodlandLabyrinthScout" code="237">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Woodland Labyrinth</DisplayCategory>
     <DisplayName>Woodland Labyrinth Scout</DisplayName>
@@ -2936,7 +3011,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="WoodlandLabyrinthsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WoodlandLabyrinthExplorer">
+  <FameBonus id="WoodlandLabyrinthExplorer" code="238">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Woodland Labyrinth</DisplayCategory>
     <DisplayName>Woodland Labyrinth Explorer</DisplayName>
@@ -2945,7 +3020,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="WoodlandLabyrinthsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WoodlandLabyrinthAdventurer">
+  <FameBonus id="WoodlandLabyrinthAdventurer" code="239">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Woodland Labyrinth</DisplayCategory>
     <DisplayName>Woodland Labyrinth Adventurer</DisplayName>
@@ -2954,7 +3029,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="WoodlandLabyrinthsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WoodlandLabyrinthConqueror">
+  <FameBonus id="WoodlandLabyrinthConqueror" code="240">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Woodland Labyrinth</DisplayCategory>
     <DisplayName>Woodland Labyrinth Conqueror</DisplayName>
@@ -2963,7 +3038,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="WoodlandLabyrinthsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WoodlandLabyrinthMaster">
+  <FameBonus id="WoodlandLabyrinthMaster" code="241">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Woodland Labyrinth</DisplayCategory>
     <DisplayName>Woodland Labyrinth Master {0}</DisplayName>
@@ -2971,9 +3046,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete Woodland Labyrinth 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="WoodlandLabyrinthsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrawlingDepthsScout">
+  <FameBonus id="CrawlingDepthsScout" code="242">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Crawling Depths</DisplayCategory>
     <DisplayName>The Crawling Depths Scout</DisplayName>
@@ -2982,7 +3058,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="CrawlingDepthsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrawlingDepthsExplorer">
+  <FameBonus id="CrawlingDepthsExplorer" code="243">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Crawling Depths</DisplayCategory>
     <DisplayName>The Crawling Depths Explorer</DisplayName>
@@ -2991,7 +3067,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="CrawlingDepthsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrawlingDepthsAdventurer">
+  <FameBonus id="CrawlingDepthsAdventurer" code="244">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Crawling Depths</DisplayCategory>
     <DisplayName>The Crawling Depths Adventurer</DisplayName>
@@ -3000,7 +3076,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="CrawlingDepthsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrawlingDepthsConqueror">
+  <FameBonus id="CrawlingDepthsConqueror" code="245">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Crawling Depths</DisplayCategory>
     <DisplayName>The Crawling Depths Conqueror</DisplayName>
@@ -3009,7 +3085,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="CrawlingDepthsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrawlingDepthsMaster">
+  <FameBonus id="CrawlingDepthsMaster" code="246">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Crawling Depths</DisplayCategory>
     <DisplayName>The Crawling Depths Master {0}</DisplayName>
@@ -3017,9 +3093,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete The Crawling Depths 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CrawlingDepthsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DavyJonesLockerScout">
+  <FameBonus id="DavyJonesLockerScout" code="247">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Davy Jones' Locker</DisplayCategory>
     <DisplayName>Davy Jones' Locker Scout</DisplayName>
@@ -3028,7 +3105,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="DavyJonesLockersCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DavyJonesLockerExplorer">
+  <FameBonus id="DavyJonesLockerExplorer" code="248">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Davy Jones' Locker</DisplayCategory>
     <DisplayName>Davy Jones' Locker Explorer</DisplayName>
@@ -3037,7 +3114,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="DavyJonesLockersCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DavyJonesLockerAdventurer">
+  <FameBonus id="DavyJonesLockerAdventurer" code="249">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Davy Jones' Locker</DisplayCategory>
     <DisplayName>Davy Jones' Locker Adventurer</DisplayName>
@@ -3046,7 +3123,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="DavyJonesLockersCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DavyJonesLockerConqueror">
+  <FameBonus id="DavyJonesLockerConqueror" code="250">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Davy Jones' Locker</DisplayCategory>
     <DisplayName>Davy Jones' Locker Conqueror</DisplayName>
@@ -3055,7 +3132,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="DavyJonesLockersCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="DavyJonesLockerMaster">
+  <FameBonus id="DavyJonesLockerMaster" code="251">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Davy Jones' Locker</DisplayCategory>
     <DisplayName>Davy Jones' Locker Master {0}</DisplayName>
@@ -3063,9 +3140,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete Davy Jones' Locker 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="DavyJonesLockersCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MountainTempleScout">
+  <FameBonus id="MountainTempleScout" code="252">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mountain Temple</DisplayCategory>
     <DisplayName>Mountain Temple Scout</DisplayName>
@@ -3074,7 +3152,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="MountainTemplesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MountainTempleExplorer">
+  <FameBonus id="MountainTempleExplorer" code="253">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mountain Temple</DisplayCategory>
     <DisplayName>Mountain Temple Explorer</DisplayName>
@@ -3083,7 +3161,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="MountainTemplesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MountainTempleAdventurer">
+  <FameBonus id="MountainTempleAdventurer" code="254">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mountain Temple</DisplayCategory>
     <DisplayName>Mountain Temple Adventurer</DisplayName>
@@ -3092,7 +3170,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="MountainTemplesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MountainTempleConqueror">
+  <FameBonus id="MountainTempleConqueror" code="255">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mountain Temple</DisplayCategory>
     <DisplayName>Mountain Temple Conqueror</DisplayName>
@@ -3101,7 +3179,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="MountainTemplesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MountainTempleMaster">
+  <FameBonus id="MountainTempleMaster" code="256">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mountain Temple</DisplayCategory>
     <DisplayName>Mountain Temple Master {0}</DisplayName>
@@ -3109,9 +3187,10 @@
     <AbsoluteBonus>3000</AbsoluteBonus>
     <Description>Complete Mountain Temple 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="MountainTemplesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofDraconisScout">
+  <FameBonus id="LairofDraconisScout" code="257">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Draconis</DisplayCategory>
     <DisplayName>Lair of Draconis Scout</DisplayName>
@@ -3120,7 +3199,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="LairOfDraconisCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofDraconisExplorer">
+  <FameBonus id="LairofDraconisExplorer" code="258">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Draconis</DisplayCategory>
     <DisplayName>Lair of Draconis Explorer</DisplayName>
@@ -3129,7 +3208,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="LairOfDraconisCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofDraconisAdventurer">
+  <FameBonus id="LairofDraconisAdventurer" code="259">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Draconis</DisplayCategory>
     <DisplayName>Lair of Draconis Adventurer</DisplayName>
@@ -3138,7 +3217,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="LairOfDraconisCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofDraconisConqueror">
+  <FameBonus id="LairofDraconisConqueror" code="260">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Draconis</DisplayCategory>
     <DisplayName>Lair of Draconis Conqueror</DisplayName>
@@ -3147,7 +3226,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="LairOfDraconisCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofDraconisMaster">
+  <FameBonus id="LairofDraconisMaster" code="261">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Draconis</DisplayCategory>
     <DisplayName>Lair of Draconis Master {0}</DisplayName>
@@ -3155,9 +3234,10 @@
     <AbsoluteBonus>3500</AbsoluteBonus>
     <Description>Complete Lair of Draconis 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="LairOfDraconisCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheThirdDimensionScout">
+  <FameBonus id="TheThirdDimensionScout" code="262">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Third Dimension</DisplayCategory>
     <DisplayName>The Third Dimension Scout</DisplayName>
@@ -3166,7 +3246,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="ThirdDimensionsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheThirdDimensionExplorer">
+  <FameBonus id="TheThirdDimensionExplorer" code="263">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Third Dimension</DisplayCategory>
     <DisplayName>The Third Dimension Explorer</DisplayName>
@@ -3175,7 +3255,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="ThirdDimensionsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheThirdDimensionAdventurer">
+  <FameBonus id="TheThirdDimensionAdventurer" code="264">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Third Dimension</DisplayCategory>
     <DisplayName>The Third Dimension Adventurer</DisplayName>
@@ -3184,7 +3264,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="ThirdDimensionsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheThirdDimensionConqueror">
+  <FameBonus id="TheThirdDimensionConqueror" code="265">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Third Dimension</DisplayCategory>
     <DisplayName>The Third Dimension Conqueror</DisplayName>
@@ -3193,7 +3273,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="ThirdDimensionsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheThirdDimensionMaster">
+  <FameBonus id="TheThirdDimensionMaster" code="266">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Third Dimension</DisplayCategory>
     <DisplayName>The Third Dimension Master {0}</DisplayName>
@@ -3201,9 +3281,10 @@
     <AbsoluteBonus>3000</AbsoluteBonus>
     <Description>Complete The Third Dimension 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ThirdDimensionsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceCaveScout">
+  <FameBonus id="IceCaveScout" code="267">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Cave</DisplayCategory>
     <DisplayName>Ice Cave Scout</DisplayName>
@@ -3212,7 +3293,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="IceCavesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceCaveExplorer">
+  <FameBonus id="IceCaveExplorer" code="268">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Cave</DisplayCategory>
     <DisplayName>Ice Cave Explorer</DisplayName>
@@ -3221,7 +3302,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="IceCavesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceCaveAdventurer">
+  <FameBonus id="IceCaveAdventurer" code="269">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Cave</DisplayCategory>
     <DisplayName>Ice Cave Adventurer</DisplayName>
@@ -3230,7 +3311,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="IceCavesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceCaveConqueror">
+  <FameBonus id="IceCaveConqueror" code="270">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Cave</DisplayCategory>
     <DisplayName>Ice Cave Conqueror</DisplayName>
@@ -3239,7 +3320,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="IceCavesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceCaveMaster">
+  <FameBonus id="IceCaveMaster" code="271">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Cave</DisplayCategory>
     <DisplayName>Ice Cave Master {0}</DisplayName>
@@ -3247,9 +3328,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Complete Ice Cave 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="IceCavesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OceanTrenchScout">
+  <FameBonus id="OceanTrenchScout" code="272">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ocean Trench</DisplayCategory>
     <DisplayName>Ocean Trench Scout</DisplayName>
@@ -3258,7 +3340,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="OceanTrenchesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OceanTrenchExplorer">
+  <FameBonus id="OceanTrenchExplorer" code="273">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ocean Trench</DisplayCategory>
     <DisplayName>Ocean Trench Explorer</DisplayName>
@@ -3267,7 +3349,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="OceanTrenchesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OceanTrenchAdventurer">
+  <FameBonus id="OceanTrenchAdventurer" code="274">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ocean Trench</DisplayCategory>
     <DisplayName>Ocean Trench Adventurer</DisplayName>
@@ -3276,7 +3358,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="OceanTrenchesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OceanTrenchConqueror">
+  <FameBonus id="OceanTrenchConqueror" code="275">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ocean Trench</DisplayCategory>
     <DisplayName>Ocean Trench Conqueror</DisplayName>
@@ -3285,7 +3367,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="OceanTrenchesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="OceanTrenchMaster">
+  <FameBonus id="OceanTrenchMaster" code="276">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ocean Trench</DisplayCategory>
     <DisplayName>Ocean Trench Master {0}</DisplayName>
@@ -3293,9 +3375,10 @@
     <AbsoluteBonus>3500</AbsoluteBonus>
     <Description>Complete Ocean Trench 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="OceanTrenchesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TomboftheAncientsScout">
+  <FameBonus id="TomboftheAncientsScout" code="277">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Tomb of the Ancients</DisplayCategory>
     <DisplayName>Tomb of the Ancients Scout</DisplayName>
@@ -3304,7 +3387,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="TombOfTheAncientsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TomboftheAncientsExplorer">
+  <FameBonus id="TomboftheAncientsExplorer" code="278">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Tomb of the Ancients</DisplayCategory>
     <DisplayName>Tomb of the Ancients Explorer</DisplayName>
@@ -3313,7 +3396,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="TombOfTheAncientsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TomboftheAncientsAdventurer">
+  <FameBonus id="TomboftheAncientsAdventurer" code="279">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Tomb of the Ancients</DisplayCategory>
     <DisplayName>Tomb of the Ancients Adventurer</DisplayName>
@@ -3322,7 +3405,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="TombOfTheAncientsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TomboftheAncientsConqueror">
+  <FameBonus id="TomboftheAncientsConqueror" code="280">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Tomb of the Ancients</DisplayCategory>
     <DisplayName>Tomb of the Ancients Conqueror</DisplayName>
@@ -3331,7 +3414,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="TombOfTheAncientsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TomboftheAncientsMaster">
+  <FameBonus id="TomboftheAncientsMaster" code="281">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Tomb of the Ancients</DisplayCategory>
     <DisplayName>Tomb of the Ancients Master {0}</DisplayName>
@@ -3339,9 +3422,10 @@
     <AbsoluteBonus>4000</AbsoluteBonus>
     <Description>Complete Tomb of the Ancients 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="TombOfTheAncientsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheShattersScout">
+  <FameBonus id="TheShattersScout" code="282">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Shatters</DisplayCategory>
     <DisplayName>The Shatters Scout</DisplayName>
@@ -3350,7 +3434,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="TheShattersCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheShattersExplorer">
+  <FameBonus id="TheShattersExplorer" code="283">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Shatters</DisplayCategory>
     <DisplayName>The Shatters Explorer</DisplayName>
@@ -3359,7 +3443,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="TheShattersCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheShattersAdventurer">
+  <FameBonus id="TheShattersAdventurer" code="284">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Shatters</DisplayCategory>
     <DisplayName>The Shatters Adventurer</DisplayName>
@@ -3368,7 +3452,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="TheShattersCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheShattersConqueror">
+  <FameBonus id="TheShattersConqueror" code="285">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Shatters</DisplayCategory>
     <DisplayName>The Shatters Conqueror</DisplayName>
@@ -3377,7 +3461,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="TheShattersCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheShattersMaster">
+  <FameBonus id="TheShattersMaster" code="286">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Shatters</DisplayCategory>
     <DisplayName>The Shatters Master {0}</DisplayName>
@@ -3385,9 +3469,10 @@
     <AbsoluteBonus>5000</AbsoluteBonus>
     <Description>Complete The Shatters 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="TheShattersCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheNestScout">
+  <FameBonus id="TheNestScout" code="287">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Nest</DisplayCategory>
     <DisplayName>The Nest Scout</DisplayName>
@@ -3396,7 +3481,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="TheNestsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheNestExplorer">
+  <FameBonus id="TheNestExplorer" code="288">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Nest</DisplayCategory>
     <DisplayName>The Nest Explorer</DisplayName>
@@ -3405,7 +3490,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="TheNestsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheNestAdventurer">
+  <FameBonus id="TheNestAdventurer" code="289">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Nest</DisplayCategory>
     <DisplayName>The Nest Adventurer</DisplayName>
@@ -3414,7 +3499,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="TheNestsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheNestConqueror">
+  <FameBonus id="TheNestConqueror" code="290">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Nest</DisplayCategory>
     <DisplayName>The Nest Conqueror</DisplayName>
@@ -3423,7 +3508,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="TheNestsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheNestMaster">
+  <FameBonus id="TheNestMaster" code="291">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Nest</DisplayCategory>
     <DisplayName>The Nest Master {0}</DisplayName>
@@ -3431,9 +3516,10 @@
     <AbsoluteBonus>4000</AbsoluteBonus>
     <Description>Complete The Nest 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="TheNestsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="FungalCavernScout">
+  <FameBonus id="FungalCavernScout" code="292">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Fungal Cavern</DisplayCategory>
     <DisplayName>Fungal Cavern Scout</DisplayName>
@@ -3442,7 +3528,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="FungalCavernsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="FungalCavernExplorer">
+  <FameBonus id="FungalCavernExplorer" code="293">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Fungal Cavern</DisplayCategory>
     <DisplayName>Fungal Cavern Explorer</DisplayName>
@@ -3451,7 +3537,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="FungalCavernsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="FungalCavernAdventurer">
+  <FameBonus id="FungalCavernAdventurer" code="294">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Fungal Cavern</DisplayCategory>
     <DisplayName>Fungal Cavern Adventurer</DisplayName>
@@ -3460,7 +3546,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="FungalCavernsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="FungalCavernConqueror">
+  <FameBonus id="FungalCavernConqueror" code="295">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Fungal Cavern</DisplayCategory>
     <DisplayName>Fungal Cavern Conqueror</DisplayName>
@@ -3469,7 +3555,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="FungalCavernsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="FungalCavernMaster">
+  <FameBonus id="FungalCavernMaster" code="296">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Fungal Cavern</DisplayCategory>
     <DisplayName>Fungal Cavern Master {0}</DisplayName>
@@ -3477,9 +3563,10 @@
     <AbsoluteBonus>5000</AbsoluteBonus>
     <Description>Complete Fungal Cavern 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="FungalCavernsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrystalCavernScout">
+  <FameBonus id="CrystalCavernScout" code="297">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Crystal Cavern</DisplayCategory>
     <DisplayName>Crystal Cavern Scout</DisplayName>
@@ -3488,7 +3575,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="CrystalCavernsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrystalCavernExplorer">
+  <FameBonus id="CrystalCavernExplorer" code="298">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Crystal Cavern</DisplayCategory>
     <DisplayName>Crystal Cavern Explorer</DisplayName>
@@ -3497,7 +3584,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="CrystalCavernsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrystalCavernAdventurer">
+  <FameBonus id="CrystalCavernAdventurer" code="299">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Crystal Cavern</DisplayCategory>
     <DisplayName>Crystal Cavern Adventurer</DisplayName>
@@ -3506,7 +3593,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="CrystalCavernsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrystalCavernConqueror">
+  <FameBonus id="CrystalCavernConqueror" code="300">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Crystal Cavern</DisplayCategory>
     <DisplayName>Crystal Cavern Conqueror</DisplayName>
@@ -3515,7 +3602,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="CrystalCavernsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CrystalCavernMaster">
+  <FameBonus id="CrystalCavernMaster" code="301">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Crystal Cavern</DisplayCategory>
     <DisplayName>Crystal Cavern Master {0}</DisplayName>
@@ -3523,9 +3610,10 @@
     <AbsoluteBonus>6000</AbsoluteBonus>
     <Description>Complete Crystal Cavern 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CrystalCavernsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LostHallsScout">
+  <FameBonus id="LostHallsScout" code="302">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lost Halls</DisplayCategory>
     <DisplayName>Lost Halls Scout</DisplayName>
@@ -3534,7 +3622,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="LostHallsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LostHallsExplorer">
+  <FameBonus id="LostHallsExplorer" code="303">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lost Halls</DisplayCategory>
     <DisplayName>Lost Halls Explorer</DisplayName>
@@ -3543,7 +3631,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="LostHallsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LostHallsAdventurer">
+  <FameBonus id="LostHallsAdventurer" code="304">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lost Halls</DisplayCategory>
     <DisplayName>Lost Halls Adventurer</DisplayName>
@@ -3552,7 +3640,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="LostHallsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LostHallsConqueror">
+  <FameBonus id="LostHallsConqueror" code="305">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lost Halls</DisplayCategory>
     <DisplayName>Lost Halls Conqueror</DisplayName>
@@ -3561,7 +3649,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="LostHallsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LostHallsMaster">
+  <FameBonus id="LostHallsMaster" code="306">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lost Halls</DisplayCategory>
     <DisplayName>Lost Halls Master {0}</DisplayName>
@@ -3569,9 +3657,10 @@
     <AbsoluteBonus>6000</AbsoluteBonus>
     <Description>Complete Lost Halls 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="LostHallsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CultistHideoutScout">
+  <FameBonus id="CultistHideoutScout" code="307">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cultist Hideout</DisplayCategory>
     <DisplayName>Cultist Hideout Scout</DisplayName>
@@ -3580,7 +3669,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="CultistHideoutsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CultistHideoutExplorer">
+  <FameBonus id="CultistHideoutExplorer" code="308">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cultist Hideout</DisplayCategory>
     <DisplayName>Cultist Hideout Explorer</DisplayName>
@@ -3589,7 +3678,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="CultistHideoutsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CultistHideoutAdventurer">
+  <FameBonus id="CultistHideoutAdventurer" code="309">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cultist Hideout</DisplayCategory>
     <DisplayName>Cultist Hideout Adventurer</DisplayName>
@@ -3598,7 +3687,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="CultistHideoutsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CultistHideoutConqueror">
+  <FameBonus id="CultistHideoutConqueror" code="310">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cultist Hideout</DisplayCategory>
     <DisplayName>Cultist Hideout Conqueror</DisplayName>
@@ -3607,7 +3696,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="CultistHideoutsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CultistHideoutMaster">
+  <FameBonus id="CultistHideoutMaster" code="311">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cultist Hideout</DisplayCategory>
     <DisplayName>Cultist Hideout Master {0}</DisplayName>
@@ -3615,9 +3704,10 @@
     <AbsoluteBonus>7000</AbsoluteBonus>
     <Description>Complete Cultist Hideout 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CultistHideoutsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheVoidScout">
+  <FameBonus id="TheVoidScout" code="312">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Void</DisplayCategory>
     <DisplayName>The Void Scout</DisplayName>
@@ -3626,7 +3716,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="TheVoidsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheVoidExplorer">
+  <FameBonus id="TheVoidExplorer" code="313">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Void</DisplayCategory>
     <DisplayName>The Void Explorer</DisplayName>
@@ -3635,7 +3725,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="TheVoidsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheVoidAdventurer">
+  <FameBonus id="TheVoidAdventurer" code="314">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Void</DisplayCategory>
     <DisplayName>The Void Adventurer</DisplayName>
@@ -3644,7 +3734,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="TheVoidsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheVoidConqueror">
+  <FameBonus id="TheVoidConqueror" code="315">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Void</DisplayCategory>
     <DisplayName>The Void Conqueror</DisplayName>
@@ -3653,7 +3743,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="TheVoidsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheVoidMaster">
+  <FameBonus id="TheVoidMaster" code="316">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Void</DisplayCategory>
     <DisplayName>The Void Master {0}</DisplayName>
@@ -3661,9 +3751,10 @@
     <AbsoluteBonus>8000</AbsoluteBonus>
     <Description>Complete The Void 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="TheVoidsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sCastleScout">
+  <FameBonus id="Oryx'sCastleScout" code="317">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Castle</DisplayCategory>
     <DisplayName>Oryx's Castle Scout</DisplayName>
@@ -3672,7 +3763,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="OryxsCastlesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sCastleExplorer">
+  <FameBonus id="Oryx'sCastleExplorer" code="318">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Castle</DisplayCategory>
     <DisplayName>Oryx's Castle Explorer</DisplayName>
@@ -3681,7 +3772,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="OryxsCastlesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sCastleAdventurer">
+  <FameBonus id="Oryx'sCastleAdventurer" code="319">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Castle</DisplayCategory>
     <DisplayName>Oryx's Castle Adventurer</DisplayName>
@@ -3690,7 +3781,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="OryxsCastlesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sCastleConqueror">
+  <FameBonus id="Oryx'sCastleConqueror" code="320">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Castle</DisplayCategory>
     <DisplayName>Oryx's Castle Conqueror</DisplayName>
@@ -3699,7 +3790,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="OryxsCastlesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sCastleMaster">
+  <FameBonus id="Oryx'sCastleMaster" code="321">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Castle</DisplayCategory>
     <DisplayName>Oryx's Castle Master {0}</DisplayName>
@@ -3707,9 +3798,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete Oryx's Castle 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="OryxsCastlesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofShaitanScout">
+  <FameBonus id="LairofShaitanScout" code="322">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Shaitan</DisplayCategory>
     <DisplayName>Lair of Shaitan Scout</DisplayName>
@@ -3718,7 +3810,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="LairOfShaitansCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofShaitanExplorer">
+  <FameBonus id="LairofShaitanExplorer" code="323">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Shaitan</DisplayCategory>
     <DisplayName>Lair of Shaitan Explorer</DisplayName>
@@ -3727,7 +3819,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="LairOfShaitansCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofShaitanAdventurer">
+  <FameBonus id="LairofShaitanAdventurer" code="324">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Shaitan</DisplayCategory>
     <DisplayName>Lair of Shaitan Adventurer</DisplayName>
@@ -3736,7 +3828,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="LairOfShaitansCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofShaitanConqueror">
+  <FameBonus id="LairofShaitanConqueror" code="325">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Shaitan</DisplayCategory>
     <DisplayName>Lair of Shaitan Conqueror</DisplayName>
@@ -3745,7 +3837,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="LairOfShaitansCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="LairofShaitanMaster">
+  <FameBonus id="LairofShaitanMaster" code="326">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Lair of Shaitan</DisplayCategory>
     <DisplayName>Lair of Shaitan Master {0}</DisplayName>
@@ -3753,9 +3845,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete Lair of Shaitan 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="LairOfShaitansCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sEncoreScout">
+  <FameBonus id="PuppetMaster'sEncoreScout" code="327">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Encore</DisplayCategory>
     <DisplayName>Puppet Master's Encore Scout</DisplayName>
@@ -3764,7 +3857,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="PuppetMastersEncoresCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sEncoreExplorer">
+  <FameBonus id="PuppetMaster'sEncoreExplorer" code="328">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Encore</DisplayCategory>
     <DisplayName>Puppet Master's Encore Explorer</DisplayName>
@@ -3773,7 +3866,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="PuppetMastersEncoresCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sEncoreAdventurer">
+  <FameBonus id="PuppetMaster'sEncoreAdventurer" code="329">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Encore</DisplayCategory>
     <DisplayName>Puppet Master's Encore Adventurer</DisplayName>
@@ -3782,7 +3875,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="PuppetMastersEncoresCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sEncoreConqueror">
+  <FameBonus id="PuppetMaster'sEncoreConqueror" code="330">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Encore</DisplayCategory>
     <DisplayName>Puppet Master's Encore Conqueror</DisplayName>
@@ -3791,7 +3884,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="PuppetMastersEncoresCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="PuppetMaster'sEncoreMaster">
+  <FameBonus id="PuppetMaster'sEncoreMaster" code="331">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Puppet Master's Encore</DisplayCategory>
     <DisplayName>Puppet Master's Encore Master {0}</DisplayName>
@@ -3799,9 +3892,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete Puppet Master's Encore 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="PuppetMastersEncoresCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CnidarianReefScout">
+  <FameBonus id="CnidarianReefScout" code="332">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cnidarian Reef</DisplayCategory>
     <DisplayName>Cnidarian Reef Scout</DisplayName>
@@ -3810,7 +3904,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="CnidarianReefsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CnidarianReefExplorer">
+  <FameBonus id="CnidarianReefExplorer" code="333">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cnidarian Reef</DisplayCategory>
     <DisplayName>Cnidarian Reef Explorer</DisplayName>
@@ -3819,7 +3913,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="CnidarianReefsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CnidarianReefAdventurer">
+  <FameBonus id="CnidarianReefAdventurer" code="334">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cnidarian Reef</DisplayCategory>
     <DisplayName>Cnidarian Reef Adventurer</DisplayName>
@@ -3828,7 +3922,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="CnidarianReefsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CnidarianReefConqueror">
+  <FameBonus id="CnidarianReefConqueror" code="335">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cnidarian Reef</DisplayCategory>
     <DisplayName>Cnidarian Reef Conqueror</DisplayName>
@@ -3837,7 +3931,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="CnidarianReefsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="CnidarianReefMaster">
+  <FameBonus id="CnidarianReefMaster" code="336">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Cnidarian Reef</DisplayCategory>
     <DisplayName>Cnidarian Reef Master {0}</DisplayName>
@@ -3845,9 +3939,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete Cnidarian Reef 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="CnidarianReefsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SecludedThicketScout">
+  <FameBonus id="SecludedThicketScout" code="337">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Secluded Thicket</DisplayCategory>
     <DisplayName>Secluded Thicket Scout</DisplayName>
@@ -3856,7 +3951,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="SecludedThicketsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SecludedThicketExplorer">
+  <FameBonus id="SecludedThicketExplorer" code="338">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Secluded Thicket</DisplayCategory>
     <DisplayName>Secluded Thicket Explorer</DisplayName>
@@ -3865,7 +3960,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="SecludedThicketsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SecludedThicketAdventurer">
+  <FameBonus id="SecludedThicketAdventurer" code="339">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Secluded Thicket</DisplayCategory>
     <DisplayName>Secluded Thicket Adventurer</DisplayName>
@@ -3874,7 +3969,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="SecludedThicketsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SecludedThicketConqueror">
+  <FameBonus id="SecludedThicketConqueror" code="340">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Secluded Thicket</DisplayCategory>
     <DisplayName>Secluded Thicket Conqueror</DisplayName>
@@ -3883,7 +3978,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="SecludedThicketsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="SecludedThicketMaster">
+  <FameBonus id="SecludedThicketMaster" code="341">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Secluded Thicket</DisplayCategory>
     <DisplayName>Secluded Thicket Master {0}</DisplayName>
@@ -3891,9 +3986,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Complete Secluded Thicket 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="SecludedThicketsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HighTechTerrorScout">
+  <FameBonus id="HighTechTerrorScout" code="342">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>High Tech Terror</DisplayCategory>
     <DisplayName>High Tech Terror Scout</DisplayName>
@@ -3902,7 +3998,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="HighTechTerrorsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HighTechTerrorExplorer">
+  <FameBonus id="HighTechTerrorExplorer" code="343">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>High Tech Terror</DisplayCategory>
     <DisplayName>High Tech Terror Explorer</DisplayName>
@@ -3911,7 +4007,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="HighTechTerrorsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HighTechTerrorAdventurer">
+  <FameBonus id="HighTechTerrorAdventurer" code="344">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>High Tech Terror</DisplayCategory>
     <DisplayName>High Tech Terror Adventurer</DisplayName>
@@ -3920,7 +4016,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="HighTechTerrorsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HighTechTerrorConqueror">
+  <FameBonus id="HighTechTerrorConqueror" code="345">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>High Tech Terror</DisplayCategory>
     <DisplayName>High Tech Terror Conqueror</DisplayName>
@@ -3929,7 +4025,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="HighTechTerrorsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HighTechTerrorMaster">
+  <FameBonus id="HighTechTerrorMaster" code="346">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>High Tech Terror</DisplayCategory>
     <DisplayName>High Tech Terror Master {0}</DisplayName>
@@ -3937,9 +4033,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Complete High Tech Terror 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="HighTechTerrorsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sChamberScout">
+  <FameBonus id="Oryx'sChamberScout" code="347">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Chamber</DisplayCategory>
     <DisplayName>Oryx's Chamber Scout</DisplayName>
@@ -3948,7 +4045,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="OryxsChambersCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sChamberExplorer">
+  <FameBonus id="Oryx'sChamberExplorer" code="348">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Chamber</DisplayCategory>
     <DisplayName>Oryx's Chamber Explorer</DisplayName>
@@ -3957,7 +4054,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="OryxsChambersCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sChamberAdventurer">
+  <FameBonus id="Oryx'sChamberAdventurer" code="349">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Chamber</DisplayCategory>
     <DisplayName>Oryx's Chamber Adventurer</DisplayName>
@@ -3966,7 +4063,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="OryxsChambersCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sChamberConqueror">
+  <FameBonus id="Oryx'sChamberConqueror" code="350">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Chamber</DisplayCategory>
     <DisplayName>Oryx's Chamber Conqueror</DisplayName>
@@ -3975,7 +4072,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="OryxsChambersCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sChamberMaster">
+  <FameBonus id="Oryx'sChamberMaster" code="351">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Chamber</DisplayCategory>
     <DisplayName>Oryx's Chamber Master {0}</DisplayName>
@@ -3983,9 +4080,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Complete Oryx's Chamber 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="OryxsChambersCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WineCellarScout">
+  <FameBonus id="WineCellarScout" code="352">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Wine Cellar</DisplayCategory>
     <DisplayName>Wine Cellar Scout</DisplayName>
@@ -3994,7 +4092,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="WineCellarsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WineCellarExplorer">
+  <FameBonus id="WineCellarExplorer" code="353">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Wine Cellar</DisplayCategory>
     <DisplayName>Wine Cellar Explorer</DisplayName>
@@ -4003,7 +4101,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="WineCellarsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WineCellarAdventurer">
+  <FameBonus id="WineCellarAdventurer" code="354">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Wine Cellar</DisplayCategory>
     <DisplayName>Wine Cellar Adventurer</DisplayName>
@@ -4012,7 +4110,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="WineCellarsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WineCellarConqueror">
+  <FameBonus id="WineCellarConqueror" code="355">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Wine Cellar</DisplayCategory>
     <DisplayName>Wine Cellar Conqueror</DisplayName>
@@ -4021,7 +4119,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="WineCellarsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="WineCellarMaster">
+  <FameBonus id="WineCellarMaster" code="356">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Wine Cellar</DisplayCategory>
     <DisplayName>Wine Cellar Master {0}</DisplayName>
@@ -4029,9 +4127,10 @@
     <AbsoluteBonus>4000</AbsoluteBonus>
     <Description>Complete Wine Cellar 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="WineCellarsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sSanctuaryScout">
+  <FameBonus id="Oryx'sSanctuaryScout" code="357">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Sanctuary</DisplayCategory>
     <DisplayName>Oryx's Sanctuary Scout</DisplayName>
@@ -4040,7 +4139,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="OryxsSanctuarysCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sSanctuaryExplorer">
+  <FameBonus id="Oryx'sSanctuaryExplorer" code="358">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Sanctuary</DisplayCategory>
     <DisplayName>Oryx's Sanctuary Explorer</DisplayName>
@@ -4049,7 +4148,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="OryxsSanctuarysCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sSanctuaryAdventurer">
+  <FameBonus id="Oryx'sSanctuaryAdventurer" code="359">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Sanctuary</DisplayCategory>
     <DisplayName>Oryx's Sanctuary Adventurer</DisplayName>
@@ -4058,7 +4157,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="OryxsSanctuarysCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sSanctuaryConqueror">
+  <FameBonus id="Oryx'sSanctuaryConqueror" code="360">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Sanctuary</DisplayCategory>
     <DisplayName>Oryx's Sanctuary Conqueror</DisplayName>
@@ -4067,7 +4166,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="OryxsSanctuarysCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Oryx'sSanctuaryMaster">
+  <FameBonus id="Oryx'sSanctuaryMaster" code="361">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Oryx's Sanctuary</DisplayCategory>
     <DisplayName>Oryx's Sanctuary Master {0}</DisplayName>
@@ -4075,9 +4174,10 @@
     <AbsoluteBonus>10000</AbsoluteBonus>
     <Description>Complete Oryx's Sanctuary 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="OryxsSanctuarysCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Belladonna'sGardenScout">
+  <FameBonus id="Belladonna'sGardenScout" code="362">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Belladonna's Garden</DisplayCategory>
     <DisplayName>Belladonna's Garden Scout</DisplayName>
@@ -4086,7 +4186,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="BelladonnasGardensCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Belladonna'sGardenExplorer">
+  <FameBonus id="Belladonna'sGardenExplorer" code="363">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Belladonna's Garden</DisplayCategory>
     <DisplayName>Belladonna's Garden Explorer</DisplayName>
@@ -4095,7 +4195,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="BelladonnasGardensCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Belladonna'sGardenAdventurer">
+  <FameBonus id="Belladonna'sGardenAdventurer" code="364">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Belladonna's Garden</DisplayCategory>
     <DisplayName>Belladonna's Garden Adventurer</DisplayName>
@@ -4104,7 +4204,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="BelladonnasGardensCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Belladonna'sGardenConqueror">
+  <FameBonus id="Belladonna'sGardenConqueror" code="365">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Belladonna's Garden</DisplayCategory>
     <DisplayName>Belladonna's Garden Conqueror</DisplayName>
@@ -4113,7 +4213,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="BelladonnasGardensCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Belladonna'sGardenMaster">
+  <FameBonus id="Belladonna'sGardenMaster" code="366">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Belladonna's Garden</DisplayCategory>
     <DisplayName>Belladonna's Garden Master {0}</DisplayName>
@@ -4121,9 +4221,10 @@
     <AbsoluteBonus>3000</AbsoluteBonus>
     <Description>Complete Belladonna's Garden 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="BelladonnasGardensCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheMachineScout">
+  <FameBonus id="TheMachineScout" code="367">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Machine</DisplayCategory>
     <DisplayName>The Machine Scout</DisplayName>
@@ -4132,7 +4233,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="TheMachinesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheMachineExplorer">
+  <FameBonus id="TheMachineExplorer" code="368">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Machine</DisplayCategory>
     <DisplayName>The Machine Explorer</DisplayName>
@@ -4141,7 +4242,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="TheMachinesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheMachineAdventurer">
+  <FameBonus id="TheMachineAdventurer" code="369">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Machine</DisplayCategory>
     <DisplayName>The Machine Adventurer</DisplayName>
@@ -4150,7 +4251,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="TheMachinesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheMachineConqueror">
+  <FameBonus id="TheMachineConqueror" code="370">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Machine</DisplayCategory>
     <DisplayName>The Machine Conqueror</DisplayName>
@@ -4159,7 +4260,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="TheMachinesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="TheMachineMaster">
+  <FameBonus id="TheMachineMaster" code="371">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>The Machine</DisplayCategory>
     <DisplayName>The Machine Master {0}</DisplayName>
@@ -4167,9 +4268,10 @@
     <AbsoluteBonus>2000</AbsoluteBonus>
     <Description>Complete The Machine 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="TheMachinesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="RainbowRoadScout">
+  <FameBonus id="RainbowRoadScout" code="372">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Rainbow Road</DisplayCategory>
     <DisplayName>Rainbow Road Scout</DisplayName>
@@ -4178,7 +4280,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="RainbowRoadsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="RainbowRoadExplorer">
+  <FameBonus id="RainbowRoadExplorer" code="373">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Rainbow Road</DisplayCategory>
     <DisplayName>Rainbow Road Explorer</DisplayName>
@@ -4187,7 +4289,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="RainbowRoadsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="RainbowRoadAdventurer">
+  <FameBonus id="RainbowRoadAdventurer" code="374">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Rainbow Road</DisplayCategory>
     <DisplayName>Rainbow Road Adventurer</DisplayName>
@@ -4196,7 +4298,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="RainbowRoadsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="RainbowRoadConqueror">
+  <FameBonus id="RainbowRoadConqueror" code="375">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Rainbow Road</DisplayCategory>
     <DisplayName>Rainbow Road Conqueror</DisplayName>
@@ -4205,7 +4307,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="RainbowRoadsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="RainbowRoadMaster">
+  <FameBonus id="RainbowRoadMaster" code="376">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Rainbow Road</DisplayCategory>
     <DisplayName>Rainbow Road Master {0}</DisplayName>
@@ -4213,9 +4315,10 @@
     <AbsoluteBonus>100</AbsoluteBonus>
     <Description>Complete Rainbow Road 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="RainbowRoadsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadGodMayhemScout">
+  <FameBonus id="MadGodMayhemScout" code="377">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad God Mayhem</DisplayCategory>
     <DisplayName>Mad God Mayhem Scout</DisplayName>
@@ -4224,7 +4327,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="MadGodMayhemsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadGodMayhemExplorer">
+  <FameBonus id="MadGodMayhemExplorer" code="378">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad God Mayhem</DisplayCategory>
     <DisplayName>Mad God Mayhem Explorer</DisplayName>
@@ -4233,7 +4336,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="MadGodMayhemsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadGodMayhemAdventurer">
+  <FameBonus id="MadGodMayhemAdventurer" code="379">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad God Mayhem</DisplayCategory>
     <DisplayName>Mad God Mayhem Adventurer</DisplayName>
@@ -4242,7 +4345,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="MadGodMayhemsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadGodMayhemConqueror">
+  <FameBonus id="MadGodMayhemConqueror" code="380">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad God Mayhem</DisplayCategory>
     <DisplayName>Mad God Mayhem Conqueror</DisplayName>
@@ -4251,7 +4354,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="MadGodMayhemsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MadGodMayhemMaster">
+  <FameBonus id="MadGodMayhemMaster" code="381">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Mad God Mayhem</DisplayCategory>
     <DisplayName>Mad God Mayhem Master {0}</DisplayName>
@@ -4259,9 +4362,10 @@
     <AbsoluteBonus>3000</AbsoluteBonus>
     <Description>Complete Mad God Mayhem 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="MadGodMayhemsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MalogiaScout">
+  <FameBonus id="MalogiaScout" code="382">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Malogia</DisplayCategory>
     <DisplayName>Malogia Scout</DisplayName>
@@ -4270,7 +4374,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="MalogiasCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MalogiaExplorer">
+  <FameBonus id="MalogiaExplorer" code="383">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Malogia</DisplayCategory>
     <DisplayName>Malogia Explorer</DisplayName>
@@ -4279,7 +4383,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="MalogiasCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MalogiaAdventurer">
+  <FameBonus id="MalogiaAdventurer" code="384">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Malogia</DisplayCategory>
     <DisplayName>Malogia Adventurer</DisplayName>
@@ -4288,7 +4392,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="MalogiasCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MalogiaConqueror">
+  <FameBonus id="MalogiaConqueror" code="385">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Malogia</DisplayCategory>
     <DisplayName>Malogia Conqueror</DisplayName>
@@ -4297,7 +4401,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="MalogiasCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="MalogiaMaster">
+  <FameBonus id="MalogiaMaster" code="386">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Malogia</DisplayCategory>
     <DisplayName>Malogia Master {0}</DisplayName>
@@ -4305,9 +4409,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Complete Malogia 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="MalogiasCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UntarisScout">
+  <FameBonus id="UntarisScout" code="387">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Untaris</DisplayCategory>
     <DisplayName>Untaris Scout</DisplayName>
@@ -4316,7 +4421,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="UntarisCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UntarisExplorer">
+  <FameBonus id="UntarisExplorer" code="388">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Untaris</DisplayCategory>
     <DisplayName>Untaris Explorer</DisplayName>
@@ -4325,7 +4430,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="UntarisCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UntarisAdventurer">
+  <FameBonus id="UntarisAdventurer" code="389">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Untaris</DisplayCategory>
     <DisplayName>Untaris Adventurer</DisplayName>
@@ -4334,7 +4439,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="UntarisCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UntarisConqueror">
+  <FameBonus id="UntarisConqueror" code="390">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Untaris</DisplayCategory>
     <DisplayName>Untaris Conqueror</DisplayName>
@@ -4343,7 +4448,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="UntarisCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="UntarisMaster">
+  <FameBonus id="UntarisMaster" code="391">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Untaris</DisplayCategory>
     <DisplayName>Untaris Master {0}</DisplayName>
@@ -4351,9 +4456,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Complete Untaris 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="UntarisCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForaxScout">
+  <FameBonus id="ForaxScout" code="392">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forax</DisplayCategory>
     <DisplayName>Forax Scout</DisplayName>
@@ -4362,7 +4468,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="ForaxsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForaxExplorer">
+  <FameBonus id="ForaxExplorer" code="393">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forax</DisplayCategory>
     <DisplayName>Forax Explorer</DisplayName>
@@ -4371,7 +4477,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="ForaxsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForaxAdventurer">
+  <FameBonus id="ForaxAdventurer" code="394">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forax</DisplayCategory>
     <DisplayName>Forax Adventurer</DisplayName>
@@ -4380,7 +4486,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="ForaxsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForaxConqueror">
+  <FameBonus id="ForaxConqueror" code="395">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forax</DisplayCategory>
     <DisplayName>Forax Conqueror</DisplayName>
@@ -4389,7 +4495,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="ForaxsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="ForaxMaster">
+  <FameBonus id="ForaxMaster" code="396">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Forax</DisplayCategory>
     <DisplayName>Forax Master {0}</DisplayName>
@@ -4397,9 +4503,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Complete Forax 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="ForaxsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="KatalundScout">
+  <FameBonus id="KatalundScout" code="397">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Katalund</DisplayCategory>
     <DisplayName>Katalund Scout</DisplayName>
@@ -4408,7 +4515,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="KatalundsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="KatalundExplorer">
+  <FameBonus id="KatalundExplorer" code="398">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Katalund</DisplayCategory>
     <DisplayName>Katalund Explorer</DisplayName>
@@ -4417,7 +4524,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="KatalundsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="KatalundAdventurer">
+  <FameBonus id="KatalundAdventurer" code="399">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Katalund</DisplayCategory>
     <DisplayName>Katalund Adventurer</DisplayName>
@@ -4426,7 +4533,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="KatalundsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="KatalundConqueror">
+  <FameBonus id="KatalundConqueror" code="400">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Katalund</DisplayCategory>
     <DisplayName>Katalund Conqueror</DisplayName>
@@ -4435,7 +4542,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="KatalundsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="KatalundMaster">
+  <FameBonus id="KatalundMaster" code="401">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Katalund</DisplayCategory>
     <DisplayName>Katalund Master {0}</DisplayName>
@@ -4443,9 +4550,10 @@
     <AbsoluteBonus>2500</AbsoluteBonus>
     <Description>Complete Katalund 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="KatalundsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BattlefortheNexusScout">
+  <FameBonus id="BattlefortheNexusScout" code="402">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Battle for the Nexus</DisplayCategory>
     <DisplayName>Battle for the Nexus Scout</DisplayName>
@@ -4454,7 +4562,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="BattleForTheNexusCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BattlefortheNexusExplorer">
+  <FameBonus id="BattlefortheNexusExplorer" code="403">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Battle for the Nexus</DisplayCategory>
     <DisplayName>Battle for the Nexus Explorer</DisplayName>
@@ -4463,7 +4571,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="BattleForTheNexusCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BattlefortheNexusAdventurer">
+  <FameBonus id="BattlefortheNexusAdventurer" code="404">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Battle for the Nexus</DisplayCategory>
     <DisplayName>Battle for the Nexus Adventurer</DisplayName>
@@ -4472,7 +4580,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="BattleForTheNexusCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BattlefortheNexusConqueror">
+  <FameBonus id="BattlefortheNexusConqueror" code="405">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Battle for the Nexus</DisplayCategory>
     <DisplayName>Battle for the Nexus Conqueror</DisplayName>
@@ -4481,7 +4589,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="BattleForTheNexusCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="BattlefortheNexusMaster">
+  <FameBonus id="BattlefortheNexusMaster" code="406">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Battle for the Nexus</DisplayCategory>
     <DisplayName>Battle for the Nexus Master {0}</DisplayName>
@@ -4489,9 +4597,10 @@
     <AbsoluteBonus>3000</AbsoluteBonus>
     <Description>Complete Battle for the Nexus 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="BattleForTheNexusCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceTombScout">
+  <FameBonus id="IceTombScout" code="407">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Tomb</DisplayCategory>
     <DisplayName>Ice Tomb Scout</DisplayName>
@@ -4500,7 +4609,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="IceTombsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceTombExplorer">
+  <FameBonus id="IceTombExplorer" code="408">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Tomb</DisplayCategory>
     <DisplayName>Ice Tomb Explorer</DisplayName>
@@ -4509,7 +4618,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="IceTombsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceTombAdventurer">
+  <FameBonus id="IceTombAdventurer" code="409">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Tomb</DisplayCategory>
     <DisplayName>Ice Tomb Adventurer</DisplayName>
@@ -4518,7 +4627,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="IceTombsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceTombConqueror">
+  <FameBonus id="IceTombConqueror" code="410">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Tomb</DisplayCategory>
     <DisplayName>Ice Tomb Conqueror</DisplayName>
@@ -4527,7 +4636,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="IceTombsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="IceTombMaster">
+  <FameBonus id="IceTombMaster" code="411">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Ice Tomb</DisplayCategory>
     <DisplayName>Ice Tomb Master {0}</DisplayName>
@@ -4535,9 +4644,10 @@
     <AbsoluteBonus>3000</AbsoluteBonus>
     <Description>Complete Ice Tomb 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="IceTombsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Santa'sWorkshopScout">
+  <FameBonus id="Santa'sWorkshopScout" code="412">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Santa's Workshop</DisplayCategory>
     <DisplayName>Santa's Workshop Scout</DisplayName>
@@ -4546,7 +4656,7 @@
     <ShortDisplayName>Scout</ShortDisplayName>
     <Condition stat="SantasWorkshopsCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Santa'sWorkshopExplorer">
+  <FameBonus id="Santa'sWorkshopExplorer" code="413">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Santa's Workshop</DisplayCategory>
     <DisplayName>Santa's Workshop Explorer</DisplayName>
@@ -4555,7 +4665,7 @@
     <ShortDisplayName>Explorer</ShortDisplayName>
     <Condition stat="SantasWorkshopsCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Santa'sWorkshopAdventurer">
+  <FameBonus id="Santa'sWorkshopAdventurer" code="414">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Santa's Workshop</DisplayCategory>
     <DisplayName>Santa's Workshop Adventurer</DisplayName>
@@ -4564,7 +4674,7 @@
     <ShortDisplayName>Adventurer</ShortDisplayName>
     <Condition stat="SantasWorkshopsCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Santa'sWorkshopConqueror">
+  <FameBonus id="Santa'sWorkshopConqueror" code="415">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Santa's Workshop</DisplayCategory>
     <DisplayName>Santa's Workshop Conqueror</DisplayName>
@@ -4573,7 +4683,7 @@
     <ShortDisplayName>Conqueror</ShortDisplayName>
     <Condition stat="SantasWorkshopsCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="Santa'sWorkshopMaster">
+  <FameBonus id="Santa'sWorkshopMaster" code="416">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
     <DisplayCategory>Santa's Workshop</DisplayCategory>
     <DisplayName>Santa's Workshop Master {0}</DisplayName>
@@ -4581,98 +4691,54 @@
     <AbsoluteBonus>100</AbsoluteBonus>
     <Description>Complete Santa's Workshop 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
+    <MaxRepeatCount>20</MaxRepeatCount>
     <Condition stat="SantasWorkshopsCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroicUndeadLairScout">
+  <FameBonus id="BeachzoneScout" code="417">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Undead Lair</DisplayCategory>
-    <DisplayName>Heroic Undead Lair Scout</DisplayName>
-    <AbsoluteBonus>100</AbsoluteBonus>
-    <Description>Complete Heroic Undead Lair 1 time</Description>
+    <DisplayCategory>Beachzone</DisplayCategory>
+    <DisplayName>Beachzone Scout</DisplayName>
+    <AbsoluteBonus>5</AbsoluteBonus>
+    <Description>Complete Beachzone 1 time</Description>
     <ShortDisplayName>Scout</ShortDisplayName>
-    <Condition stat="HeroicUndeadLairsCompleted" threshold="1">StatValue</Condition>
+    <Condition stat="BeachzonesCompleted" threshold="1">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroicUndeadLairExplorer">
+  <FameBonus id="BeachzoneExplorer" code="418">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Undead Lair</DisplayCategory>
-    <DisplayName>Heroic Undead Lair Explorer</DisplayName>
-    <AbsoluteBonus>200</AbsoluteBonus>
-    <Description>Complete Heroic Undead Lair 10 times</Description>
+    <DisplayCategory>Beachzone</DisplayCategory>
+    <DisplayName>Beachzone Explorer</DisplayName>
+    <AbsoluteBonus>10</AbsoluteBonus>
+    <Description>Complete Beachzone 10 times</Description>
     <ShortDisplayName>Explorer</ShortDisplayName>
-    <Condition stat="HeroicUndeadLairsCompleted" threshold="10">StatValue</Condition>
+    <Condition stat="BeachzonesCompleted" threshold="10">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroicUndeadLairAdventurer">
+  <FameBonus id="BeachzoneAdventurer" code="419">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Undead Lair</DisplayCategory>
-    <DisplayName>Heroic Undead Lair Adventurer</DisplayName>
-    <AbsoluteBonus>400</AbsoluteBonus>
-    <Description>Complete Heroic Undead Lair 20 times</Description>
+    <DisplayCategory>Beachzone</DisplayCategory>
+    <DisplayName>Beachzone Adventurer</DisplayName>
+    <AbsoluteBonus>20</AbsoluteBonus>
+    <Description>Complete Beachzone 20 times</Description>
     <ShortDisplayName>Adventurer</ShortDisplayName>
-    <Condition stat="HeroicUndeadLairsCompleted" threshold="20">StatValue</Condition>
+    <Condition stat="BeachzonesCompleted" threshold="20">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroicUndeadLairConqueror">
+  <FameBonus id="BeachzoneConqueror" code="420">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Undead Lair</DisplayCategory>
-    <DisplayName>Heroic Undead Lair Conqueror</DisplayName>
-    <AbsoluteBonus>800</AbsoluteBonus>
-    <Description>Complete Heroic Undead Lair 40 times</Description>
+    <DisplayCategory>Beachzone</DisplayCategory>
+    <DisplayName>Beachzone Conqueror</DisplayName>
+    <AbsoluteBonus>40</AbsoluteBonus>
+    <Description>Complete Beachzone 40 times</Description>
     <ShortDisplayName>Conqueror</ShortDisplayName>
-    <Condition stat="HeroicUndeadLairsCompleted" threshold="40">StatValue</Condition>
+    <Condition stat="BeachzonesCompleted" threshold="40">StatValue</Condition>
   </FameBonus>
-  <FameBonus id="HeroicUndeadLairMaster">
+  <FameBonus id="BeachzoneMaster" code="421">
     <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Undead Lair</DisplayCategory>
-    <DisplayName>Heroic Undead Lair Master {0}</DisplayName>
+    <DisplayCategory>Beachzone</DisplayCategory>
+    <DisplayName>Beachzone Master {0}</DisplayName>
     <Repeatable>true</Repeatable>
-    <AbsoluteBonus>2000</AbsoluteBonus>
-    <Description>Complete Heroic Undead Lair 100 times</Description>
-    <ShortDisplayName>Master {0}</ShortDisplayName>
-    <Condition stat="HeroicUndeadLairsCompleted" threshold="100">StatValue</Condition>
-  </FameBonus>
-  <FameBonus id="HeroicAbyssofDemonsScout">
-    <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Abyss of Demons</DisplayCategory>
-    <DisplayName>Heroic Abyss of Demons Scout</DisplayName>
     <AbsoluteBonus>100</AbsoluteBonus>
-    <Description>Complete Heroic Abyss of Demons 1 time</Description>
-    <ShortDisplayName>Scout</ShortDisplayName>
-    <Condition stat="HeroicAbyssOfDemonsCompleted" threshold="1">StatValue</Condition>
-  </FameBonus>
-  <FameBonus id="HeroicAbyssofDemonsExplorer">
-    <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Abyss of Demons</DisplayCategory>
-    <DisplayName>Heroic Abyss of Demons Explorer</DisplayName>
-    <AbsoluteBonus>200</AbsoluteBonus>
-    <Description>Complete Heroic Abyss of Demons 10 times</Description>
-    <ShortDisplayName>Explorer</ShortDisplayName>
-    <Condition stat="HeroicAbyssOfDemonsCompleted" threshold="10">StatValue</Condition>
-  </FameBonus>
-  <FameBonus id="HeroicAbyssofDemonsAdventurer">
-    <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Abyss of Demons</DisplayCategory>
-    <DisplayName>Heroic Abyss of Demons Adventurer</DisplayName>
-    <AbsoluteBonus>400</AbsoluteBonus>
-    <Description>Complete Heroic Abyss of Demons 20 times</Description>
-    <ShortDisplayName>Adventurer</ShortDisplayName>
-    <Condition stat="HeroicAbyssOfDemonsCompleted" threshold="20">StatValue</Condition>
-  </FameBonus>
-  <FameBonus id="HeroicAbyssofDemonsConqueror">
-    <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Abyss of Demons</DisplayCategory>
-    <DisplayName>Heroic Abyss of Demons Conqueror</DisplayName>
-    <AbsoluteBonus>800</AbsoluteBonus>
-    <Description>Complete Heroic Abyss of Demons 40 times</Description>
-    <ShortDisplayName>Conqueror</ShortDisplayName>
-    <Condition stat="HeroicAbyssOfDemonsCompleted" threshold="40">StatValue</Condition>
-  </FameBonus>
-  <FameBonus id="HeroicAbyssofDemonsMaster">
-    <DisplayGroup>Dungeon Bonuses</DisplayGroup>
-    <DisplayCategory>Heroic Abyss of Demons</DisplayCategory>
-    <DisplayName>Heroic Abyss of Demons Master {0}</DisplayName>
-    <Repeatable>true</Repeatable>
-    <AbsoluteBonus>2000</AbsoluteBonus>
-    <Description>Complete Heroic Abyss of Demons 100 times</Description>
+    <Description>Complete Beachzone 100 times</Description>
     <ShortDisplayName>Master {0}</ShortDisplayName>
-    <Condition stat="HeroicAbyssOfDemonsCompleted" threshold="100">StatValue</Condition>
+    <MaxRepeatCount>20</MaxRepeatCount>
+    <Condition stat="BeachzonesCompleted" threshold="100">StatValue</Condition>
   </FameBonus>
 </Objects>

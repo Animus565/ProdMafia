@@ -5,7 +5,6 @@ import org.osflash.signals.Signal;
 
 public class ConsoleWatchSignal extends Signal {
 
-
     public function ConsoleWatchSignal() {
         super(Watch);
     }

@@ -28,6 +28,7 @@ public class RemoteTexture {
         var _local4:Injector = StaticInjectorContext.getInjector();
         this.logger = _local4.getInstance(ILogger);
     }
+
     public var id_:String;
     public var instance_:String;
     public var callback_:Function;

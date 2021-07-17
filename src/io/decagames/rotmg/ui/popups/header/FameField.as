@@ -13,7 +13,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class FameField extends Sprite {
 
-
     public function FameField(param1:int) {
         super();
         this.fameFieldBackground = TextureParser.instance.getSliceScalingBitmap("UI", "bordered_field", param1);
@@ -28,6 +27,7 @@ public class FameField extends Sprite {
         this.fameBitmap.x = param1 - 40;
         addChild(this.fameBitmap);
     }
+
     private var fameFieldBackground:SliceScalingBitmap;
     private var fameBitmap:Bitmap;
 

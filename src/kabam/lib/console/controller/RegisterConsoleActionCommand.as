@@ -6,10 +6,10 @@ import org.osflash.signals.Signal;
 
 public class RegisterConsoleActionCommand {
 
-
     public function RegisterConsoleActionCommand() {
         super();
     }
+
     [Inject]
     public var console:Console;
     [Inject]

@@ -6,10 +6,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class ConfirmationModalMediator extends Mediator {
 
-
     public function ConfirmationModalMediator() {
         super();
     }
+
     [Inject]
     public var view:ConfirmationModal;
     [Inject]

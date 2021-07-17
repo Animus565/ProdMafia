@@ -29,10 +29,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class FameContentPopupMediator extends Mediator {
 
-
     public function FameContentPopupMediator() {
         super();
     }
+
     [Inject]
     public var view:FameContentPopup;
     [Inject]

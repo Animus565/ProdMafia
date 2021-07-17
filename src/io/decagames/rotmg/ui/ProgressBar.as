@@ -36,6 +36,7 @@ public class ProgressBar extends UIGridElement {
         this.value = param7;
         this._shouldAnimate = true;
     }
+
     private var componentWidth:int;
     private var componentHeight:int;
     private var backgroundColor:uint;

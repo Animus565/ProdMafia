@@ -8,12 +8,12 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class ConsoleKeyMediator extends Mediator {
 
-
     private const TRIGGER:uint = 123;
 
     public function ConsoleKeyMediator() {
         super();
     }
+
     [Inject]
     public var view:DisplayObjectContainer;
     [Inject]

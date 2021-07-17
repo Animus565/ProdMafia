@@ -6,20 +6,54 @@ import org.osflash.signals.Signal;
 public class BaseTask implements Task {
 
     private var _started:TaskStartedSignal;
+
+    final public function get started():Signal {
+        return ((this._started = ((this._started) || (new TaskStartedSignal()))));
+    }
+
     private var _finished:TaskResultSignal;
+
+    final public function get finished():TaskResultSignal {
+        return ((this._finished = ((this._finished) || (new TaskResultSignal()))));
+    }
+
     private var _lastly:TaskResultSignal;
+
+    final public function get lastly():TaskResultSignal {
+        return ((this._lastly = ((this._lastly) || (new TaskResultSignal()))));
+    }
+
     private var _isStarted:Boolean;
+
+    public function get isStarted():Boolean {
+        return (this._isStarted);
+    }
+
     private var _isFinished:Boolean;
+
+    public function get isFinished():Boolean {
+        return (this._isFinished);
+    }
+
     private var _isOK:Boolean;
+
+    public function get isOK():Boolean {
+        return (this._isOK);
+    }
+
     private var _error:String;
 
+    public function get error():String {
+        return (this._error);
+    }
 
     final public function start():void {
         if (!this._isStarted) {
             this._isStarted = true;
             ((this._started) && (this._started.dispatch(this)));
-            this.startTask();
         }
+
+        this.startTask();
     }
 
     final public function reset():void {
@@ -47,34 +81,6 @@ public class BaseTask implements Task {
         this._isFinished = true;
         ((this._finished) && (this._finished.dispatch(this, _arg1, _arg2)));
         ((this._lastly) && (this._lastly.dispatch(this, _arg1, _arg2)));
-    }
-
-    final public function get started():Signal {
-        return ((this._started = ((this._started) || (new TaskStartedSignal()))));
-    }
-
-    final public function get finished():TaskResultSignal {
-        return ((this._finished = ((this._finished) || (new TaskResultSignal()))));
-    }
-
-    final public function get lastly():TaskResultSignal {
-        return ((this._lastly = ((this._lastly) || (new TaskResultSignal()))));
-    }
-
-    public function get isStarted():Boolean {
-        return (this._isStarted);
-    }
-
-    public function get isFinished():Boolean {
-        return (this._isFinished);
-    }
-
-    public function get isOK():Boolean {
-        return (this._isOK);
-    }
-
-    public function get error():String {
-        return (this._error);
     }
 }
 }

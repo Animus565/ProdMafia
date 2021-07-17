@@ -5,7 +5,6 @@ import org.osflash.signals.Signal;
 
 public class RegisterAccountSignal extends Signal {
 
-
     public function RegisterAccountSignal() {
         super(AccountData);
     }

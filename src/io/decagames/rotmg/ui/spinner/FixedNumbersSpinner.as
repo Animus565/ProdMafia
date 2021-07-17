@@ -3,12 +3,12 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
 public class FixedNumbersSpinner extends NumberSpinner {
 
-
     public function FixedNumbersSpinner(param1:SliceScalingBitmap, param2:int, param3:Vector.<int>, param4:String = "") {
         super(param1, param2, 0, param3.length - 1, 1, param4);
         this._numbers = param3;
         this.updateLabel();
     }
+
     private var _numbers:Vector.<int>;
 
     override public function get value():int {

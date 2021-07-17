@@ -15,6 +15,7 @@ public final class ConsoleEvent extends Event {
         super(_arg_1, false, false);
         this.data = _arg_2;
     }
+
     public var data:String;
 }
 }

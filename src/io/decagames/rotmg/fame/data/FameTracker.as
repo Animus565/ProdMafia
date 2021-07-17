@@ -10,10 +10,10 @@ import kabam.rotmg.ui.model.HUDModel;
 
 public class FameTracker {
 
-
     public function FameTracker() {
         super();
     }
+
     [Inject]
     public var metrics:CharactersMetricsTracker;
     [Inject]

@@ -6,7 +6,6 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 public class InputTextField extends UILabel {
 
-
     public function InputTextField(param1:String = "") {
         super();
         this.placeholder = param1;
@@ -19,6 +18,7 @@ public class InputTextField extends UILabel {
         this.addEventListener("focusIn", this.onFocusHandler);
         this.addEventListener("removedFromStage", this.onRemoveEvent);
     }
+
     private var placeholder:String;
 
     private var _wasModified:Boolean;

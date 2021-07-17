@@ -6,7 +6,6 @@ import org.osflash.signals.Signal;
 
 public class UITab extends Sprite {
 
-
     public function UITab(param1:String, param2:Boolean = false) {
         displaySignal = new Signal(Boolean);
         lastSize = new Point(0, 0);
@@ -14,6 +13,7 @@ public class UITab extends Sprite {
         this._tabName = param1;
         this._transparentBackgroundFix = param2;
     }
+
     public var displaySignal:Signal;
     private var lastSize:Point;
 

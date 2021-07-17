@@ -33,6 +33,7 @@ public class CreditsScreen extends Sprite {
         addChild(this.kabamLogo);
         addChild(this.closeButton);
     }
+
     public var close:Signal;
     private var creditsText:TextFieldDisplayConcrete;
     private var wildshadowLogo:StackedLogoR;

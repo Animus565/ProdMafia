@@ -31,7 +31,6 @@ public class SpriteBackground extends Sprite {
 
     private static const grayfilter:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
 
-
     private const enabledFill:GraphicsSolidFill = new GraphicsSolidFill(0xffffff, 1);
 
     private const disabledFill:GraphicsSolidFill = new GraphicsSolidFill(0x7f7f7f, 1);
@@ -57,6 +56,7 @@ public class SpriteBackground extends Sprite {
         this.waiter.complete.add(this.updateUI);
         addChild(this.text);
     }
+
     public var prefix:String;
     public var text:TextFieldDisplayConcrete;
     public var icon:Bitmap;

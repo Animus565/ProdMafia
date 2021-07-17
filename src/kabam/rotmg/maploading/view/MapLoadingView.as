@@ -28,6 +28,7 @@ public class MapLoadingView extends Sprite {
         this.makeLoadingScreen();
         addEventListener("removedFromStage", this.onRemovedFromStage);
     }
+
     private var screen:DisplayObjectContainer;
     private var mapNameField:TextFieldDisplayConcrete;
     private var indicators:Vector.<DisplayObject>;

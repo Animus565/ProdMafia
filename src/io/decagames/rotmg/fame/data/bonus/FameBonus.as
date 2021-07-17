@@ -1,7 +1,6 @@
 package io.decagames.rotmg.fame.data.bonus {
 public class FameBonus {
 
-
     public function FameBonus(param1:int, param2:int, param3:int, param4:int, param5:String, param6:String) {
         super();
         this._added = param2;

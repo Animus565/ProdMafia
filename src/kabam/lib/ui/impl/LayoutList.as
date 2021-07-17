@@ -17,7 +17,6 @@ public class LayoutList extends Sprite implements List {
 
     private static const ZERO_SIZE:Size = new Size(0, 0);
 
-
     public const itemsChanged:Signal = new Signal();
 
     private const list:Vector.<DisplayObject> = new Vector.<DisplayObject>(0);
@@ -33,6 +32,7 @@ public class LayoutList extends Sprite implements List {
         addChild(this.container);
         addChild(this.containerMask);
     }
+
     private var layout:Layout;
     private var size:Size;
     private var offset:int = 0;

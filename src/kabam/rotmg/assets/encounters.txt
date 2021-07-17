@@ -2132,6 +2132,7 @@
     <ShadowSize>70</ShadowSize>
     <MaxHitPoints>30000</MaxHitPoints>
     <DamageBasedXP />
+    <EventChestBoss />
     <Defense>10</Defense>
     <Exp>10000</Exp>
     <HealthBarBoss radius="50" />
@@ -2151,6 +2152,9 @@
     <ShadowSize>100</ShadowSize>
     <MaxHitPoints>20000</MaxHitPoints>
     <Defense>15</Defense>
+    <Terrain>HighForest</Terrain>
+    <SpawnProb>0.008</SpawnProb>
+    <PerRealmMax>1</PerRealmMax>
     <KillStat stat="HumanoidKills" />
     <KillStat stat="EncounterKills" />
   </Object>

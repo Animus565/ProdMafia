@@ -13,7 +13,6 @@ import io.decagames.rotmg.utils.colors.Tint;
 
 public class SliceScalingButton extends BaseButton {
 
-
     public function SliceScalingButton(param1:SliceScalingBitmap, param2:SliceScalingBitmap = null, param3:SliceScalingBitmap = null) {
         labelMargin = new Point();
         this._bitmap = param1;
@@ -24,6 +23,7 @@ public class SliceScalingButton extends BaseButton {
         this.stateFactories = new Dictionary();
         super();
     }
+
     protected var labelMargin:Point;
     private var staticWidth:Boolean;
     private var disableBitmap:SliceScalingBitmap;

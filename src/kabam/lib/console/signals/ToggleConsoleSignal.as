@@ -3,7 +3,6 @@ import org.osflash.signals.Signal;
 
 public class ToggleConsoleSignal extends Signal {
 
-
     public function ToggleConsoleSignal() {
         super();
     }

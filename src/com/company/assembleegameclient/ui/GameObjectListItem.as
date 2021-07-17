@@ -17,7 +17,6 @@ import org.osflash.signals.Signal;
 
 public class GameObjectListItem extends Sprite {
 
-
     public function GameObjectListItem(_arg_1:uint, _arg_2:Boolean, _arg_3:GameObject, _arg_4:Boolean = false) {
         super();
         this.positionClassBelow = _arg_4;
@@ -38,6 +37,7 @@ public class GameObjectListItem extends Sprite {
         this.textReady = this.text.textChanged;
         this.draw(_arg_3);
     }
+
     public var portrait:Bitmap;
     public var isLongVersion:Boolean;
     public var go:GameObject;

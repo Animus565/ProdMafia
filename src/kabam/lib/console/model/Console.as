@@ -5,12 +5,12 @@ import org.osflash.signals.Signal;
 
 public final class Console {
 
-
     public function Console() {
         super();
         this.hash = new ActionHash();
         this.history = new ActionHistory();
     }
+
     private var hash:ActionHash;
     private var history:ActionHistory;
 

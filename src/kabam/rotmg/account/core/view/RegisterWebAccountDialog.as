@@ -13,7 +13,6 @@ import org.osflash.signals.Signal;
 
 public class RegisterWebAccountDialog extends Frame {
 
-
     public function RegisterWebAccountDialog() {
         register = new Signal(AccountData);
         cancel = new Signal();
@@ -22,6 +21,7 @@ public class RegisterWebAccountDialog extends Frame {
         this.enableForTabBehavior();
         this.addEventListeners();
     }
+
     public var register:Signal;
     public var cancel:Signal;
     private var emailInput:TextInputField;

@@ -25,6 +25,7 @@ public final class ConsoleInputView extends TextField implements Resizable {
         this.lifecycle.addedToStage.add(this.onAddedToStage);
         this.lifecycle.removedFromStage.add(this.onRemovedFromStage);
     }
+
     private var lifecycle:StageLifecycleUtil;
 
     public function resize(_arg_1:Rectangle):void {

@@ -13,7 +13,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class ModalPopup extends BasePopup {
 
-
     public function ModalPopup(param1:int, param2:int, param3:String = "", param4:Function = null, param5:Rectangle = null, param6:Number = 0.8, param7:Boolean = false, param8:int = 0, param9:int = 0) {
         var _loc10_:int = 0;
         super(param1 + 2 * this.contentMargin, param2 <= 2 * this.contentMargin ? 2 * this.contentMargin + 1 : Number(param2 + 2 * this.contentMargin), param5);
@@ -51,6 +50,7 @@ public class ModalPopup extends BasePopup {
             this.background.height = this.background.height + 15;
         }
     }
+
     protected var contentMask:Sprite;
     protected var background:SliceScalingBitmap;
     protected var contentMargin:int = 11;

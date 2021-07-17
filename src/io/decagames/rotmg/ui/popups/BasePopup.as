@@ -4,13 +4,13 @@ import flash.geom.Rectangle;
 
 public class BasePopup extends Sprite {
 
-
     public function BasePopup(param1:int, param2:int, param3:Rectangle = null) {
         super();
         this._popupWidth = param1;
         this._popupHeight = param2;
         this._overrideSizePosition = param3;
     }
+
     public var disablePopupBackground:Boolean;
 
     protected var _showOnFullScreen:Boolean;

@@ -3,8 +3,8 @@ import mx.core.ByteArrayAsset;
 
 [Embed(source="xmasNexusObjects.txt", mimeType="application/octet-stream")]
 public class xmasNexusObjects extends ByteArrayAsset {
-   public function xmasNexusObjects() {
-      super();
-   }
+    public function xmasNexusObjects() {
+        super();
+    }
 }
 }

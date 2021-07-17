@@ -5,10 +5,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class NumberSpinnerMediator extends Mediator {
 
-
     public function NumberSpinnerMediator() {
         super();
     }
+
     [Inject]
     public var view:NumberSpinner;
 

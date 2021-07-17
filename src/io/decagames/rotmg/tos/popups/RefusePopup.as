@@ -5,7 +5,6 @@ import io.decagames.rotmg.ui.popups.modal.TextModal;
 
 public class RefusePopup extends TextModal {
 
-
     public function RefusePopup() {
         var _loc1_:Vector.<BaseButton> = new Vector.<BaseButton>();
         _loc1_.push(new GoBackButton());

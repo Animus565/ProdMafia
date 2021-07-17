@@ -1,13 +1,13 @@
 package kabam.lib.tasks {
 public class BranchingTask extends BaseTask {
 
-
     public function BranchingTask(_arg_1:Task, _arg_2:Task = null, _arg_3:Task = null) {
         super();
         this.task = _arg_1;
         this.success = _arg_2;
         this.failure = _arg_3;
     }
+
     private var task:Task;
     private var success:Task;
     private var failure:Task;

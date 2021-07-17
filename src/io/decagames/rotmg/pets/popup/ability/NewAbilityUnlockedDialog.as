@@ -10,7 +10,6 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 public class NewAbilityUnlockedDialog extends ModalPopup {
 
-
     public function NewAbilityUnlockedDialog(param1:String) {
         var _loc2_:* = null;
         var _loc4_:* = null;

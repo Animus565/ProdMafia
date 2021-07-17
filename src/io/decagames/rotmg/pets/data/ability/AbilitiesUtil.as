@@ -4,7 +4,6 @@ import io.decagames.rotmg.pets.data.vo.IPetVO;
 
 public class AbilitiesUtil {
 
-
     public static function isActiveAbility(param1:PetRarityEnum, param2:int):Boolean {
         if (param1.ordinal >= PetRarityEnum.LEGENDARY.ordinal) {
             return true;

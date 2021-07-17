@@ -3,8 +3,8 @@ import mx.core.ByteArrayAsset;
 
 [Embed(source="epicspiderDen.txt", mimeType="application/octet-stream")]
 public class epicspiderDen extends ByteArrayAsset {
-   public function epicspiderDen() {
-      super();
-   }
+    public function epicspiderDen() {
+        super();
+    }
 }
 }

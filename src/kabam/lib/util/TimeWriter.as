@@ -1,10 +1,10 @@
 package kabam.lib.util {
 public class TimeWriter {
 
-
     public function TimeWriter() {
         super();
     }
+
     private var timeStringStarted:Boolean = false;
     private var seconds:int;
     private var minutes:int;

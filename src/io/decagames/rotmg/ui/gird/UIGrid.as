@@ -9,7 +9,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class UIGrid extends Sprite {
 
-
     public function UIGrid(param1:int, param2:int, param3:int, param4:int = -1, param5:int = 0, param6:DisplayObject = null) {
         super();
         this.elements = new Vector.<UIGridElement>();
@@ -30,6 +29,7 @@ public class UIGrid extends Sprite {
         this.numberOfColumns = param2;
         this.addEventListener("addedToStage", this.onAddedHandler);
     }
+
     private var elements:Vector.<UIGridElement>;
     private var decors:Vector.<SliceScalingBitmap>;
     private var gridMargin:int;

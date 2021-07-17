@@ -8,10 +8,10 @@ import kabam.lib.console.vo.ConsoleAction;
 
 public class AddDefaultConsoleActionsCommand {
 
-
     public function AddDefaultConsoleActionsCommand() {
         super();
     }
+
     [Inject]
     public var register:RegisterConsoleActionSignal;
     [Inject]

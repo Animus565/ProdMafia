@@ -3,8 +3,8 @@ import mx.core.ByteArrayAsset;
 
 [Embed(source="mTesting.txt", mimeType="application/octet-stream")]
 public class mTesting extends ByteArrayAsset {
-   public function mTesting() {
-      super();
-   }
+    public function mTesting() {
+        super();
+    }
 }
 }

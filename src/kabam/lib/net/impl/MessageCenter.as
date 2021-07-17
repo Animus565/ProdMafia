@@ -9,7 +9,6 @@ public class MessageCenter implements MessageMap, MessageProvider {
 
     private static const MAX_ID:int = 256;
 
-
     private const maps:Vector.<MessageCenterMapping> = new Vector.<MessageCenterMapping>(256, true);
 
     private const pools:Vector.<MessagePool> = new Vector.<MessagePool>(256, true);
@@ -17,6 +16,7 @@ public class MessageCenter implements MessageMap, MessageProvider {
     public function MessageCenter() {
         super();
     }
+
     private var injector:Injector;
 
     public function setInjector(_arg_1:Injector):MessageCenter {

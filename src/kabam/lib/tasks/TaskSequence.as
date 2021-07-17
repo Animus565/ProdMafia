@@ -1,11 +1,11 @@
 package kabam.lib.tasks {
 public class TaskSequence extends BaseTask {
 
-
     public function TaskSequence() {
         super();
         this.tasks = new Vector.<Task>();
     }
+
     private var tasks:Vector.<Task>;
     private var index:int;
     private var continueOnFail:Boolean;

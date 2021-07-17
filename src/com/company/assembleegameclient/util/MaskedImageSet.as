@@ -4,12 +4,12 @@ import com.company.util.ImageSet;
 import flash.display.BitmapData;
 
 public class MaskedImageSet {
-    public var images_:Vector.<MaskedImage>;
-
     public function MaskedImageSet() {
         this.images_ = new Vector.<MaskedImage>();
         super();
     }
+
+    public var images_:Vector.<MaskedImage>;
 
     public function addFromBitmapData(images:BitmapData, masks:BitmapData, width:int, height:int):void {
         var imagesSet:ImageSet = new ImageSet();

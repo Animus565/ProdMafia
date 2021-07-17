@@ -6,13 +6,13 @@ import org.swiftsuspenders.Injector;
 
 public class MessageCenterMapping implements MessageMapping {
 
-
     private const nullHandler:NullHandlerProxy = new NullHandlerProxy();
 
     public function MessageCenterMapping() {
         handler = nullHandler;
         super();
     }
+
     private var id:int;
     private var injector:Injector;
     private var messageType:Class;
@@ -60,7 +60,6 @@ public class MessageCenterMapping implements MessageMapping {
 import kabam.lib.net.api.MessageHandlerProxy;
 
 class NullHandlerProxy implements MessageHandlerProxy {
-
 
     function NullHandlerProxy() {
         super();

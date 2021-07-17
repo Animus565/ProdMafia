@@ -4,8 +4,8 @@ import mx.core.ByteArrayAsset;
 
 [Embed(source="forgeProperties.txt", mimeType="application/octet-stream")]
 public class forgeProperties extends ByteArrayAsset {
-   public function forgeProperties() {
-      super();
-   }
+    public function forgeProperties() {
+        super();
+    }
 }
 }

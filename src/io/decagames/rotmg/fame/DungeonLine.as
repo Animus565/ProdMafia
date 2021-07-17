@@ -7,11 +7,11 @@ import flash.display.Bitmap;
 
 public class DungeonLine extends StatsLine {
 
-
     public function DungeonLine(param1:String, param2:String, param3:String) {
         this.dungeonTextureName = param2;
         super(param1, param3, "", 1);
     }
+
     private var dungeonTextureName:String;
     private var dungeonBitmap:Bitmap;
 

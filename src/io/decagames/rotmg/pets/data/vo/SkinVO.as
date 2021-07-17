@@ -8,7 +8,6 @@ import org.osflash.signals.Signal;
 
 public class SkinVO extends PetSkinRenderer implements IPetVO {
 
-
     public static function parseFromXML(param1:XML):SkinVO {
         var _loc2_:SkinVO = new SkinVO();
         _loc2_.skinType = int(param1.@type);

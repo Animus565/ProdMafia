@@ -13,7 +13,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class CoinsField extends Sprite {
 
-
     public function CoinsField(param1:int) {
         super();
         this.coinsFieldBackground = TextureParser.instance.getSliceScalingBitmap("UI", "bordered_field", param1);
@@ -28,6 +27,7 @@ public class CoinsField extends Sprite {
         this.coinBitmap.x = param1 - 40;
         addChild(this.coinBitmap);
     }
+
     private var coinsFieldBackground:SliceScalingBitmap;
     private var coinBitmap:Bitmap;
 

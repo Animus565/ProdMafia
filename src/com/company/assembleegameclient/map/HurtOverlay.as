@@ -10,7 +10,6 @@ import flash.display.Shape;
 
 public class HurtOverlay extends Shape {
 
-
     private const s:Number = 600 / Math.sin(0.785398163397448);
 
     public function HurtOverlay(_arg_1:AGameSprite = null) {
@@ -35,6 +34,7 @@ public class HurtOverlay extends Shape {
         graphics.drawGraphicsData(this.gradientGraphicsData_);
         visible = false;
     }
+
     private var gradientFill_:GraphicsGradientFill;
     private var gradientPath_:GraphicsPath;
     private var gradientGraphicsData_:Vector.<IGraphicsData>;

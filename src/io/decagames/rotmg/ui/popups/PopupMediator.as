@@ -11,11 +11,11 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class PopupMediator extends Mediator {
 
-
     public function PopupMediator() {
         super();
         this.popups = new Vector.<BasePopup>();
     }
+
     [Inject]
     public var view:PopupView;
     [Inject]

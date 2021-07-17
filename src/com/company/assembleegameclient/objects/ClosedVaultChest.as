@@ -6,7 +6,6 @@ import flash.display.BitmapData;
 
 public class ClosedVaultChest extends SellableObject {
 
-
     public function ClosedVaultChest(_arg_1:XML) {
         super(_arg_1);
     }

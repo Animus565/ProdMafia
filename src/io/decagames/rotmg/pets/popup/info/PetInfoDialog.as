@@ -12,7 +12,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class PetInfoDialog extends ModalPopup {
 
-
     public function PetInfoDialog() {
         super(280, 320, "Yard Caretaker");
         this.contentInset = TextureParser.instance.getSliceScalingBitmap("UI", "popup_content_inset", 280);
@@ -28,6 +27,7 @@ public class PetInfoDialog extends ModalPopup {
         this.createInfo();
         this.createGrid();
     }
+
     private var icon:Bitmap;
     private var contentInset:SliceScalingBitmap;
     private var contentTabs:SliceScalingBitmap;

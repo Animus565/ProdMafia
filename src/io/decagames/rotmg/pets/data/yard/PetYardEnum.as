@@ -53,6 +53,7 @@ public class PetYardEnum {
         this.ordinal = param2;
         this.rarity = param3;
     }
+
     public var value:String;
     public var ordinal:int;
     public var rarity:PetRarityEnum;

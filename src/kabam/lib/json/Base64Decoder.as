@@ -3,7 +3,6 @@ import com.hurlant.util.Base64;
 
 public class Base64Decoder {
 
-
     public function Base64Decoder() {
         super();
     }

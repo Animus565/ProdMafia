@@ -8,12 +8,12 @@ import robotlegs.bender.framework.api.LogLevel;
 
 public class ConsoleLogTarget implements ILogTarget {
 
-
     public function ConsoleLogTarget(_arg_1:IContext) {
         super();
         this.consoleLog = _arg_1.injector.getInstance(ConsoleLogSignal);
         this.messageParser = new LogMessageParser();
     }
+
     private var consoleLog:ConsoleLogSignal;
     private var messageParser:LogMessageParser;
 

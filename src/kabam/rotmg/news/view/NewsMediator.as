@@ -7,10 +7,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class NewsMediator extends Mediator {
 
-
     public function NewsMediator() {
         super();
     }
+
     [Inject]
     public var view:NewsView;
     [Inject]

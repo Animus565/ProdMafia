@@ -3,8 +3,8 @@ import mx.core.BitmapAsset;
 
 [Embed(source="material_common.png")]
 public class material_common extends BitmapAsset {
-   public function material_common() {
-      super();
-   }
+    public function material_common() {
+        super();
+    }
 }
 }

@@ -7,7 +7,6 @@ public class AbilityConfig {
 
     public static const ABILITY_GEOMETRIC_RATIO:Number = 1.08;
 
-
     public function AbilityConfig() {
         super();
     }

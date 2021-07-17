@@ -4,15 +4,15 @@ import flash.utils.IDataInput;
 import kabam.rotmg.messaging.impl.data.SlotObjectData;
 
 public class ForgeResult extends IncomingMessage {
-    public var success:Boolean;
-    public var results:Vector.<SlotObjectData>;
-
     public function ForgeResult(id:uint, callback:Function) {
         this.results = new Vector.<SlotObjectData>();
         super(id, callback);
     }
 
-    override public function parseFromInput(data:IDataInput) : void {
+    public var success:Boolean;
+    public var results:Vector.<SlotObjectData>;
+
+    override public function parseFromInput(data:IDataInput):void {
         this.success = data.readBoolean();
         this.results.length = 0;
         var resultsLen:int = data.readByte();
@@ -20,7 +20,7 @@ public class ForgeResult extends IncomingMessage {
             this.results[i].parseFromInput(data);
     }
 
-    override public function toString() : String {
+    override public function toString():String {
         return formatToString("FORGE_RESULT", "success", "results");
     }
 }

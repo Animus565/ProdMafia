@@ -6,10 +6,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class CancelButtonMediator extends Mediator {
 
-
     public function CancelButtonMediator() {
         super();
     }
+
     [Inject]
     public var closeSignal:CloseCurrentPopupSignal;
     [Inject]

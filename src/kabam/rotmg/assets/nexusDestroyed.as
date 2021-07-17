@@ -3,8 +3,8 @@ import mx.core.ByteArrayAsset;
 
 [Embed(source="nexusDestroyed.txt", mimeType="application/octet-stream")]
 public class nexusDestroyed extends ByteArrayAsset {
-   public function nexusDestroyed() {
-      super();
-   }
+    public function nexusDestroyed() {
+        super();
+    }
 }
 }

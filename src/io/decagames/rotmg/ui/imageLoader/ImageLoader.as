@@ -6,10 +6,10 @@ import flash.net.URLRequest;
 
 public class ImageLoader {
 
-
     public function ImageLoader() {
         super();
     }
+
     private var _callBack:Function;
 
     private var _loader:Loader;

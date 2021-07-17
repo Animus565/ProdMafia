@@ -81,6 +81,7 @@ public class StatsLine extends Sprite {
         this.setLabelsPosition();
         this._tooltipText = param3;
     }
+
     protected var lineHeight:int;
     protected var fameValue:UILabel;
     protected var label:UILabel;

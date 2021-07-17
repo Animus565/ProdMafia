@@ -5,7 +5,6 @@ import io.decagames.rotmg.ui.popups.modal.buttons.ClosePopupButton;
 
 public class ErrorModal extends TextModal {
 
-
     public function ErrorModal(param1:int, param2:String, param3:String) {
         var _loc4_:Vector.<BaseButton> = new Vector.<BaseButton>();
         _loc4_.push(new ClosePopupButton("Ok"));

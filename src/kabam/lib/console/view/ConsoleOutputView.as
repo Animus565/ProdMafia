@@ -12,7 +12,6 @@ public final class ConsoleOutputView extends Sprite implements Resizable {
 
     private static const DEFAULT_OUTPUT:String = "kabam.lib/console";
 
-
     private const PATTERN:RegExp = /\[0x(.+)\:(.+)\]/gi;
 
     private const HTML_TEMPLATE:String = "<font color=\'#$1\'>$2</font>";
@@ -42,6 +41,7 @@ public final class ConsoleOutputView extends Sprite implements Resizable {
         //this.logConsole = new Console("", new ConsoleConfig());
         //addChild(this.logConsole);
     }
+
     private var watchTextField:TextField;
     private var logConsole:Console;
     private var watchBottom:Number;

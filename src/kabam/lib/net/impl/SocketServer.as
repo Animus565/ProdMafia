@@ -12,9 +12,6 @@ import flash.utils.ByteArray;
 import flash.utils.Timer;
 
 import kabam.lib.net.api.MessageProvider;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.appengine.api.AppEngineClient;
-import kabam.rotmg.core.StaticInjectorContext;
 
 import org.osflash.signals.Signal;
 
@@ -27,6 +24,12 @@ public class SocketServer {
     public const error:Signal = new Signal(String);
     private const unsentPlaceholder:Message = new Message(0);
     private const data:ByteArray = new ByteArray();
+
+    public function SocketServer() {
+        this.head = this.unsentPlaceholder;
+        this.tail = this.unsentPlaceholder;
+        super();
+    }
 
     [Inject]
     public var messages:MessageProvider;
@@ -43,12 +46,6 @@ public class SocketServer {
     private var server:String;
     private var port:int;
 
-    public function SocketServer() {
-        this.head = this.unsentPlaceholder;
-        this.tail = this.unsentPlaceholder;
-        super();
-    }
-
     public function setOutgoingCipher(cipher:ICipher):SocketServer {
         this.outgoingCipher = cipher;
         return this;
@@ -59,7 +56,7 @@ public class SocketServer {
         return this;
     }
 
-    public function connect(address:String, port:int) : void {
+    public function connect(address:String, port:int):void {
         this.server = address;
         this.port = port;
         this.addListeners();
@@ -70,47 +67,13 @@ public class SocketServer {
             this.socket.connect(address, port);
     }
 
-    private function addListeners():void {
-        this.socket.addEventListener(Event.CONNECT, this.onConnect);
-        this.socket.addEventListener(Event.CLOSE, this.onClose);
-        this.socket.addEventListener(ProgressEvent.SOCKET_DATA, this.socketBuffer);
-        this.socket.addEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
-        this.socket.addEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecurityError);
-    }
-
-    private function socketBuffer(_:Event) : void {
-        if (Parameters.data.noClip)
-            return;
-
-        this.onSocketData(null);
-    }
-
-    private function connectWithDelay():void {
-        this.delayTimer = new Timer(this.socketServerModel.connectDelayMS, 1);
-        this.delayTimer.addEventListener(TimerEvent.TIMER_COMPLETE, this.onTimerComplete);
-        this.delayTimer.start();
-    }
-
-    private function onTimerComplete(_arg1:TimerEvent) : void {
-        this.delayTimer.removeEventListener(TimerEvent.TIMER_COMPLETE, this.onTimerComplete);
-        this.socket.connect(this.server, this.port);
-    }
-
     public function disconnect():void {
         try {
             this.socket.close();
+        } catch (error:Error) {
         }
-        catch (error:Error) { }
         this.removeListeners();
         this.closed.dispatch();
-    }
-
-    private function removeListeners():void {
-        this.socket.removeEventListener(Event.CONNECT, this.onConnect);
-        this.socket.removeEventListener(Event.CLOSE, this.onClose);
-        this.socket.removeEventListener(ProgressEvent.SOCKET_DATA, this.socketBuffer);
-        this.socket.removeEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
-        this.socket.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecurityError);
     }
 
     public function sendMessage(msg:Message):void {
@@ -122,19 +85,38 @@ public class SocketServer {
         this.sendPending(null);
     }
 
-    private function sendPending(_:Event) : void {
-        if (Parameters.data.noClip)
-            return;
-
-        this.socket.connected && this.sendPendingMessages();
-    }
-
     public function queueMessage(msg:Message):void {
         if (Parameters.data.noClip)
             return;
 
         this.tail.next = msg;
         this.tail = msg;
+    }
+
+    public function isConnected():Boolean {
+        return this.socket.connected;
+    }
+
+    private function addListeners():void {
+        this.socket.addEventListener(Event.CONNECT, this.onConnect);
+        this.socket.addEventListener(Event.CLOSE, this.onClose);
+        this.socket.addEventListener(ProgressEvent.SOCKET_DATA, this.socketBuffer);
+        this.socket.addEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
+        this.socket.addEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecurityError);
+    }
+
+    private function connectWithDelay():void {
+        this.delayTimer = new Timer(this.socketServerModel.connectDelayMS, 1);
+        this.delayTimer.addEventListener(TimerEvent.TIMER_COMPLETE, this.onTimerComplete);
+        this.delayTimer.start();
+    }
+
+    private function removeListeners():void {
+        this.socket.removeEventListener(Event.CONNECT, this.onConnect);
+        this.socket.removeEventListener(Event.CLOSE, this.onClose);
+        this.socket.removeEventListener(ProgressEvent.SOCKET_DATA, this.socketBuffer);
+        this.socket.removeEventListener(IOErrorEvent.IO_ERROR, this.onIOError);
+        this.socket.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecurityError);
     }
 
     private function sendPendingMessages():void {
@@ -158,6 +140,8 @@ public class SocketServer {
                 this.outgoingCipher.encrypt(this.data);
                 this.data.position = 0;
             }
+            if (Parameters.LOG_PACKETS)
+                trace("Sent:", msg.id);
             this.socket.writeInt(this.data.bytesAvailable + 5);
             this.socket.writeByte(msg.id);
             this.socket.writeBytes(this.data);
@@ -172,6 +156,39 @@ public class SocketServer {
         this.unsentPlaceholder.next = null;
         this.unsentPlaceholder.prev = null;
         this.head = (this.tail = this.unsentPlaceholder);
+    }
+
+    private function logErrorAndClose(errorPrefix:String, errMsgs:Array = null):void {
+        this.error.dispatch(this.parseString(errorPrefix, errMsgs));
+        this.disconnect();
+    }
+
+    private function parseString(msgTemplate:String, msgs:Array):String {
+        var numMsgs:int = msgs.length;
+        for (var i:int = 0; i < numMsgs; i++) {
+            msgTemplate = msgTemplate.replace("{" + i + "}", msgs[i]);
+            i++;
+        }
+        return msgTemplate;
+    }
+
+    private function socketBuffer(_:Event):void {
+        if (Parameters.data.noClip)
+            return;
+
+        this.onSocketData(null);
+    }
+
+    private function onTimerComplete(_arg1:TimerEvent):void {
+        this.delayTimer.removeEventListener(TimerEvent.TIMER_COMPLETE, this.onTimerComplete);
+        this.socket.connect(this.server, this.port);
+    }
+
+    private function sendPending(_:Event):void {
+        if (Parameters.data.noClip)
+            return;
+
+        this.socket.connected && this.sendPendingMessages();
     }
 
     private function onConnect(evt:Event):void {
@@ -209,8 +226,7 @@ public class SocketServer {
                 if (this.socket.bytesAvailable < 4) break;
                 try {
                     this.messageLen = this.socket.readInt();
-                }
-                catch (e:Error) {
+                } catch (e:Error) {
                     errorMessage = parseString("Socket-Server Data Error: {0}: {1}", [e.name, e.message]);
                     error.dispatch(errorMessage);
                     messageLen = -1;
@@ -219,6 +235,8 @@ public class SocketServer {
             }
             if (this.socket.bytesAvailable < this.messageLen - MESSAGE_LENGTH_SIZE_IN_BYTES) break;
             messageId = this.socket.readUnsignedByte();
+            if (Parameters.LOG_PACKETS)
+                trace("Recv:", messageId);
             message = this.messages.require(messageId);
             var bytesStr:String = "";
             var i:int = 0;
@@ -247,36 +265,19 @@ public class SocketServer {
                 message.parseFromInput(data);
                 if (data.bytesAvailable > 0) {
                     bytesStr = "";
-                    for (i = 0; i < data.bytesAvailable; i++)
-                        bytesStr += data.readByte().toString() + ", ";
-                    trace("Read-only packet (id: " + messageId + ") has unread data left over: " + bytesStr)
+                    var bytesAvailable:int = data.bytesAvailable;
+                    for (i = 0; i < bytesAvailable; i++)
+                        bytesStr += (i == 0 ? "[" : "") + data.readByte().toString()
+                                + (i == bytesAvailable - 1 ? "]" : ", ");
+                    trace("Read-only packet (id: " + messageId + ") has unread data left over: " + bytesStr);
                 }
-            }
-            catch (error:Error) {
+            } catch (error:Error) {
                 logErrorAndClose("Socket-Server Protocol Error: {0}", [error.toString()]);
                 return;
             }
             message.consume();
             sendPendingMessages();
         }
-    }
-
-    private function logErrorAndClose(errorPrefix:String, errMsgs:Array = null):void {
-        this.error.dispatch(this.parseString(errorPrefix, errMsgs));
-        this.disconnect();
-    }
-
-    private function parseString(msgTemplate:String, msgs:Array):String {
-        var numMsgs:int = msgs.length;
-        for (var i:int = 0; i < numMsgs; i++) {
-            msgTemplate = msgTemplate.replace("{" + i + "}", msgs[i]);
-            i++;
-        }
-        return msgTemplate;
-    }
-
-    public function isConnected():Boolean {
-        return this.socket.connected;
     }
 }
 }

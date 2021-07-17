@@ -9,32 +9,26 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="Air 32 sdk (2)" />
+          <sdk name="air 32" />
         </dependencies>
         <compiler-options>
           <map>
             <entry key="compiler.debug.swf" value="false" />
-            <entry key="compiler.keep-generated-actionscript" value="false" />
           </map>
         </compiler-options>
-        <packaging-air-desktop package-file-name="ProdMafia" />
+        <packaging-air-desktop use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/Descriptor.xml" package-file-name="ProdMafia" />
         <packaging-android />
         <packaging-ios />
       </configuration>
     </configurations>
-    <compiler-options>
-      <map>
-        <entry key="compiler.debug.swc" value="false" />
-        <entry key="compiler.debug.swf" value="true" />
-      </map>
-    </compiler-options>
+    <compiler-options />
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Air 32 sdk (2)" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="air 32" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">

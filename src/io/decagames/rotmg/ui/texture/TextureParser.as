@@ -28,6 +28,7 @@ public class TextureParser {
         this.json = StaticInjectorContext.getInjector().getInstance(JsonParser);
         this.registerTexture(new UIAssets.UI(), new UIAssets.UI_CONFIG(), new UIAssets.UI_SLICE_CONFIG(), "UI");
     }
+
     private var textures:Dictionary;
     private var json:JsonParser;
 

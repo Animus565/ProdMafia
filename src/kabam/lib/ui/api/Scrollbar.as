@@ -3,7 +3,6 @@ import org.osflash.signals.Signal;
 
 public interface Scrollbar {
 
-
     function get positionChanged():Signal;
 
     function setSize(_arg_1:int, _arg_2:int):void;

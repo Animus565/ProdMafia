@@ -1,11 +1,11 @@
 package kabam.lib.tasks {
 public class TaskMonitor {
 
-
     public function TaskMonitor() {
         super();
         this.tasks = new Vector.<Task>(0);
     }
+
     private var tasks:Vector.<Task>;
 
     public function add(_arg_1:Task):void {

@@ -10,11 +10,11 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class FuseTooltip extends ToolTip {
 
-
     public function FuseTooltip() {
         super(3552822, 1, 10197915, 1);
         this.init();
     }
+
     private var title:UILabel;
     private var topDesc:UILabel;
     private var fuseIcon:SliceScalingBitmap;

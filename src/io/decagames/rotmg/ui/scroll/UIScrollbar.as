@@ -27,6 +27,7 @@ public class UIScrollbar extends Sprite {
         this._slider.y = 1;
         addChild(this._slider);
     }
+
     private var background:SliceScalingBitmap;
     private var sliderAsset:SliceScalingBitmap;
     private var contentHeight:int;

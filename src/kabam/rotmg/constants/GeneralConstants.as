@@ -13,7 +13,6 @@ public class GeneralConstants {
 
     public static const MODE_RIFT:int = 2;
 
-
     public function GeneralConstants() {
         super();
     }

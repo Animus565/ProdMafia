@@ -3,8 +3,8 @@ import mx.core.ByteArrayAsset;
 
 [Embed(source="spiderDenObjects.txt", mimeType="application/octet-stream")]
 public class spiderDenObjects extends ByteArrayAsset {
-   public function spiderDenObjects() {
-      super();
-   }
+    public function spiderDenObjects() {
+        super();
+    }
 }
 }

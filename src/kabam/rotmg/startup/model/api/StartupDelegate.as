@@ -3,7 +3,6 @@ import kabam.lib.tasks.Task;
 
 public interface StartupDelegate {
 
-
     function getPriority():int;
 
     function make():Task;

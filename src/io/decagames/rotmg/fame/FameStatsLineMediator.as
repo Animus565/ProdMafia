@@ -9,10 +9,10 @@ import robotlegs.bender.bundles.mvcs.Mediator;
 
 public class FameStatsLineMediator extends Mediator {
 
-
     public function FameStatsLineMediator() {
         super();
     }
+
     [Inject]
     public var view:StatsLine;
     [Inject]

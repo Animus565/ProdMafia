@@ -7,12 +7,12 @@ import org.osflash.signals.Signal;
 
 public class GroupMappedSignal extends Signal {
 
-
     public function GroupMappedSignal(_arg_1:String, ...rest) {
         this.eventType = _arg_1;
         this.mappedTargets = new Dictionary(true);
         super(rest);
     }
+
     private var eventType:String;
     private var mappedTargets:Dictionary;
 

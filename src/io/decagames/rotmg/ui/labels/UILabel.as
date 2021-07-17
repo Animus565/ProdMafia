@@ -5,7 +5,6 @@ public class UILabel extends TextField {
 
     public static var DEBUG:Boolean = false;
 
-
     public function UILabel() {
         super();
         if (DEBUG) {

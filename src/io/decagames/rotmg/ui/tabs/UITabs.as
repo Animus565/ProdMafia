@@ -10,7 +10,6 @@ import org.osflash.signals.Signal;
 
 public class UITabs extends Sprite {
 
-
     public function UITabs(param1:int, param2:Boolean = false) {
         buttonsRenderedSignal = new Signal();
         tabSelectedSignal = new TabSelectedSignal();
@@ -32,6 +31,7 @@ public class UITabs extends Sprite {
             this.tabsButtonMargin = 3;
         }
     }
+
     public var buttonsRenderedSignal:Signal;
     public var tabSelectedSignal:TabSelectedSignal;
     private var tabsXSpace:int = 3;

@@ -3,7 +3,6 @@ import flash.display.Sprite;
 
 public class UIGridElement extends Sprite {
 
-
     public function UIGridElement() {
         super();
     }

@@ -27,6 +27,7 @@ public class PopupHeader extends Sprite {
         this.buttonsContainers = new Vector.<Sprite>();
         this.buttons = new Vector.<SliceScalingButton>();
     }
+
     private var backgroundBitmap:SliceScalingBitmap;
     private var titleBackgroundBitmap:SliceScalingBitmap;
     private var buttonsContainers:Vector.<Sprite>;

@@ -29,6 +29,7 @@ public class SliceScalingBitmap extends Bitmap {
             this.bitmapData = param1;
         }
     }
+
     protected var margin:Point;
     private var scaleGrid:Rectangle;
     private var currentWidth:int;

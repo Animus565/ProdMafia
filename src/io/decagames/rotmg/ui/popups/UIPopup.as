@@ -5,7 +5,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class UIPopup extends BasePopup {
 
-
     public function UIPopup(param1:int, param2:int) {
         super(param1, param2);
         this._header = new PopupHeader(param1, PopupHeader.TYPE_FULL);
@@ -14,6 +13,7 @@ public class UIPopup extends BasePopup {
         this.footer.y = param2 - this.footer.height;
         addChild(this.footer);
     }
+
     private var footer:SliceScalingBitmap;
     private var _background:SliceScalingBitmap;
     private var popupType:String;

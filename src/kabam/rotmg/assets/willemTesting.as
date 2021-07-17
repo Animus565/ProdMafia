@@ -3,8 +3,8 @@ import mx.core.ByteArrayAsset;
 
 [Embed(source="willemTesting.txt", mimeType="application/octet-stream")]
 public class willemTesting extends ByteArrayAsset {
-   public function willemTesting() {
-      super();
-   }
+    public function willemTesting() {
+        super();
+    }
 }
 }

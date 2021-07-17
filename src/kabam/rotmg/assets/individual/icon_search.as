@@ -3,8 +3,8 @@ import mx.core.BitmapAsset;
 
 [Embed(source="icon_search.png")]
 public class icon_search extends BitmapAsset {
-   public function icon_search() {
-      super();
-   }
+    public function icon_search() {
+        super();
+    }
 }
 }

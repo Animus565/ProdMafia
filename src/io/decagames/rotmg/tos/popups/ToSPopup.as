@@ -6,7 +6,6 @@ import io.decagames.rotmg.ui.popups.modal.TextModal;
 
 public class ToSPopup extends TextModal {
 
-
     public function ToSPopup() {
         var _loc1_:Vector.<BaseButton> = new Vector.<BaseButton>();
         _loc1_.push(new RefuseButton());

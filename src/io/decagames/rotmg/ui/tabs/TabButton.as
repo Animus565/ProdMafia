@@ -47,6 +47,7 @@ public class TabButton extends SliceScalingButton {
         _loc2_.addMargin(0, this.buttonType == "borderless" ? 0 : 3);
         _interactionEffects = false;
     }
+
     private var selectedBitmap:String;
     private var defaultBitmap:String;
     private var buttonType:String;

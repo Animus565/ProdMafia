@@ -10,10 +10,10 @@ import robotlegs.bender.framework.api.IConfig;
 
 public class StartupConfig implements IConfig {
 
-
     public function StartupConfig() {
         super();
     }
+
     [Inject]
     public var injector:Injector;
     [Inject]

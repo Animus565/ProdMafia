@@ -4,7 +4,6 @@ import flash.display.Sprite;
 
 public class PopupView extends Sprite {
 
-
     public function PopupView() {
         super();
         this.popupContainer = new Sprite();
@@ -12,6 +11,7 @@ public class PopupView extends Sprite {
         super.addChild(this.popupContainer);
         super.addChild(this.fadeContainer);
     }
+
     protected var popupFadeColor:uint = 1381653;
     protected var popupFadeAlpha:Number = 0.6;
     private var popupContainer:Sprite;

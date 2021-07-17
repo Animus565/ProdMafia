@@ -10,7 +10,6 @@ import org.osflash.signals.Signal;
 
 public class NumberSpinner extends Sprite {
 
-
     public function NumberSpinner(param1:SliceScalingBitmap, param2:int, param3:int, param4:int, param5:int, param6:String = "") {
         super();
         this._upArrow = new SliceScalingButton(param1);
@@ -37,6 +36,7 @@ public class NumberSpinner extends Sprite {
         addChild(this._downArrow);
         this._value = param2;
     }
+
     public var valueWasChanged:Signal;
     protected var suffix:String;
     protected var label:UILabel;

@@ -4,10 +4,10 @@ import kabam.rotmg.maploading.view.MapLoadingView;
 
 public class ShowLoadingViewCommand {
 
-
     public function ShowLoadingViewCommand() {
         super();
     }
+
     [Inject]
     public var layers:Layers;
     [Inject]

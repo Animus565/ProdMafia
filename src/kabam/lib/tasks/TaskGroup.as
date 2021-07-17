@@ -1,11 +1,11 @@
 package kabam.lib.tasks {
 public class TaskGroup extends BaseTask {
 
-
     public function TaskGroup() {
         super();
         this.tasks = new Vector.<BaseTask>();
     }
+
     private var tasks:Vector.<BaseTask>;
     private var pending:int;
 

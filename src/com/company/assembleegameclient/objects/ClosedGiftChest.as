@@ -10,12 +10,12 @@ import kabam.rotmg.game.view.TextPanel;
 
 public class ClosedGiftChest extends GameObject implements IInteractiveObject {
 
-
     public function ClosedGiftChest(_arg_1:XML) {
         super(_arg_1);
         isInteractive_ = true;
         this.textPanelUpdateSignal = StaticInjectorContext.getInjector().getInstance(TextPanelMessageUpdateSignal);
     }
+
     private var textPanelUpdateSignal:TextPanelMessageUpdateSignal;
 
     public function getTooltip():ToolTip {

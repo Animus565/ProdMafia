@@ -7,7 +7,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class ConfirmationModal extends TextModal {
 
-
     public function ConfirmationModal(param1:int, param2:String, param3:String, param4:String, param5:String, param6:int = 100) {
         var _loc7_:* = undefined;
         _loc7_ = new Vector.<BaseButton>();
@@ -20,6 +19,7 @@ public class ConfirmationModal extends TextModal {
         _loc7_.push(_loc8_);
         super(param1, param2, param3, _loc7_);
     }
+
     public var confirmButton:SliceScalingButton;
 }
 }

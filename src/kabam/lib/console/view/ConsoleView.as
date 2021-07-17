@@ -3,7 +3,6 @@ import flash.display.Sprite;
 
 public final class ConsoleView extends Sprite {
 
-
     public function ConsoleView() {
         super();
         var _local1:* = new ConsoleOutputView();
@@ -13,6 +12,7 @@ public final class ConsoleView extends Sprite {
         this.input = _local1;
         addChild(_local1);
     }
+
     public var output:ConsoleOutputView;
     public var input:ConsoleInputView;
 

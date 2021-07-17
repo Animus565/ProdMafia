@@ -5,7 +5,6 @@ import org.osflash.signals.Signal;
 
 public final class RegisterConsoleActionSignal extends Signal {
 
-
     public function RegisterConsoleActionSignal() {
         super(ConsoleAction, Signal);
     }

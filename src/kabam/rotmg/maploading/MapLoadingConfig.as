@@ -15,10 +15,10 @@ import robotlegs.bender.framework.api.IConfig;
 
 public class MapLoadingConfig implements IConfig {
 
-
     public function MapLoadingConfig() {
         super();
     }
+
     [Inject]
     public var injector:Injector;
     [Inject]

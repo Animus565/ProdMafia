@@ -3,7 +3,6 @@ import flash.geom.Rectangle;
 
 public interface Resizable {
 
-
     function resize(_arg_1:Rectangle):void;
 }
 }

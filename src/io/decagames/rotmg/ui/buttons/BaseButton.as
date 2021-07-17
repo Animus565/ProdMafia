@@ -7,7 +7,6 @@ import org.osflash.signals.Signal;
 
 public class BaseButton extends Sprite {
 
-
     public function BaseButton() {
         clickSignal = new Signal();
         rollOverSignal = new Signal();
@@ -15,6 +14,7 @@ public class BaseButton extends Sprite {
         super();
         this.addEventListener("addedToStage", this.onAddedToStage);
     }
+
     public var clickSignal:Signal;
     public var rollOverSignal:Signal;
     public var rollOutSignal:Signal;

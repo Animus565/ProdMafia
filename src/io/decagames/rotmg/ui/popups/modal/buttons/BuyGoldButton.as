@@ -5,7 +5,6 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 public class BuyGoldButton extends SliceScalingButton {
 
-
     public function BuyGoldButton() {
         super(TextureParser.instance.getSliceScalingBitmap("UI", "generic_green_button"));
         setLabel("Buy Gold", DefaultLabelFormat.defaultButtonLabel);

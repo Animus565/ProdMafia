@@ -5,7 +5,6 @@ import kabam.rotmg.application.api.ApplicationSetup;
 
 public class Testing2Setup implements ApplicationSetup {
 
-
     private const SERVER:String = "test2.realmofthemadgod.com";
 
     private const UNENCRYPTED:String = "http://test2.realmofthemadgod.com";

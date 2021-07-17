@@ -33,10 +33,10 @@ import robotlegs.bender.framework.api.IContext;
 
 public class ConsoleConfig {
 
-
     public function ConsoleConfig() {
         super();
     }
+
     [Inject]
     public var context:IContext;
     [Inject]

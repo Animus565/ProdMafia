@@ -5,7 +5,6 @@ import kabam.rotmg.application.api.ApplicationSetup;
 
 public class FixedIPSetup implements ApplicationSetup {
 
-
     private const SERVER:String = "test.realmofthemadgod.com";
 
     private const UNENCRYPTED:String = "http://test.realmofthemadgod.com";
@@ -19,6 +18,7 @@ public class FixedIPSetup implements ApplicationSetup {
     public function FixedIPSetup() {
         super();
     }
+
     private var ipAddress:String;
 
     public function setAddress(_arg_1:String):FixedIPSetup {

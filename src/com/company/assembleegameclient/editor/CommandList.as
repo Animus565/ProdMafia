@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.editor {
 public class CommandList {
 
-
     public function CommandList() {
         list_ = new Vector.<Command>();
         super();
     }
+
     private var list_:Vector.<Command>;
 
     public function empty():Boolean {

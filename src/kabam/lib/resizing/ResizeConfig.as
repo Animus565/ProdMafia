@@ -9,10 +9,10 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 
 public class ResizeConfig {
 
-
     public function ResizeConfig() {
         super();
     }
+
     [Inject]
     public var injector:Injector;
     [Inject]

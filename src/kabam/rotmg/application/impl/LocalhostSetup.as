@@ -5,7 +5,6 @@ import kabam.rotmg.application.api.ApplicationSetup;
 
 public class LocalhostSetup implements ApplicationSetup {
 
-
     private const SERVER:String = "http://localhost:8080";
 
     private const ANALYTICS:String = "UA-101960510-5";

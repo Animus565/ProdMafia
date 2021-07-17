@@ -1,44 +1,47 @@
 package com.company.assembleegameclient.objects {
-   import kabam.rotmg.text.view.stringBuilder.PatternBuilder;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   
-   public class PortalNameParser {
-      
-      public static const NAME_PARSER:RegExp = /(.+)\s\((.+)\)/;
-       
-      
-      public function PortalNameParser() {
-         super();
-      }
-      
-      public function parse(param1:String) : String {
-         if(!param1) {
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+
+public class PortalNameParser {
+
+    public static const NAME_PARSER:RegExp = /(.+)\s\((.+)\)/;
+
+    public function PortalNameParser() {
+        super();
+    }
+
+    public function parse(param1:String):String {
+        if (!param1) {
             return "";
-         }
-         var _loc2_:Array = param1.match(NAME_PARSER);
-         if(_loc2_ == null) {
+        }
+        var _loc2_:Array = param1.match(NAME_PARSER);
+        if (_loc2_ == null) {
             return this.wrapNameWithBracesIfRequired(param1);
-         }
-         return this.makePatternFromParts(_loc2_);
-      }
-      
-      public function makeBuilder(param1:String) : StringBuilder {
-         return new PatternBuilder().setPattern(this.parse(param1));
-      }
-      
-      private function wrapNameWithBracesIfRequired(param1:String) : String {
-         if(param1.charAt(0) == "{" && param1.charAt(param1.length - 1) == "}") {
+        }
+        return this.makePatternFromParts(_loc2_);
+    }
+
+    public function makeBuilder(name:String):StringBuilder {
+        var tokens:Object = name.charAt(0) == "{" ? LineBuilder.fromJSON(name).tokens : null;
+        return new StaticStringBuilder(tokens ?
+                LineBuilder.getLocalizedStringFromKey(tokens as String) :
+                name);
+    }
+
+    private function wrapNameWithBracesIfRequired(param1:String):String {
+        if (param1.charAt(0) == "{" && param1.charAt(param1.length - 1) == "}") {
             return param1;
-         }
-         return "{" + param1 + "}";
-      }
-      
-      private function makePatternFromParts(param1:Array) : String {
-         var _loc2_:* = "{" + param1[1] + "}";
-         if(param1.length > 1) {
+        }
+        return "{" + param1 + "}";
+    }
+
+    private function makePatternFromParts(param1:Array):String {
+        var _loc2_:* = "{" + param1[1] + "}";
+        if (param1.length > 1) {
             _loc2_ = _loc2_ + (" (" + param1[2] + ")");
-         }
-         return _loc2_;
-      }
-   }
+        }
+        return _loc2_;
+    }
+}
 }

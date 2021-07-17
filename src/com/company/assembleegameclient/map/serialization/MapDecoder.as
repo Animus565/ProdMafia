@@ -14,7 +14,6 @@ import kabam.rotmg.core.StaticInjectorContext;
 
 public class MapDecoder {
 
-
     private static function get json():JsonParser {
         return StaticInjectorContext.getInjector().getInstance(JsonParser);
     }
