@@ -477,6 +477,8 @@ public class Options extends Sprite {
         this.addOptionAndPosition(new KeyMapper("pickUpKey", "Pick Up Key", "The key which picks up items from your vault"));
         this.addOptionAndPosition(new KeyMapper("reconKey", "Reconnect", "The key which reconects you to your current instance"));
         this.addOptionAndPosition(new KeyMapper("noClipKey", "No Clip Key", "The key which toggles whether to No Clip"));
+        this.addOptionAndPosition(new ChoiceOption("isKrelay",makeOnOffLabels(),[true,false],"K-Relay","This toggle makes sure any ProdMafia features won't affect K-Relay",null));
+
     }
 
     private function onProjUpdateChange() : void

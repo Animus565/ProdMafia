@@ -16,7 +16,7 @@ import flash.utils.ByteArray;
 import flash.utils.Dictionary;
 
 public class Parameters {
-    public static const CLIENT_VERSION:String = "1.6.2.0.0";
+    public static const CLIENT_VERSION:String = "1.6.3.0.0";
     public static const PORT:int = 2050;
     public static const UNITY_LAUNCHER_VERSION:String = "2019.3.14f1";
     public static const UNITY_GAME_VERSION:String = "2019.4.21f1";
@@ -812,6 +812,7 @@ public class Parameters {
         setDefault("customNameAll","");
         setDefault("dataScrambler",false);
         setDefault("transmog",0);
+        setDefault("isKrelay",false);
         generateClientToken();
     }
 

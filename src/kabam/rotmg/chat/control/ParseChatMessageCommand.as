@@ -145,41 +145,42 @@ public class ParseChatMessageCommand {
                 this.handleFPSCommand("FPS Cap", "customFPS", split, command);
                 return;
             case "/ip":
-                if (split.length == 1) {
-                    var server:Server = this.hudModel.gameSprite.gsc_.server_;
-                    var index:int = server.name.indexOf("NexusPortal.");
-                    this.addTextLine.dispatch(ChatMessage.make("*Help*", (index == -1 ? server.name : server.name.substring(index + "NexusPortal.".length)) + ": " + server.address));
-                    if (Parameters.data.ipClipboard) {
-                        System.setClipboard(server.address);
-                        this.addTextLine.dispatch(ChatMessage.make("*Help*", "Successfully copied IP to Clipboard"));
+                if(!Parameters.data.isKrelay) {
+                    if (split.length == 1) {
+                        var server:Server = this.hudModel.gameSprite.gsc_.server_;
+                        var index:int = server.name.indexOf("NexusPortal.");
+                        this.addTextLine.dispatch(ChatMessage.make("*Help*", (index == -1 ? server.name : server.name.substring(index + "NexusPortal.".length)) + ": " + server.address));
+                        if (Parameters.data.ipClipboard) {
+                            System.setClipboard(server.address);
+                            this.addTextLine.dispatch(ChatMessage.make("*Help*", "Successfully copied IP to Clipboard"));
+                        }
+                    } else {
+                        this.addTextLine.dispatch(ChatMessage.make("*Error*", "Invalid syntax! This command does not use any arguments."));
                     }
-                } else {
-                    this.addTextLine.dispatch(ChatMessage.make("*Error*", "Invalid syntax! This command does not use any arguments."));
                 }
                 return;
             case "/goto":
-                if (Parameters.data.shownGotoWarning) {
-                    if (split.length == 2) {
-                        Parameters.enteringRealm = true;
-                        this.jumpToIP(split[1]);
-                    } else {
-                        this.addTextLine.dispatch(ChatMessage.make("*Error*", "Incorrect arguments! Syntax: /goto <ip>"));
+                    if(!Parameters.data.isKrelay) {
+                        if (Parameters.data.shownGotoWarning) {
+                            if (split.length == 2) {
+                                Parameters.enteringRealm = true;
+                                this.jumpToIP(split[1]);
+                            } else {
+                                this.addTextLine.dispatch(ChatMessage.make("*Error*", "Incorrect arguments! Syntax: /goto <ip>"));
+                            }
+                        } else {
+                            this.addTextLine.dispatch(ChatMessage.make("*Error*", "WARNING! /goto can be used to steal your account information, meaning you should only use it on IPs you trust. Re-send the message for it to register."));
+                            Parameters.data.shownGotoWarning = true;
+                        }
                     }
-                } else {
-                    this.addTextLine.dispatch(ChatMessage.make("*Error*", "WARNING! /goto can be used to steal your account information, meaning you should only use it on IPs you trust. Re-send the message for it to register."));
-                    Parameters.data.shownGotoWarning = true;
-                }
                 return;
             case "/conn":
-                if (Parameters.data.replaceCon) {
-                    this.handleConCommand(split);
-                    return;
-                }
-                break;
             case "/con":
-                if (!Parameters.data.replaceCon) {
-                    this.handleConCommand(split);
-                    return;
+                if(!Parameters.data.isKrelay) {
+                    if (!Parameters.data.replaceCon) {
+                        this.handleConCommand(split);
+                        return;
+                    }
                 }
                 break;
             case "/pos":
@@ -456,22 +457,6 @@ public class ParseChatMessageCommand {
                 this.hudModel.gameSprite.gsc_.changeGuildRank(this.hudModel.gameSprite.map.player_.name_, rank);
                 this.addTextLine.dispatch(Parameters.HELP_CHAT_NAME,
                         "Your guild rank has been set to: " + rank);
-                return;
-            case "/lm":
-            case "/lifemul":
-            case "/lifemult":
-                Parameters.data.lifeMul = parseFloat(split[1]);
-                Parameters.save();
-                this.addTextLine.dispatch(ChatMessage.make("", "Life Multiplier: " +
-                        Parameters.data.lifeMul + "x"));
-                return;
-            case "/sm":
-            case "/speedmul":
-            case "/speedmult":
-                Parameters.data.speedMul = parseFloat(split[1]);
-                Parameters.save();
-                this.addTextLine.dispatch(ChatMessage.make("", "Speed Multiplier: " +
-                        Parameters.data.speedMul + "x"));
                 return;
             case "/nc":
             case "/nukecount":
