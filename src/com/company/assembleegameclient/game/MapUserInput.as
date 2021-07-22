@@ -670,11 +670,6 @@ public class MapUserInput {
                     gs.gsc_.escape();
                 }
                 return;
-            case Parameters.data.nukeKey:
-                Parameters.data.nukeOn = !Parameters.data.nukeOn;
-                Parameters.save();
-                player.levelUpEffect("Nuke: " + (!!Parameters.data.nukeOn?"ON":"OFF"));
-                return;
             case Parameters.data.walkKey:
                 this.isWalking = true;
                 return;

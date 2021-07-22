@@ -458,13 +458,6 @@ public class ParseChatMessageCommand {
                 this.addTextLine.dispatch(Parameters.HELP_CHAT_NAME,
                         "Your guild rank has been set to: " + rank);
                 return;
-            case "/nc":
-            case "/nukecount":
-                var count:int = parseInt(split[1]);
-                Parameters.data.nukeCount = count;
-                Parameters.save();
-                this.addTextLine.dispatch(ChatMessage.make("*Help*","Nuke count set to: " + count));
-                return;
             case "/listblueprints":
             case "/lb":
                 var unlocked:Vector.<int> = new <int>[];

@@ -797,8 +797,6 @@ public class Parameters {
         setDefault("debugMode", false);
         setDefault("pickUpKey", KeyCodes.UNSET);
         setDefault("depositKey", KeyCodes.UNSET);
-        setDefault("nukeCount", 20);
-        setDefault("nukeOn", true);
         setDefaultKey("nukeKey", KeyCodes.UNSET);
         setDefaultKey("reconKey", KeyCodes.UNSET);
         setDefault("summCtrl",71);

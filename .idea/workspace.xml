@@ -229,24 +229,24 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="260" y="299" width="2133" height="799" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1626319916721" />
-    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1626672756052">
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1626966741353">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1626672756052" />
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1626966741353" />
     <state x="3292" y="389" key="com.intellij.ide.util.TipDialog/2560.0.1920.1040/0.0.2560.1400@2560.0.1920.1040" timestamp="1625269472530" />
-    <state x="1019" y="460" width="1103" height="757" key="find.popup" timestamp="1626676363181">
+    <state x="1019" y="460" width="1103" height="757" key="find.popup" timestamp="1626966897770">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1019" y="460" width="1103" height="757" key="find.popup/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1626676363181" />
+    <state x="1019" y="460" width="1103" height="757" key="find.popup/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1626966897770" />
     <state x="3292" y="321" width="828" height="536" key="find.popup/2560.0.1920.1040/0.0.2560.1400@2560.0.1920.1040" timestamp="1626550937304" />
     <state x="1101" y="413" key="refactoring.ChangeSignatureDialog" timestamp="1626319381121">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1101" y="413" key="refactoring.ChangeSignatureDialog/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1626319381121" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1626676372787">
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1626966800474">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1626676372787" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1626966800474" />
     <state x="3267" y="234" width="672" height="504" key="search.everywhere.popup/2560.0.1920.1040/0.0.2560.1400@2560.0.1920.1040" timestamp="1626550929473" />
   </component>
   <component name="XDebuggerManager">

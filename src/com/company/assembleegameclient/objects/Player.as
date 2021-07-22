@@ -3054,28 +3054,6 @@ public class Player extends Character {
         if(equipId == -1) {
             return;
         }
-        if(Parameters.data.nukeOn)
-        {
-            if(this.mp_ < xml.MpCost)
-            {
-                SoundEffectLibrary.play("no_mana");
-                return;
-            }
-            if(this.isQuiet || this.isSilenced)
-            {
-                SoundEffectLibrary.play("error");
-                return;
-            }
-            var cd:int = xml.hasOwnProperty("Cooldown") ? xml.Cooldown : 500
-            ;
-            for (var i:int = 0; i < Parameters.data.nukeCount; i++) {
-                map_.gs_.gsc_.useItem(map_.gs_.lastUpdate_ + i * cd,
-                        objectId_, 1, equipId,
-                        target.x, target.y, 1);
-            }
-            TimeUtil.moddedTime = TimeUtil.moddedTime + i * cd;
-            return;
-        }
         for each(var _loc3_ in xml.Activate) {
             if(_loc3_.toString() == "Teleport") {
                 this.useAltWeapon(x,y,1,-1,false);
